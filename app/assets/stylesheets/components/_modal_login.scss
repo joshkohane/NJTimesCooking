@@ -19,29 +19,57 @@
   background-color: #FFFFFF;
 }
 
-.modal-image {
-  width: 550px;
-  height: 625px;
+.modal-image-tag {
+
+  .modal-image {
+    position: relative;
+    width: 550px;
+    height: 625px;
+  }
+
+  .modal-image-text {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    padding: 35px 40px;
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: 300;
+    text-align: center;
+  }
 }
+
 
 .modal-form {
-  padding: 34px 34px 0 34px;
+  padding: 28px 34px 0 34px;
   width: 282px;
-  text-align: center;
 }
 
-.modal-btn {
+.btn {
   width: 282px;
-  background-color: rgb(227, 61, 38);
   text-align: center;
-  color: #FFFFFF;
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 500;
   font-size: 16px;
   height: 40px;
   border-radius: 5px;
-  border: 1px solid rgb(227,61, 38);
   box-sizing: border-box;
+}
+
+.modal-btn {
+  background-color: rgb(227, 61, 38);
+  color: #FFFFFF;
+  border: 1px solid rgb(227,61, 38);
+}
+
+.demo-btn {
+  background-color: #FFFFFF;
+  color: rgb(18, 18, 18);
+  border: 1px solid rgb(136, 136, 136);
+}
+
+.modal-submit-btn {
+  padding-top: 10px;
 }
 
 .modal-btn:hover {
@@ -49,21 +77,143 @@
   transition: all .15s ease-in 0s;
 }
 
-.modal-link {
-  text-decoration: underline;
-  font-family: 'Libre Franklin', sans-serif;
-  color: #333333;
-  font-weight: 600;
-  font-size: 16px;
+.demo-btn:hover {
+  background-color: rgb(247, 247, 247);
+  transition: all .15s ease-in 0s;
 }
 
-span {
+.modal-line-break {
+  display: flex;
+  justify-content: space-between;
+  width: 282px;
+  align-items: center;
+  color: rgb(102, 102, 102);
+  font-size: 14px;
+  padding-top: 10px;
+}
+  
+.modal-line-break::before, .modal-line-break::after {
+  display: inline-block;
+  color: rgb(102, 102, 102);
+  content: "";
+  height: 0;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  width: calc(50% - 4em);
+}
+      
+.modal-footer {
+  display: flex;
+  padding-top: 15px;
+  justify-content: center;
+  
+  .modal-switch-page {
+    font-size: 16px;
+    margin-right: 5px;
+    line-height: 1.5;
+  }
+
+  .modal-link {
+    text-decoration: underline;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #333333;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}
+
+.close-modal-btn {
   position: absolute;
-  right: 8px;
-  top: 0;
+  right: 6px;
+  top: 6px;
   padding: 10px;
   font-size: 16px;
   font-weight: 400;
   color: rgb(184, 184, 184);
   cursor: pointer;
 }
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.5;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.modal-input-field {
+
+  .modal-input-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000;
+    padding-top: 15px;
+    padding-bottom: 3px;
+  }
+  
+  .modal-input {
+    width: 282px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    height: 40px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    padding: 0 10px;
+  }
+}
+
+.modal-password-field {
+  display: block;
+  position: relative;
+  padding-bottom: 10px;
+
+  .modal-show-btn {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    right: 0px;
+    width: 56px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    height: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    border-right: 1px solid rgb(204, 204, 204);
+    box-sizing: border-box;
+    float: right;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .modal-show-blue {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 2px solid rgb(22, 22, 207)
+  }
+
+  .modal-show-btn:hover {
+    background-color: rgb(247, 247, 247);
+    transition: all .15s ease-in 0s;
+  }
+}
+
+.modal-errors {
+  font-size: 14px;
+  font-weight: 300;
+  color: #D0021B;
+  // padding-top: 3px;
+}
+
