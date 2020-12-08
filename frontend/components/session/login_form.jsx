@@ -34,9 +34,9 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="modal-form" >
                 <h1>Log in to NJT Cooking</h1>
-                <span onClick={this.props.closeModal}>&times;</span>
+                <span onClick={this.props.closeModal}>&#x2715;</span>
                 <label>Email Address
                     <input 
                         type="text"
@@ -51,9 +51,9 @@ class LoginForm extends React.Component {
                     <div onClick={this.toggleShow}>{this.state.show ? "Show" : "Hide" }</div>
                     <p>{this.props.errors.session.join('')}</p>
                 </label>
-                <input type="submit" value="Log In" />
+                <input type="submit" value="Log In" className="btn modal-btn"/>
                 <p>Don't have a Times account?</p>
-                <button onClick={() => this.props.openModal('signup')}>Create one</button>
+                <button onClick={() => this.props.openModal('signup')} className="modal-link">Create one</button>
                 {/* <Link to='/signup'>Create one</Link> */}
             </form>
         )

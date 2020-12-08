@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+//  SCSS Reset File
+@import "base/reset.scss";
+
+// Base Styles
+@import "base/colors.scss";
+@import "base/fonts.scss";
+
+// Component Styles
+@import "components/*"

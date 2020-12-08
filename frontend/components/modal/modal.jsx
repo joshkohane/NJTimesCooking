@@ -22,6 +22,7 @@ const Modal = ({modal, closeModal}) => {
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
+                <img className="modal-image" src="brownies.jpg" alt="Some delicious looking brownies"/>
                 { component }
             </div>
         </div>

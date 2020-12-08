@@ -37,9 +37,9 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="modal-form" >
                 <h1>Join NJT Cooking</h1>
-                <span onClick={this.props.closeModal}>&times;</span>
+                <span onClick={this.props.closeModal}>&#x2715;</span>
                 <label>First Name
                     <input
                         type="text"
@@ -69,9 +69,9 @@ class SignupForm extends React.Component {
                     <div onClickCapture={this.toggleShow}>{this.state.show ? "Show" : "Hide"}</div>
                     {this.props.errors.session.map(err => err.includes('short') ? <p>Please provide a password that is between 6 and 255 characters in length.</p> : '')}
                 </label>
-                <input type="submit" value="Create Account" />
+                <input type="submit" value="Create Account" className="btn modal-btn" />
                 <p>Aready have a Times account?</p>
-                <button onClick={() => this.props.openModal('login')}>Log in</button>
+                <button onClick={() => this.props.openModal('login')} className="modal-link" >Log in</button>
                 {/* <Link to='/login'>Log in</Link> */}
             </form>
         )
