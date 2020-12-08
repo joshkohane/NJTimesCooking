@@ -8,7 +8,8 @@ class NavBar extends React.Component {
             <div>
                 {currentUser ? 
                     <button onClick={() => logout()}>Log Out</button> :
-                    <Link to='/login'>Log In</Link>
+                    <button onClick={() => this.props.openModal('login')}>Log In</button>
+                    // <Link to='/login'>Log In</Link>
                 }
             </div>
         )

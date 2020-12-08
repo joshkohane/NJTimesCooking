@@ -20,6 +20,7 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.signup(this.state);
+        this.props.closeModal();
     }
 
     handleChange(type) {
@@ -38,6 +39,7 @@ class SignupForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <h1>Join NJT Cooking</h1>
+                <span onClick={this.props.closeModal}>&times;</span>
                 <label>First Name
                     <input
                         type="text"
@@ -64,12 +66,13 @@ class SignupForm extends React.Component {
                         type={this.state.show ? "password" : "text"}
                         value={this.state.password}
                         onChange={this.handleChange('password')} />
-                        <button onClickCapture={this.toggleShow}>{this.state.show ? "Show" : "Hide"}</button>
-                        {this.props.errors.session.map(err => err.includes('short') ? <p>Please provide a password that is between 6 and 255 characters in length.</p> : '')}
+                    <div onClickCapture={this.toggleShow}>{this.state.show ? "Show" : "Hide"}</div>
+                    {this.props.errors.session.map(err => err.includes('short') ? <p>Please provide a password that is between 6 and 255 characters in length.</p> : '')}
                 </label>
                 <input type="submit" value="Create Account" />
                 <p>Aready have a Times account?</p>
-                <Link to='/login'>Log in</Link>
+                <button onClick={() => this.props.openModal('login')}>Log in</button>
+                {/* <Link to='/login'>Log in</Link> */}
             </form>
         )
     }

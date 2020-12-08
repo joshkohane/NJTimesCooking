@@ -17,6 +17,7 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state);
+        this.props.closeModal();
     }
 
     handleChange(type) {
@@ -35,6 +36,7 @@ class LoginForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <h1>Log in to NJT Cooking</h1>
+                <span onClick={this.props.closeModal}>&times;</span>
                 <label>Email Address
                     <input 
                         type="text"
@@ -46,12 +48,13 @@ class LoginForm extends React.Component {
                         type={this.state.show ? "password" : "text"}
                         value={this.state.password}
                         onChange={this.handleChange('password')} />
-                    <button onClick={this.toggleShow}>{this.state.show ? "Show" : "Hide" }</button>
+                    <div onClick={this.toggleShow}>{this.state.show ? "Show" : "Hide" }</div>
                     <p>{this.props.errors.session.join('')}</p>
                 </label>
                 <input type="submit" value="Log In" />
                 <p>Don't have a Times account?</p>
-                <Link to='/signup'>Create one</Link>
+                <button onClick={() => this.props.openModal('signup')}>Create one</button>
+                {/* <Link to='/signup'>Create one</Link> */}
             </form>
         )
     }
