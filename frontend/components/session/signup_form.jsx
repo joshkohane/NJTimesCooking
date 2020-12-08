@@ -17,10 +17,15 @@ class SignupForm extends React.Component {
         this.toggleShow = this.toggleShow.bind(this);
     }
 
+    componentDidUpdate(e) {
+        if (this.props.loggedIn) {
+            this.props.closeModal();
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.signup(this.state);
-        this.props.closeModal();
     }
 
     handleChange(type) {
@@ -59,7 +64,8 @@ class SignupForm extends React.Component {
                         type="text"
                         value={this.state.email}
                         onChange={this.handleChange('email')} />
-                    {this.props.errors.session.map(err => err.includes('Email') ? <p>Please enter a valid email address.</p> : '')}
+                    {this.props.errors.session.map(err => err.includes(`Email can't be blank`) ? <p>Please enter a valid email address.</p> : '')}
+                    {this.props.errors.session.map(err => err.includes(`Email has already been taken`) ? <p>{err}</p> : '')}
                 </label>
                 <label>Password
                     <input
@@ -72,7 +78,6 @@ class SignupForm extends React.Component {
                 <input type="submit" value="Create Account" className="btn modal-btn" />
                 <p>Aready have a Times account?</p>
                 <button onClick={() => this.props.openModal('login')} className="modal-link" >Log in</button>
-                {/* <Link to='/login'>Log in</Link> */}
             </form>
         )
     }

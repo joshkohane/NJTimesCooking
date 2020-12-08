@@ -14,8 +14,8 @@
 class User < ApplicationRecord
     attr_reader :password
 
-    validates_presence_of :email, :message => 'Please enter a valid email address.'
-    validates :session_token, presence: true, uniqueness: true
+    # validates_presence_of :email, :message => 'Please enter a valid email address.'
+    validates :session_token, :email, presence: true, uniqueness: true
     validates :first_name, :last_name, :password_digest, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true 
 

@@ -7,19 +7,26 @@ class LoginForm extends React.Component {
         this.state = {
             email: '',
             password: '',
-            show: true
+            show: true,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.toggleShow = this.toggleShow.bind(this);
     }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.login(this.state);
-        this.props.closeModal();
+    
+    componentDidUpdate(e) {
+        if (this.props.loggedIn) {
+            this.props.closeModal();
+        }
     }
 
+    handleSubmit(user) {
+        return (e) => {
+            e.preventDefault();
+            this.props.login(user);
+        }
+    }
+    
     handleChange(type) {
         return (e) => {
             this.setState({[type]: e.target.value})
@@ -34,7 +41,7 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="modal-form" >
+            <form onSubmit={this.handleSubmit(this.state)} className="modal-form" >
                 <h1>Log in to NJT Cooking</h1>
                 <span onClick={this.props.closeModal}>&#x2715;</span>
                 <label>Email Address
@@ -52,9 +59,9 @@ class LoginForm extends React.Component {
                     <p>{this.props.errors.session.join('')}</p>
                 </label>
                 <input type="submit" value="Log In" className="btn modal-btn"/>
+                <input type="button" value="Demo User" className="btn modal-btn" onClick={this.handleSubmit({email: 'joshkohane@gmail.com', password: 'password'})} />
                 <p>Don't have a Times account?</p>
                 <button onClick={() => this.props.openModal('signup')} className="modal-link">Create one</button>
-                {/* <Link to='/signup'>Create one</Link> */}
             </form>
         )
     }
