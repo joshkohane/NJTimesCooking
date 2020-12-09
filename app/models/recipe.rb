@@ -11,6 +11,7 @@
 #  author_id   :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  tip         :string
 #
 class Recipe < ApplicationRecord
     validates :title, presence: true, uniqueness: true
@@ -20,4 +21,5 @@ class Recipe < ApplicationRecord
     has_many :ingredients,
         through: :ingredient_lists,
         source: :ingredients
+    has_one_attached :photo
 end

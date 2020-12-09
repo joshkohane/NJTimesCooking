@@ -11,6 +11,7 @@
 #  author_id   :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  tip         :string
 #
 require 'test_helper'
 

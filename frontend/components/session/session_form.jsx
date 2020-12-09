@@ -112,8 +112,8 @@ class SessionForm extends React.Component {
                 <div className="modal-footer" >
                     <p className="modal-switch-page" >{ this.props.formType === 'login' ? "Don't have a Times account?" : "Already have a Times account?" }</p>
                     {this.props.formType === 'login' ?
-                        <button onClick={() => this.props.openModal('signup')} className="modal-link">Create one</button> :
-                        <button onClick={() => this.props.openModal('login')} className="modal-link" >Log in</button>
+                        <button type="button" onClick={() => this.props.openModal('signup')} className="modal-link">Create one</button> :
+                        <button type="button" onClick={() => this.props.openModal('login')} className="modal-link" >Log in</button>
                     }
                 </div>
             </form>
