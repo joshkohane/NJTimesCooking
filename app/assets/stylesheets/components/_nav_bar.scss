@@ -1,0 +1,20 @@
+.main-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    // width: 235px;
+    padding: 18px 20px 20px 21px;
+
+    .logo-left {
+        border-right: 1px solid #e4523fa4;
+        padding-right: 3px;
+        height: 26px;
+        width: auto;
+    }
+    
+    .logo-right {
+        height: 31px;
+        width: auto;
+        padding-left: 3px;
+    }
+}
