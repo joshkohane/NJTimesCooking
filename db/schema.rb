@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_192955) do
+ActiveRecord::Schema.define(version: 2020_12_09_171705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ingredient_lists", force: :cascade do |t|
+    t.integer "recipe_id", null: false
+    t.string "header", default: "Ingredients", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_ingredient_lists_on_recipe_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.integer "ingredient_list_id", null: false
+    t.integer "order", null: false
+    t.string "amount", null: false
+    t.string "unit"
+    t.string "item", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_list_id"], name: "index_ingredients_on_ingredient_list_id"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "yield", null: false
+    t.string "time", null: false
+    t.text "description", null: false
+    t.jsonb "directions", default: [], null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_recipes_on_author_id"
+    t.index ["title"], name: "index_recipes_on_title", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
