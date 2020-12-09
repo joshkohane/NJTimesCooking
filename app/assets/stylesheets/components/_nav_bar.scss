@@ -1,3 +1,6 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
 .main-logo {
     display: flex;
     justify-content: flex-start;
@@ -6,14 +9,14 @@
     padding: 18px 20px 20px 21px;
 
     .logo-left {
-        border-right: 1px solid #e4523fa4;
-        padding-right: 3px;
+        border-right: 0.5px solid $btn-red;
+        padding-right: 5px;
         height: 26px;
         width: auto;
     }
     
     .logo-right {
-        height: 31px;
+        height: 33px;
         width: auto;
         padding-left: 3px;
     }

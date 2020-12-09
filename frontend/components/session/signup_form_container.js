@@ -1,6 +1,6 @@
 import SessionForm from './session_form';
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import { signup, login, resetErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapSTP = state => ({
@@ -13,7 +13,8 @@ const mapDTP = dispatch => ({
     login: (user) => dispatch(login(user)),
     action: (user) => dispatch(signup(user)),
     openModal: (modal) => dispatch(openModal(modal)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    resetErrors: () => dispatch(resetErrors()),
 })
 
 export default connect(mapSTP, mapDTP)(SessionForm);

@@ -1,3 +1,6 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -16,7 +19,7 @@
   transform: translate(-50%, -50%);
   width: 900px;
   height: 625px;
-  background-color: #FFFFFF;
+  background-color: $white;
 }
 
 .modal-image-tag {
@@ -32,13 +35,13 @@
     top: 0px;
     left: 10px;
     padding: 35px 40px;
-    color: #FFFFFF;
+    color: $white;
+    font: $serif;
     font-size: 26px;
     font-weight: 300;
     text-align: center;
   }
 }
-
 
 .modal-form {
   padding: 28px 34px 0 34px;
@@ -48,7 +51,7 @@
 .btn {
   width: 282px;
   text-align: center;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: $sans-serif;
   font-weight: 500;
   font-size: 16px;
   height: 40px;
@@ -57,15 +60,15 @@
 }
 
 .modal-btn {
-  background-color: rgb(227, 61, 38);
-  color: #FFFFFF;
-  border: 1px solid rgb(227,61, 38);
+  background-color: $btn-red;
+  color: $white;
+  border: 1px solid $btn-red;;
 }
 
 .demo-btn {
-  background-color: #FFFFFF;
-  color: rgb(18, 18, 18);
-  border: 1px solid rgb(136, 136, 136);
+  background-color: $white;
+  color: $darkest-gray;
+  border: 1px solid $light-gray;
 }
 
 .modal-submit-btn {
@@ -73,12 +76,12 @@
 }
 
 .modal-btn:hover {
-  background-color: rgb(207, 46, 30);
+  background-color: $darker-red;
   transition: all .15s ease-in 0s;
 }
 
 .demo-btn:hover {
-  background-color: rgb(247, 247, 247);
+  background-color: $off-white;
   transition: all .15s ease-in 0s;
 }
 
@@ -87,18 +90,19 @@
   justify-content: space-between;
   width: 282px;
   align-items: center;
-  color: rgb(102, 102, 102);
-  font-size: 14px;
+  color: $gray;
+  font-family: $sans-serif;
+  font-size: 12px;
   padding-top: 10px;
 }
   
 .modal-line-break::before, .modal-line-break::after {
   display: inline-block;
-  color: rgb(102, 102, 102);
+  color: $gray;
   content: "";
   height: 0;
-  border-bottom: 1px solid rgb(204, 204, 204);
-  width: calc(50% - 4em);
+  border-bottom: 1px solid $lighter-gray;
+  width: calc(50% - 4.4em);
 }
       
 .modal-footer {
@@ -107,15 +111,16 @@
   justify-content: center;
   
   .modal-switch-page {
-    font-size: 16px;
+    font-family: $sans-serif;
+    font-size: 14px;
     margin-right: 5px;
     line-height: 1.5;
   }
 
   .modal-link {
     text-decoration: underline;
-    font-family: 'Libre Franklin', sans-serif;
-    color: #333333;
+    font-family: $sans-serif;
+    color: $dark-gray;
     font-weight: 600;
     font-size: 15px;
   }
@@ -128,7 +133,7 @@
   padding: 10px;
   font-size: 16px;
   font-weight: 400;
-  color: rgb(184, 184, 184);
+  color: $lightish-gray;
   cursor: pointer;
 }
 
@@ -144,23 +149,24 @@
 .modal-input-field {
 
   .modal-input-text {
+    font-family: $sans-serif;
     font-size: 12px;
     font-weight: 700;
-    color: #000000;
+    color: $black;
     padding-top: 15px;
     padding-bottom: 3px;
   }
   
   .modal-input {
     width: 282px;
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: $sans-serif;
     font-weight: 400;
     font-size: 15px;
     height: 40px;
     border-radius: 5px;
     box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(204, 204, 204);
+    background-color: $white;
+    border: 1px solid $lighter-gray;
     padding: 0 10px;
   }
 }
@@ -179,21 +185,22 @@
     right: 0px;
     width: 56px;
     text-align: center;
+    font-family: $sans-serif;
     font-weight: 500;
     font-size: 16px;
     height: 40px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    border-top: 1px solid rgb(204, 204, 204);
-    border-bottom: 1px solid rgb(204, 204, 204);
-    border-right: 1px solid rgb(204, 204, 204);
+    border-top: 1px solid $lighter-gray;
+    border-bottom: 1px solid $lighter-gray;
+    border-right: 1px solid $lighter-gray;
     box-sizing: border-box;
     float: right;
     cursor: pointer;
-    background-color: #FFFFFF;
+    background-color: $white;
     font-size: 12px;
     font-weight: 700;
-    color: #000000;
+    color: $black;
     text-align: center;
     margin: 0 auto;
   }
@@ -201,11 +208,11 @@
   .modal-show-blue {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    border: 2px solid rgb(22, 22, 207)
+    border: 2px solid $border-blue;
   }
 
   .modal-show-btn:hover {
-    background-color: rgb(247, 247, 247);
+    background-color: $off-white;
     transition: all .15s ease-in 0s;
   }
 }
@@ -213,6 +220,6 @@
 .modal-errors {
   font-size: 14px;
   font-weight: 300;
-  color: #D0021B;
+  color: $btn-red;
 }
 

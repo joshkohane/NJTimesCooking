@@ -18,7 +18,11 @@ class SessionForm extends React.Component {
         this.toggleShow = this.toggleShow.bind(this);
     }
 
-    componentDidUpdate(e) {
+    componentDidMount() {
+        this.props.resetErrors();
+    }
+
+    componentDidUpdate() {
         if (this.props.loggedIn) {
             this.props.closeModal();
         }

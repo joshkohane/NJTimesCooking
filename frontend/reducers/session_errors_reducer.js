@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, RESET_ERRORS } from '../actions/session_actions';
 
 export default (oldState = [], action) => {
     Object.freeze(oldState);
@@ -8,6 +8,8 @@ export default (oldState = [], action) => {
             return [];
         case RECEIVE_ERRORS:
             return Object.assign([], action.errors);
+        case RESET_ERRORS:
+            return [];
         default:
             return oldState;
     }
