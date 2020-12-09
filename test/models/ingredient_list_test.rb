@@ -7,6 +7,7 @@
 #  header     :string           default("Ingredients"), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  order      :integer          default(1), not null
 #
 require 'test_helper'
 
