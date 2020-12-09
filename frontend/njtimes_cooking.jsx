@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import { signup, login, logout } from './actions/session_actions';
-import { fetchAllRecipes, fetchRecipe } from './util/recipe_util';
+import { fetchAllRecipes, fetchRecipe, fetchAuthor } from './util/recipe_util';
+import { fetchOneRecipe, fetchEveryRecipe } from './actions/recipe_actions';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.signup = signup;
     window.fetchAllRecipes = fetchAllRecipes;
     window.fetchRecipe = fetchRecipe;
+    window.fetchAuthor = fetchAuthor;
+    window.fetchOneRecipe = fetchOneRecipe;
+    window.fetchEveryRecipe = fetchEveryRecipe;
     // 
 
     ReactDOM.render(<Root store={store} />, root)

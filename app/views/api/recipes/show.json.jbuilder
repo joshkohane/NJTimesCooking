@@ -7,16 +7,14 @@ json.recipe do
     end
 end
 
-# json.author do
-#     @recipe.author do |author|
-#         json.set! author.id do
-#             json.extract! author, :id, :first_name, :last_name
-#             # json.first_name @recipe.author.first_name 
-#             # json.last_name @recipe.author.last_name
-#             # json.id @recipe.author.id
-#         end
-#     end
-# end
+json.author do
+    json.set! @recipe.author.id do
+        json.extract! @recipe.author, :id, :first_name, :last_name
+        # json.first_name @recipe.author.first_name 
+        # json.last_name @recipe.author.last_name
+        # json.id @recipe.author.id
+    end
+end
 
 json.ingredient_lists do 
     @recipe.ingredient_lists.each do |list|
