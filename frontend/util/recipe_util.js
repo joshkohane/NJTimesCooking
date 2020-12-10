@@ -9,10 +9,3 @@ export const fetchRecipe = (recipeId) => (
         url: `/api/recipes/${recipeId}`
     })
 )
-
-export const fetchAuthor = (authorId) => {
-// debugger
-        return $.ajax({
-            url: `/api/users/${authorId}`
-        })
-}
