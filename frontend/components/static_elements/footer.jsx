@@ -2,18 +2,41 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="home-footer" >
-            <div className="about-us">
-                <h1 className="footer-title">About us</h1>
-                <p className="home-about-text" >NJT Cooking is a New Jersey themed clone of NYT Cooking from the New York Times. It provides any NJ based foods you could want and more.</p>
+        <div className="main-footer-container">
+            <div className="above-footer">
+                <div className="about-us">
+                    <h1 className="above-footer-title" >Get Our Newsletter</h1>
+                    <p className="above-footer-text" >For more recipes and information, keep coming back for recipe updates.</p>
+                </div>
+                <div className="learn-more">
+                    <h1 className="footer-title" >Follow us</h1>
+                    <ul className="home-icon-text" >
+                        <a target="_blank" href="https://github.com/joshkohane/NJTimesCooking" className="footer-icon">
+                            <div className="footer-inner-icon">
+                                <i class="fab fa-github links-icons-git"></i>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/josh-kohane-1472981b4" className="footer-icon">
+                            <div className="footer-inner-icon">
+                                <i class="fab fa-linkedin links-icons-linked"></i>
+                            </div>
+                        </a>
+                    </ul>
+                </div>
             </div>
-            <div className="learn-more">
-                <h1 className="footer-title" >Learn More</h1>
-                <ul className="home-learn-text" >
-                    <li className="footer-links" >GitHub Link</li>
-                    <li className="footer-links" >Another Link</li>
-                    <li className="footer-links" >Even One More Link</li>
-                </ul>
+            <div className="home-footer" >
+                {/* <div className="home-footer-container"> */}
+                    <div className="about-us">
+                        <h1 className="footer-title">About us</h1>
+                        <p className="home-about-text" >NJT Cooking is a New Jersey themed clone of NYT Cooking from the New York Times. It provides any NJ based foods you could want and more. This site was create by Josh Kohane, a software developer based in New Jersey. Recipes lovingly borrowed from the real NYTimes Cooking.</p>
+                    </div>
+                    <div className="learn-more">
+                        <h1 className="footer-title" >Learn More</h1>
+                        <ul className="home-learn-text" >
+                            <a target="_blank" href="https://cooking.nytimes.com/" className="footer-links" >Original recipes</a>
+                        </ul>
+                    </div>
+                {/* </div> */}
             </div>
         </div>
     )

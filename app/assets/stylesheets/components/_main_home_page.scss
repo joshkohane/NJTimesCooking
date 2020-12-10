@@ -2,11 +2,28 @@
 @import "../base/fonts.scss";
 
 .home-page-main-body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
     width: 1000px;
 }
+
+// @font-face {
+//   font-family:'karnak';
+//   src:url('assets/karnak.ttf');
+//   src:url('assets/karnak.ttf') format("embedded-opentype"),
+// }
+
+// @font-face {
+//   font-family:'karnak';
+//   src:font-url('karnak.ttf');
+//   src:font-url('karnak.ttf?#iefix') format('embedded-opentype'),
+// } 
+
+// @font-face {
+//   font-family: "karnak";
+//   src: url(fonts/karnak.ttf) format("truetype");
+// }
 
 .home-page-header {
     padding: 40px;
@@ -15,12 +32,14 @@
         font-size: 35px;
         font-weight: 700;
         padding: 8px;
+        font-family: "karnak";
+        text-align: center;
     }
 
     .home-page-subtitle {
         text-transform: uppercase;
         // font-family: $sans-serif;
-        font-size: 14px;
+        font-size: 16px;
         text-align: center;
     }
 }
@@ -31,15 +50,15 @@
     .recipe-card-header-title {
         font-family: $serif;
         font-size: 30px;
-        font-weight: 300;
         color: $black;
-        line-height: 1.5;
+        padding-top: 10px;
+        border-top: 7px solid $black;
     }
 
     .recipe-card-header-subtitle {
         font-family: $serif;
         font-size: 30px;
-        font-weight: 300;
         color: #999999;
+        padding-bottom: 25px;
     }
 }

@@ -10,7 +10,7 @@ import Footer from './static_elements/footer'
 
 
 const App = () => (
-    <div className="main-app" >
+    <div>
         <Modal />
         <NavBarContainer />
         <Switch>
