@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="home-footer" >
             <div className="about-us">
                 <h1 className="footer-title">About us</h1>
-                <p className="home-about-text" >NJT Cooking is a New Jersey themed close of NYT Cooking from the New York Times. It provides any NJ based foods you could want and more.</p>
+                <p className="home-about-text" >NJT Cooking is a New Jersey themed clone of NYT Cooking from the New York Times. It provides any NJ based foods you could want and more.</p>
             </div>
             <div className="learn-more">
                 <h1 className="footer-title" >Learn More</h1>

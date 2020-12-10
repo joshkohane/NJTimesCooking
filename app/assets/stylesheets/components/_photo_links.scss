@@ -1,0 +1,119 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
+.recipe-card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.recipe-card {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 1168px;
+}
+
+.recipe-card-wrapper {
+    height: 278px;
+    width: 235.5px;
+    position: relative;
+    background-color: $white;
+    margin: 20px;
+    border: 1px solid $photo-background;
+}
+
+.recipe-card-wrapper:hover {
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all .2s ease-in 0s;
+}
+
+.recipe-card-photo {
+    width: 235.5px;
+    height: 157px;
+}
+
+
+.recipe-card-text {
+    padding: 12px 12px 6px;
+    height: 106px;
+    
+    .recipe-card-title {
+        font-size: 15px;
+        font-family: $sans-serif;
+        font-weight: 700;
+        color: $darker-gray;
+    }
+    
+    .recipe-card-name {
+        font-size: 12px;
+        padding-top: 3px;
+        font-family: $sans-serif;
+        color: $darker-gray;
+    }
+}
+
+.recipe-card-footer {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    bottom: 8px;
+    padding: 15px 15px 0 15px;
+    
+    .recipe-card-time {
+        font-size: 10px;
+        font-family: $sans-serif;
+        color: #999999;
+    }
+    
+}
+
+.recipe-card-bookmark-container {
+    position: relative;
+}
+
+.recipe-card-bookmark:before,
+.recipe-card-bookmark:after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    bottom: 1px;
+    border-bottom: 8px solid #b3b3b3;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.recipe-card-bookmark:before {
+    bottom: -2px;
+    // left: 1px;
+    border-bottom: 8px solid $white;
+    z-index: 10;
+}
+
+.recipe-card-bookmark {
+    // color: #b3b3b3;
+    width: 16px;
+    height: 20px;
+    border: 2px solid #b3b3b3;
+    padding-bottom: 3px;
+    background-color: $white;
+}
+
+.recipe-card-bookmark:hover {
+    background-color: #b3b3b3;
+}
+
+// .recipe-card-bookmark-dark {
+//     display: none;
+// }
+
+// .recipe-card-bookmark:hover {
+//     display: none;
+
+// }
+
+// .recipe-card-bookmark:hover .recipe-card-bookmark-dark {
+//     display: block;
+// }

@@ -1,6 +1,7 @@
 json.recipe do
     json.set! @recipe.id do
-        json.extract! @recipe, :id, :author_id, :title, :yield, :time, :description, :directions, :tip, :photo
+        json.extract! @recipe, :id, :author_id, :title, :yield, :time, :description, :directions, :tip
+        json.photoUrl url_for(@recipe.photo)
     end
 end
 
