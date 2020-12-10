@@ -2,6 +2,7 @@
 @import "../base/fonts.scss";
 
 .nav-bar-container {
+    position: fixed;
     width: 100%;
     border-bottom: 1px solid $lighter-gray;
     display: flex;
