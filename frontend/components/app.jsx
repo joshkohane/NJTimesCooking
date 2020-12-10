@@ -5,18 +5,21 @@ import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute } from '../util/route_util';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal';
-import HomePage from './home_page/home_page';
+import HomePageContainer from './home_page/home_page_container';
+import Footer from './static_elements/footer'
+
 
 const App = () => (
-    <div>
+    <div className="main-app" >
         <Modal />
         <NavBarContainer />
         <Switch>
-            <Route exact path='/' component={HomePage} />
+            <Route exact path='/' component={HomePageContainer} />
             <Redirect to='/'/>
         </Switch>
         {/* <AuthRoute path="/login" component={LoginFormContainer} /> */}
         {/* <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+        <Footer />
     </div>
 )
 
