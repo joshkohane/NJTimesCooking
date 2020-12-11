@@ -36,7 +36,7 @@
     left: 10px;
     padding: 35px 40px;
     color: $white;
-    font: $serif;
+    font-family: $serif;
     font-size: 26px;
     font-weight: 300;
     text-align: center;
@@ -69,6 +69,7 @@
   background-color: $white;
   color: $darkest-gray;
   border: 1px solid $light-gray;
+  cursor: pointer;
 }
 
 .modal-submit-btn {
@@ -147,13 +148,14 @@
 }
 
 .modal-input-field {
+  position: relative;
 
   .modal-input-text {
     font-family: $sans-serif;
     font-size: 12px;
     font-weight: 700;
     color: $black;
-    padding-top: 15px;
+    padding-top: 19px;
     padding-bottom: 3px;
   }
   
@@ -218,6 +220,14 @@
 }
 
 .modal-errors {
+  font-size: 14px;
+  font-weight: 300;
+  color: $btn-red;
+  position: absolute;
+  bottom: -28px;
+}
+
+.modal-password-errors {
   font-size: 14px;
   font-weight: 300;
   color: $btn-red;
