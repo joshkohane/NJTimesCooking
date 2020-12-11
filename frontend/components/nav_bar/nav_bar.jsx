@@ -25,10 +25,11 @@ class NavBar extends React.Component {
         const { currentUser, logout } = this.props;
         return (
             <div className="nav-bar-container">
-                <Link to="/">
+                <Link to="/" style={{ textDecoration: 'none' }} >
                     <div className="main-logo">
                         <img className="logo-left" src={window.njIMG} alt="The NJTimesCooking Logo" />
-                        <img className="logo-right" src={window.logoIMG} alt="The NJTimesCooking Logo" />
+                        <p className="logo-right" >Cooking</p>
+                        {/* <img className="logo-right" src={window.logoIMG} alt="The NJTimesCooking Logo" /> */}
                     </div>
                 </Link>
                 <div className="nav-bar-search" >

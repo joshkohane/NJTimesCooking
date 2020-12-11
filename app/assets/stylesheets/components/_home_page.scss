@@ -5,23 +5,6 @@
     width: 1000px;
 }
 
-// @font-face {
-//   font-family:'karnak';
-//   src:url('assets/karnak.ttf');
-//   src:url('assets/karnak.ttf') format("embedded-opentype"),
-// }
-
-// @font-face {
-//   font-family:'karnak';
-//   src:font-url('karnak.ttf');
-//   src:font-url('karnak.ttf?#iefix') format('embedded-opentype'),
-// } 
-
-// @font-face {
-//   font-family: "karnak";
-//   src: url(fonts/karnak.ttf) format("truetype");
-// }
-
 .home-page-header {
     padding: 40px;
 
@@ -29,13 +12,13 @@
         font-size: 35px;
         font-weight: 700;
         padding: 8px;
-        font-family: "karnak";
+        font-family: $karnak;
         text-align: center;
     }
 
     .home-page-subtitle {
         text-transform: uppercase;
-        // font-family: $sans-serif;
+        font-family: $sans-serif;
         font-size: 16px;
         text-align: center;
     }

@@ -13,12 +13,12 @@ const Footer = () => {
                     <ul className="home-icon-text" >
                         <a target="_blank" href="https://github.com/joshkohane/NJTimesCooking" className="footer-icon">
                             <div className="footer-inner-icon">
-                                <i class="fab fa-github links-icons-git"></i>
+                                <i className="fab fa-github links-icons-git"></i>
                             </div>
                         </a>
                         <a target="_blank" href="https://www.linkedin.com/in/josh-kohane-1472981b4" className="footer-icon">
                             <div className="footer-inner-icon">
-                                <i class="fab fa-linkedin links-icons-linked"></i>
+                                <i className="fab fa-linkedin links-icons-linked"></i>
                             </div>
                         </a>
                     </ul>

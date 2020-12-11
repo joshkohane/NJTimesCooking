@@ -1,2 +1,13 @@
-$serif: "times new roman", times, georgia, serif;
+@font-face {
+  font-family: "karnak";
+  src: font-url('karnak-small-normal-400.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "cheltenham";
+  src: font-url('cheltenham-normal-200') format("truetype");
+}
+
+$serif: "cheltenham", times, georgia, serif;
 $sans-serif: 'Libre Franklin', arial, helvetica, sans-serif;
+$karnak: "karnak", times, georgia, serif;
