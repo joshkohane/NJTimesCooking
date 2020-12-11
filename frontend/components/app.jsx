@@ -6,8 +6,7 @@ import { AuthRoute } from '../util/route_util';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal';
 import HomePageContainer from './home_page/home_page_container';
-import Footer from './static_elements/footer';
-import RecipePageContainer from './recipe_page/recipe_page_container'
+import Footer from './static_elements/footer'
 
 
 const App = () => (
@@ -15,7 +14,6 @@ const App = () => (
         <Modal />
         <NavBarContainer />
         <Switch>
-            <Route path={`/api/recipes/:recipeId`} component={RecipePageContainer} />
             <Route exact path='/' component={HomePageContainer} />
             <Redirect to='/'/>
         </Switch>

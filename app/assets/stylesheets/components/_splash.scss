@@ -7,7 +7,7 @@
     cursor: pointer;
 
     .splash-image {
-        max-height: 840px;
+        max-height: 800px;
     }
 
     .recipe-otd {
@@ -23,10 +23,9 @@
         border-radius: 50%;
         background-color: $btn-red;
         color: $white;
-        font-family: $karnak;
         font-size: 13px;
         text-transform: uppercase;
-        font-weight: 400;
+        font-weight: 700;
         z-index: 1;
     }
 

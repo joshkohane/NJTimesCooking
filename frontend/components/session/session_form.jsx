@@ -102,8 +102,8 @@ class SessionForm extends React.Component {
                             className="modal-input modal-password-input"
                             onChange={this.handleChange('password')} />
                         <div className={this.state.showClasses} onClick={this.toggleShow}>{this.state.show ? "Show" : "Hide"}</div>
-                        {this.props.errors.session.map(err => err.includes('short') ? <p className="modal-password-errors" >Please provide a password that is between 6 and 255 characters in length.</p> : '')}
-                        {this.props.errors.session.map(err => err.includes('NJTimes account') ? <p className="modal-password-errors" >{err}</p> : '')}
+                        {this.props.errors.session.map(err => err.includes('short') ? <p className="modal-errors" >Please provide a password that is between 6 and 255 characters in length.</p> : '')}
+                        {this.props.errors.session.map(err => err.includes('NJTimes account') ? <p className="modal-errors" >{err}</p> : '')}
                     </div>
                 </label>
                 <div className="modal-submit-btn">
