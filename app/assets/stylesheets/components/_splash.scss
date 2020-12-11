@@ -1,0 +1,127 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
+
+.splash-container {
+    position: relative;
+    cursor: pointer;
+
+    .splash-image {
+        max-height: 800px;
+    }
+
+    .recipe-otd {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        left: 40px;
+        bottom: 310px;
+        height: 108px;
+        width: 108px;
+        border-radius: 50%;
+        background-color: $btn-red;
+        color: $white;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 700;
+        z-index: 1;
+    }
+
+    .splash-recipe {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        left: 90px;
+        bottom: 90px;
+        height: 280px;
+        width: 320px;
+        background-color: $white;
+
+        .splash-title,
+        .splash-description,
+        .splash-author {
+            width: 220px;
+            color: $darker-gray;
+        }
+
+        .splash-title {
+            padding-top: 60px;
+            font-size: 30px;
+        }
+
+        .splash-description {
+            padding-top: 10px;
+            font-size: 18px;
+        }
+
+        .splash-author {
+            padding-top: 15px;
+            font-size: 14px;
+            font-family: $sans-serif;
+            font-weight: 700;
+        }
+    }
+
+    .save-recipe-btn {
+        position: absolute;
+        display: flex;
+        right: 15px;
+        bottom: 15px;
+        background-color: $black;
+        color: $white;
+        opacity: 0.8;
+        font-family: $sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 10px 15px;
+        border-radius: 5px;
+
+        
+        .splash-outer-bookmark {
+            padding-right: 7px;
+            position: relative;
+            
+            .splash-bookmark {
+                // color: #b3b3b3;
+                width: 10px;
+                height: 14px;
+                border: 2px solid $white;
+                background-color: transparent;
+            }
+            
+            .splash-bookmark:before,
+            .splash-bookmark:after {
+                content: '';
+                position: absolute;
+                // right: 0px;
+                bottom: 1.5px;
+                border-bottom: 5px solid $white;
+                border-right: 5px solid transparent;
+                border-left: 5px solid transparent;
+                width: 0;
+                height: 0;
+            }
+            
+            .splash-bookmark:before {
+                bottom: -1px;
+                border-bottom: 5px solid $black;
+                z-index: 10;
+            }
+        }
+    }
+    
+    .save-recipe-btn:hover {
+        background-color: $btn-red;
+        opacity: 1;
+        
+        .splash-bookmark:before {
+            border-bottom: 5px solid $btn-red;
+        }
+    }
+}
+
+
