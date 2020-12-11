@@ -24,7 +24,7 @@ class RecipePage extends React.Component {
                 <p>{recipe.title}</p>
                 <p>{recipe.title}</p>
                 <p>{recipe.title}</p>
-                <p>{recipe.title}</p>
+                <p>{recipe.authorFirstName}{}</p>
 
             </div>
         )

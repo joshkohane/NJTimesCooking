@@ -31,6 +31,12 @@ recipe4 = Recipe.create!(title: "Pierogi Ruskie (Potato and Cheese Pierogi)", yi
 # recipe8 = Recipe.create!(title: "", yield: "", time: "", description: "", directions: [], tip: "", author_id: )
 # recipe9 = Recipe.create!(title: "", yield: "", time: "", description: "", directions: [], tip: "", author_id: )
 
+Recipe.all.each_with_index do |recipe, idx|
+    file = open("https://njtimescooking-dev.s3.amazonaws.com/recipe-#{idx}.jpg")
+    recipe.photo.attach(io: file, filename: "recipe-#{idx}.jpg")
+    recipe.save!
+end
+
 list1 = IngredientList.create!(recipe_id: recipe1.id, header: "Ingredients", order: 1)
 list2 = IngredientList.create!(recipe_id: recipe2.id, header: "FOR THE CRUST:", order: 1)
 list3 = IngredientList.create!(recipe_id: recipe2.id, header: "FOR THE FILLING:", order: 2)
