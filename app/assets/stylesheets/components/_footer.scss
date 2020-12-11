@@ -27,6 +27,7 @@
         font-family: $sans-serif;
         font-size: 12px;
         font-weight: 700;
+        letter-spacing: .5px;
     }
 
     .learn-more {
@@ -67,17 +68,18 @@
         .above-footer-title {
             color: $darker-gray;
             width: 600px;
-            font-size: 30px;
+            font-size: 28px;
             line-height: 1.5;
             font-family: $serif;
+            letter-spacing: .5px;
         }
 
         .above-footer-text {
             width: 600px;
-            font-size: 20px;
+            font-size: 15px;
             line-height: 1.5;
-            font-family: $serif;
-            color: $gray;
+            font-family: $sans-serif;
+            color: #666666;
         }
     }
 
@@ -86,6 +88,7 @@
         font-family: $sans-serif;
         font-size: 12px;
         font-weight: 700;
+        letter-spacing: 1px;
     }
 
     .learn-more {

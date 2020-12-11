@@ -88,9 +88,9 @@
     position: absolute;
     right: 15px;
     bottom: 1px;
-    border-bottom: 8px solid #b3b3b3;
-    border-right: 8px solid transparent;
-    border-left: 8px solid transparent;
+    border-bottom: 7.5px solid #b3b3b3;
+    border-right: 7.5px solid transparent;
+    border-left: 7.5px solid transparent;
     width: 0;
     height: 0;
 }
@@ -98,13 +98,13 @@
 .recipe-card-bookmark:before {
     bottom: -1.5px;
     // left: 1px;
-    border-bottom: 8px solid $white;
+    border-bottom: 7.5px solid $white;
     z-index: 1;
 }
 
 .recipe-card-bookmark {
     // color: #b3b3b3;
-    width: 16px;
+    width: 15px;
     height: 20px;
     border: 2px solid #b3b3b3;
     // padding-bottom: 3px;

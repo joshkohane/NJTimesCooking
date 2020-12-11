@@ -9,7 +9,7 @@
     padding: 40px;
 
     .home-page-title {
-        font-size: 35px;
+        font-size: 31px;
         font-weight: 700;
         padding: 8px;
         font-family: $karnak;
@@ -19,8 +19,9 @@
     .home-page-subtitle {
         text-transform: uppercase;
         font-family: $sans-serif;
-        font-size: 16px;
+        font-size: 12px;
         text-align: center;
+        letter-spacing: 1px;
     }
 }
 
@@ -29,7 +30,7 @@
 
     .recipe-card-header-title {
         font-family: $serif;
-        font-size: 30px;
+        font-size: 28px;
         color: $black;
         padding-top: 10px;
         border-top: 7px solid $black;
@@ -37,7 +38,7 @@
 
     .recipe-card-header-subtitle {
         font-family: $serif;
-        font-size: 30px;
+        font-size: 28px;
         color: #999999;
         padding-bottom: 25px;
     }

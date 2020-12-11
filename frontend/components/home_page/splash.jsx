@@ -12,9 +12,9 @@ const Splash = ({recipe}) => {
             </div>
             <button className="save-recipe-btn">
                 <div className="splash-outer-bookmark">
-                <div className="splash-bookmark"></div>
+                    <div className="splash-bookmark"></div>
+                </div>
                     {/* <i class="far fa-bookmark" ></i> */}
-            </div>
                 Save To Recipe Box
             </button>
         </div>

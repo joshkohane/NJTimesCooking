@@ -1,0 +1,126 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
+.recipe-page-outer-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 24px 0px;
+    
+    .recipe-page-container {
+        width: 1000px;
+        padding-bottom: 40px;
+        border-bottom: 2px solid $black;
+        position: relative;
+
+        .recipe-page-title {
+            padding: 36px 0 15px;
+            font-family: $serif;
+            font-size: 42px;
+            color: $darker-gray;
+            letter-spacing: 1px;
+        }
+
+        .recipe-page-author {
+            font-family: $sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: $darker-gray;
+            padding-bottom: 24px;
+            margin-bottom: 22px;
+            border-bottom: 1px solid $lighter-gray;
+        }
+
+        .recipe-page-label {
+            display: flex;
+            
+            .recipe-page-subheader {
+                font-family: $karnak;
+                font-size: 12px;
+                color: $black;
+                text-transform: uppercase;
+                width: 60px;
+                margin-top: 1.5px;
+                margin-bottom: 10px;
+                letter-spacing: 1.5px;
+            }
+
+            .recipe-page-yield {
+                font-family: $sans-serif;
+                font-size: 13px;
+                color: $darker-gray;
+                letter-spacing: .5px;
+            }
+        }
+
+        .recipe-page-splash {
+            display: flex;
+            justify-content: space-between;
+
+            .recipe-page-description {
+                font-family: $serif;
+                font-size: 17px;
+                letter-spacing: .5px;
+                color: $darker-gray;
+                font-weight: 700;
+            }
+
+            .recipe-page-photo {
+                width: 600px;
+                height: 400px;
+                margin-left: 20px;
+                padding-top: 7px;
+            }
+        }
+
+        .recipe-page-btn {
+            position: absolute;
+            display: flex;
+            right: 15px;
+            top: 235px;
+            background-color: $btn-red;
+            color: $white;
+            font-family: $sans-serif;
+            font-size: 14px;
+            letter-spacing: .5px;
+            padding: 10px 15px;
+            border-radius: 5px;
+
+            
+            .splash-outer-bookmark {
+                padding-right: 7px;
+                position: relative;
+                
+                .splash-bookmark {
+                    width: 8px;
+                    height: 14px;
+                    border: 2px solid $white;
+                    background-color: transparent;
+                }
+                
+                .splash-bookmark:before,
+                .splash-bookmark:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 1.8px;
+                    border-bottom: 4px solid $white;
+                    border-right: 4px solid transparent;
+                    border-left: 4px solid transparent;
+                    width: 0;
+                    height: 0;
+                }
+                
+                .splash-bookmark:before {
+                    bottom: -1.2px;
+                    border-bottom: 4px solid $btn-red;
+                    z-index: 10;
+                }
+            }
+        }
+    }
+        
+    .save-recipe-btn:hover {
+        background-color: $darker-red;
+    }
+}

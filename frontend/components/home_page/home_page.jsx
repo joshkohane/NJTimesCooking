@@ -39,7 +39,7 @@ class HomePage extends React.Component {
                     </div>
                     <div className="recipe-card-header">
                         <h1 className="recipe-card-header-title" >Recipes We Think You'll Love</h1>
-                        <h2 className="recipe-card-header-subtitle" >Some of our moves popular dishes.</h2>
+                        <h2 className="recipe-card-header-subtitle" >Some of our most popular dishes.</h2>
                     </div>
                     <div className="recipe-card-container">
                         <ul className="recipe-card" >
