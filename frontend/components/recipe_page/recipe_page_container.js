@@ -6,6 +6,9 @@ const mapSTP = (state, ownProps) => {
     // debugger;
     return {
     recipe: state.entities.recipes[ownProps.match.params.recipeId],
+    ingredients: state.entities.ingredients,
+    ingredientLists: state.entities.ingredientLists,
+    // author: state.entities.author,
 }}
 
 const mapDTP = dispatch => ({

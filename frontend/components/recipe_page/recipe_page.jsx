@@ -5,14 +5,25 @@ class RecipePage extends React.Component {
         // debugger;
         this.props.fetchOneRecipe(this.props.match.params.recipeId)
         const recipe = this.props.recipe
-        window.localStorage.setItem('recipe', JSON.stringify(recipe))
+        // debugger;
     }
 
     render() {
-        let { recipe } = this.props
+        let { recipe, ingredients, ingredientLists, author } = this.props
+        console.log(recipe)
+        console.log(ingredients)
+        console.log(ingredientLists)
+        console.log(author)
+
+
+        if (!recipe) return null;
         return (
             <div>
                 <p>{recipe.title}</p>
+                <p>By {recipe.authorFirstName} {recipe.authorLastName}</p>
+                <p>Yield {recipe.yield}</p>
+                <p>Time {recipe.time}</p>
+                <p>{recipe.description}</p>
                 <p>{recipe.title}</p>
                 <p>{recipe.title}</p>
                 <p>{recipe.title}</p>
@@ -21,10 +32,6 @@ class RecipePage extends React.Component {
                 <p>{recipe.title}</p>
                 <p>{recipe.title}</p>
                 <p>{recipe.title}</p>
-                <p>{recipe.title}</p>
-                <p>{recipe.title}</p>
-                <p>{recipe.title}</p>
-                <p>{recipe.authorFirstName}{}</p>
 
             </div>
         )

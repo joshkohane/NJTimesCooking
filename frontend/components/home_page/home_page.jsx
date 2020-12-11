@@ -15,9 +15,11 @@ class HomePage extends React.Component {
 
     render() {
         let { recipes } = this.props
+        let splashId = 0;
+        recipes.forEach(recipe => recipe.title === 'Pizza Margherita' ? splashId = recipe.id : '' )
         return (
             <div className="main-app" >
-                <Link to={`/api/recipes/${12}`} style={{ textDecoration: 'none' }}>
+                <Link to={`/api/recipes/${splashId}`} style={{ textDecoration: 'none' }}>
                     <Splash />
                 </Link>
                 <div className="home-page-main-body">
