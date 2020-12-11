@@ -1,2 +1,8 @@
+@font-face {
+  font-family: "karnak";
+  src: font-url('karnak-small-normal-400.ttf') format("truetype");
+}
+
 $serif: "times new roman", times, georgia, serif;
 $sans-serif: 'Libre Franklin', arial, helvetica, sans-serif;
+$karnak: "karnak", times, georgia, serif;
