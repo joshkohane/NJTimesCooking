@@ -14,12 +14,15 @@ class HomePage extends React.Component {
     }
 
     render() {
-        let { recipes } = this.props
-        let splashId = 0;
-        recipes.forEach(recipe => recipe.title === 'Pizza Margherita' ? splashId = recipe.id : '' )
+        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes } = this.props
+        if (!splashRecipe) return null;
+        console.log(splashRecipe)
+        // console.log(suggestedRecipes)
+        // let splashId = 0;
+        // recipes.forEach(recipe => recipe.title === 'Pizza Margherita' ? splashId = recipe.id : '' )
         return (
             <div className="main-app" >
-                <Link to={`/api/recipes/${splashId}`} style={{ textDecoration: 'none' }}>
+                <Link to={`/api/recipes/${splashRecipe.id}`} style={{ textDecoration: 'none' }}>
                     <Splash />
                 </Link>
                 <div className="home-page-main-body">
@@ -33,8 +36,8 @@ class HomePage extends React.Component {
                     </div>
                     <div className="recipe-card-container">
                         <ul className="recipe-card" >
-                            {recipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} /> )}
-                            {recipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
+                            {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} /> )}
+                            {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
                         </ul>
                     </div>
                     <div className="recipe-card-header">
@@ -43,7 +46,8 @@ class HomePage extends React.Component {
                     </div>
                     <div className="recipe-card-container">
                         <ul className="recipe-card" >
-                            {recipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
+                            {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
+                            {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
                         </ul>
                     </div>
                 </div>

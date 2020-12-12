@@ -1,13 +1,14 @@
 import HomePage from './home_page';
 import { connect } from 'react-redux';
 import { fetchEveryRecipe, fetchOneRecipe } from '../../actions/recipe_actions';
-import { selectSplashRecipe } from '../../reducers/selectors';
+import { selectSplashRecipe, selectSuggested, selectLoved } from '../../reducers/selectors';
 
 const mapSTP = state => {
     // debugger;
     return {
-
         recipes: Object.values(state.entities.recipes),
+        suggestedRecipes: selectSuggested(state),
+        lovedRecipes: selectLoved(state),
         splashRecipe: selectSplashRecipe(state),
     }
 }

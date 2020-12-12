@@ -12,6 +12,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  tip         :string
+#  category    :string
 #
 class Recipe < ApplicationRecord
     validates :title, presence: true, uniqueness: true
