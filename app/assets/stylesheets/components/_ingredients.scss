@@ -1,0 +1,36 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
+.ingredient-list-header {
+    text-transform: uppercase;
+    font-family: $sans-serif;
+    font-size: 12.5px;
+    color: $darker-gray;
+    padding-bottom: 20px;
+}
+
+.ingredient-inner-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px;
+    // align-items: space-between;
+
+    .ingredient-amount,
+    .ingredient-text {
+        color: $darker-gray;
+        font-family: $sans-serif-bold;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .ingredient-amount {
+        width: 57px;
+        padding-right: 3px;
+        text-align: right;
+    }
+
+    .ingredient-text {
+        width: 237px;
+        padding-left: 5px;
+    }
+}

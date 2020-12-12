@@ -50,12 +50,7 @@ class RecipePage extends React.Component {
                 <div className="directions-outer-container">
                     <div className="ingredients-container">
                         <h1 className="directions-header" >Ingredients</h1>
-                        {ingredientLists.map((list, idx) => {
-                            // debugger;
-                            // list.recipeId === recipe.id ?
-                               return <IngredientLists list={list} key={idx} />
-                            // : ''
-                        })}
+                        {ingredientLists.map((list, idx) => <IngredientLists list={list} key={idx} /> )}
                     </div>
                     <div className="directions-container">
                         <h1 className="directions-header" >Preparation</h1>

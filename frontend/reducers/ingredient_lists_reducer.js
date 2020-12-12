@@ -7,8 +7,6 @@ export default (oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_RECIPE:
             return Object.assign({}, newState, action.recipe.ingredientLists);
-        case RECEIVE_ALL_RECIPES:
-            return [];
         default:
             return oldState;
     }

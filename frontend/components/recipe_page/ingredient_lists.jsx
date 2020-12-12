@@ -5,7 +5,9 @@ const IngredientLists = ({ list }) => {
     // debugger
     return (
         <div>
-            <p>{list.header}</p>
+            {list.header === "Ingredients" ? '' :
+                <p className="ingredient-list-header">{list.header}</p>
+            }
             {Object.values(list.ingredients).map((ingredient, idx) => 
                 <Ingredients ingredient={ingredient} key={idx} /> 
             )}
