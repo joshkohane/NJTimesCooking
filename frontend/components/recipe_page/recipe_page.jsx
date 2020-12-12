@@ -12,7 +12,7 @@ class RecipePage extends React.Component {
     render() {
         let { recipe, ingredients, ingredientLists, author } = this.props
         if (!recipe) return null;
-        console.log(recipe.directions)
+        console.log(recipe)
         console.log(ingredients)
         console.log(ingredientLists)
         console.log(author)
@@ -52,8 +52,8 @@ class RecipePage extends React.Component {
                         {recipe.directions.map((direction, idx) => <Directions direction={direction} idx={idx} key={idx} /> )}
                         {recipe.tip ? 
                             <div>
-                                <h1>Tip</h1>
-                                <p>{recipe.tip}</p>
+                                <h1 className="direction-tip-header" >Tip</h1>
+                                <p className="direction-tip" >{recipe.tip}</p>
                             </div>
                         : ''}
                     </div>

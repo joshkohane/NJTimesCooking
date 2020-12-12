@@ -28,19 +28,34 @@
 
 .direction-wrapper {
     padding-bottom: 30px;
+}
 
-    .direction-step {
-        font-family: $sans-serif-bold;
-        font-size: 18px;
-        padding-bottom: 10px;
-        font-weight: 700;
-        color: $darker-gray;
-    }
+.direction-step,
+.direction-tip-header {
+    font-family: $sans-serif-bold;
+    font-size: 18px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    color: $darker-gray;
+}
 
-    .direction-text {
-        font-family: $sans-serif;
-        font-size: 18px;
-        line-height: 1.5;
-        color: $darker-gray;
-    }
+.direction-text {
+    font-family: $sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: $darker-gray;
+}
+
+.direction-tip-header {
+    padding-top: 10px;
+    border-top: 1px solid $lighter-gray;
+}
+
+.direction-tip {
+    font-family: $sans-serif-italic;
+    font-size: 18px;
+    font-style: italic;
+    color: $darker-gray;
+    font-weight: 300;
+    padding-bottom: 20px;
 }
