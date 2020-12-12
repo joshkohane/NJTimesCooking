@@ -1,17 +1,21 @@
 import React from 'react'
 import Directions from './directions';
+import IngredientLists from './ingredient_lists';
 
 class RecipePage extends React.Component {
     componentDidMount() {
         // debugger;
         this.props.fetchOneRecipe(this.props.match.params.recipeId)
         const recipe = this.props.recipe
+        const list = this.props.ingredientLists
         // debugger;
     }
 
     render() {
         let { recipe, ingredients, ingredientLists, author } = this.props
-        if (!recipe) return null;
+        // debugger;
+        if (ingredientLists.length === 0 || !recipe) return null;
+        //  || (recipe.id && recipe.id.toString() !== this.props.match.params.recipeId)
         console.log(recipe)
         console.log(ingredients)
         console.log(ingredientLists)
@@ -46,6 +50,12 @@ class RecipePage extends React.Component {
                 <div className="directions-outer-container">
                     <div className="ingredients-container">
                         <h1 className="directions-header" >Ingredients</h1>
+                        {ingredientLists.map((list, idx) => {
+                            // debugger;
+                            // list.recipeId === recipe.id ?
+                               return <IngredientLists list={list} key={idx} />
+                            // : ''
+                        })}
                     </div>
                     <div className="directions-container">
                         <h1 className="directions-header" >Preparation</h1>
