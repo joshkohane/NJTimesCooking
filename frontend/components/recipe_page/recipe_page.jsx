@@ -1,4 +1,5 @@
 import React from 'react'
+import Directions from './directions';
 
 class RecipePage extends React.Component {
     componentDidMount() {
@@ -10,13 +11,13 @@ class RecipePage extends React.Component {
 
     render() {
         let { recipe, ingredients, ingredientLists, author } = this.props
-        console.log(recipe)
+        if (!recipe) return null;
+        console.log(recipe.directions)
         console.log(ingredients)
         console.log(ingredientLists)
         console.log(author)
 
 
-        if (!recipe) return null;
         return (
             <div className="recipe-page-outer-container" >
                 <div className="recipe-page-container" >
@@ -43,6 +44,19 @@ class RecipePage extends React.Component {
                     </button>
                 </div>
                 <div className="directions-outer-container">
+                    <div className="ingredients-container">
+                        <h1 className="directions-header" >Ingredients</h1>
+                    </div>
+                    <div className="directions-container">
+                        <h1 className="directions-header" >Preparation</h1>
+                        {recipe.directions.map((direction, idx) => <Directions direction={direction} idx={idx} key={idx} /> )}
+                        {recipe.tip ? 
+                            <div>
+                                <h1>Tip</h1>
+                                <p>{recipe.tip}</p>
+                            </div>
+                        : ''}
+                    </div>
 
                 </div>
             </div>

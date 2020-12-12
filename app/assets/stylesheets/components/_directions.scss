@@ -1,0 +1,46 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
+.directions-outer-container {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 30px;
+
+    .directions-header {
+        font-family: $karnak;
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $darker-gray;
+        padding-bottom: 28px;
+    }
+
+    .ingredients-container {
+        width: 311px;
+    }
+
+    .directions-container {
+        width: 626px;
+    }
+}
+
+.direction-wrapper {
+    padding-bottom: 30px;
+
+    .direction-step {
+        font-family: $sans-serif-bold;
+        font-size: 18px;
+        padding-bottom: 10px;
+        font-weight: 700;
+        color: $darker-gray;
+    }
+
+    .direction-text {
+        font-family: $sans-serif;
+        font-size: 18px;
+        line-height: 1.5;
+        color: $darker-gray;
+    }
+}

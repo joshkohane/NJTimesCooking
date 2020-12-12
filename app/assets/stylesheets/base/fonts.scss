@@ -8,6 +8,17 @@
   src: font-url('cheltenham-normal-200') format("truetype");
 }
 
+@font-face {
+  font-family: "franklin";
+  src: font-url('franklin-normal-500') format("truetype");
+}
+
+@font-face {
+  font-family: "franklin-bold";
+  src: font-url('franklin-normal-700') format("truetype");
+}
+
 $serif: "cheltenham", times, georgia, serif;
-$sans-serif: 'Libre Franklin', arial, helvetica, sans-serif;
+$sans-serif: "franklin", "Libre Franklin", arial, helvetica, sans-serif;
+$sans-serif-bold: "franklin-bold", "Libre Franklin", arial, helvetica, sans-serif;
 $karnak: "karnak", times, georgia, serif;
