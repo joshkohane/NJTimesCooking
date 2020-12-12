@@ -11,6 +11,7 @@ const mapSTP = state => {
         suggestedRecipes: selectSuggested(state),
         lovedRecipes: selectLoved(state),
         splashRecipe: selectSplashRecipe(state),
+        isModalOpen: !!state.ui.modal,
     }
 }
 

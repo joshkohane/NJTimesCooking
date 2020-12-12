@@ -15,9 +15,10 @@ class HomePage extends React.Component {
     }
 
     render() {
-        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes } = this.props
+        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, isModalOpen } = this.props
         if (!splashRecipe) return null;
-        console.log(splashRecipe)
+        // debugger;
+        // console.log(splashRecipe)
         // console.log(suggestedRecipes)
         // let splashId = 0;
         // recipes.forEach(recipe => recipe.title === 'Pizza Margherita' ? splashId = recipe.id : '' )

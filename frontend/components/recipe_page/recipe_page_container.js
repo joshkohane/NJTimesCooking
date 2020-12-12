@@ -9,7 +9,8 @@ const mapSTP = (state, ownProps) => {
     recipe: state.entities.recipes[ownProps.match.params.recipeId],
     // ingredients: state.entities.ingredients,
     ingredientLists: Object.values(state.entities.ingredientLists),
-    loggedIn: state.session.currentUser,
+    loggedIn: Boolean(state.session.currentUser),
+    isModalOpen: Boolean(state.ui.modal)
     // author: state.entities.author,
 }}
 
