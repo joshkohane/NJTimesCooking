@@ -7,6 +7,7 @@ const mapSTP = state => ({
     errors: state.errors,
     loggedIn: state.session.currentUser,
     formType: 'login',
+    location: window.location.hash,
 })
 
 const mapDTP = dispatch => ({

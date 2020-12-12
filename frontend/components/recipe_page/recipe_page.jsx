@@ -1,4 +1,5 @@
 import React from 'react'
+import { openModal } from '../../actions/modal_actions';
 import Directions from './directions';
 import IngredientLists from './ingredient_lists';
 
@@ -10,11 +11,13 @@ class RecipePage extends React.Component {
         const list = this.props.ingredientLists
         // debugger;
     }
-
+    
     render() {
-        let { recipe, ingredients, ingredientLists, author } = this.props
+        let { recipe, ingredients, ingredientLists, author, loggedIn } = this.props
         // debugger;
         if (ingredientLists.length === 0 || !recipe) return null;
+        { !loggedIn ? this.props.openModal('signup') : '' }
+        // debugger;
         //  || (recipe.id && recipe.id.toString() !== this.props.match.params.recipeId)
         console.log(recipe)
         console.log(ingredients)
@@ -62,7 +65,6 @@ class RecipePage extends React.Component {
                             </div>
                         : ''}
                     </div>
-
                 </div>
             </div>
         )

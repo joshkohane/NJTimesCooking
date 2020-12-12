@@ -11,6 +11,7 @@ class HomePage extends React.Component {
 
     componentDidMount() {
         this.props.fetchEveryRecipe();
+        this.props.closeModal();
     }
 
     render() {
