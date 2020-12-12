@@ -34,6 +34,7 @@ const Footer = () => {
                         <h1 className="footer-title" >Learn More</h1>
                         <ul className="home-learn-text" >
                             <a target="_blank" href="https://cooking.nytimes.com/" className="footer-links" >Original recipes</a>
+                            <a target="_blank" href="https://www.bonappetit.com/" className="footer-links" >Additional recipes</a>
                         </ul>
                     </div>
                 {/* </div> */}
