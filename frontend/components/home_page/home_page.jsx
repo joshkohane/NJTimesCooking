@@ -25,7 +25,7 @@ class HomePage extends React.Component {
         return (
             <div className="main-app" >
                 <Link to={`/api/recipes/${splashRecipe.id}`} style={{ textDecoration: 'none' }}>
-                    <Splash />
+                    <Splash recipe={splashRecipe} />
                 </Link>
                 <div className="home-page-main-body">
                     <div className="home-page-header">
@@ -39,7 +39,7 @@ class HomePage extends React.Component {
                     <div className="recipe-card-container">
                         <ul className="recipe-card" >
                             {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} /> )}
-                            {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
+                            {/* {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)} */}
                         </ul>
                     </div>
                     <div className="recipe-card-header">
@@ -49,7 +49,7 @@ class HomePage extends React.Component {
                     <div className="recipe-card-container">
                         <ul className="recipe-card" >
                             {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
-                            {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
+                            {/* {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)} */}
                         </ul>
                     </div>
                 </div>

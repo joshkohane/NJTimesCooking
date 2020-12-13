@@ -23,7 +23,7 @@
         }
 
         .recipe-page-author {
-            font-family: $sans-serif;
+            font-family: $sans-serif-bold;
             font-size: 15px;
             font-weight: 700;
             color: $darker-gray;
@@ -41,16 +41,17 @@
                 color: $black;
                 text-transform: uppercase;
                 width: 60px;
-                margin-top: 1.5px;
-                margin-bottom: 15px;
+                margin-top: 5px;
+                margin-bottom: 13px;
                 letter-spacing: 1.5px;
             }
 
             .recipe-page-yield {
                 font-family: $sans-serif;
-                font-size: 13px;
+                font-size: 15px;
                 color: $darker-gray;
                 letter-spacing: .5px;
+                padding-bottom: 2px;
             }
         }
 
@@ -64,6 +65,7 @@
                 letter-spacing: .5px;
                 color: $darker-gray;
                 font-weight: 700;
+                line-height: 1.4;
             }
 
             .recipe-page-photo {
