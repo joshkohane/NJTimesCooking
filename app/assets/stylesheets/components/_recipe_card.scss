@@ -84,6 +84,7 @@
     // left: 1px;
     box-sizing: border-box;
     justify-content: center;
+    align-items: center;
     // width: 1168px;
     padding-bottom: 40px;
     transition: all .5s ease-in 0s;
@@ -206,3 +207,50 @@
 // .recipe-card-bookmark:hover .recipe-card-bookmark-dark {
 //     display: block;
 // }
+
+.see-all-link-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.see-all-link {
+    font-size: 17px;
+    font-family: $sans-serif-bold;
+    font-weight: 700;
+    color: $btn-red;
+    padding-right: 17px;
+    width: 235px;
+    text-align: right;
+}
+
+.see-all-link:hover {
+    color: $darker-red;
+
+}
+
+.see-all-link:hover:after { 
+    border-left: 15px solid $darker-red;
+}
+
+.see-all-link:before,
+.see-all-link:after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    bottom: -7px;
+    border-left: 15px solid $btn-red;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+.see-all-link:before {
+    right: -1px;
+    // left: 1px;
+    border-left: 15px solid $main-light-gray;
+    z-index: 1;
+}

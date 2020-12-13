@@ -28,28 +28,28 @@ class HomePage extends React.Component {
         e.preventDefault();
         let currentPosition = this.state.topLeft
         let currentIdx = this.state.topIdx
-        this.setState({ topLeft: currentPosition - 1017, topIdx: currentIdx + 4 })
+        this.setState({ topLeft: currentPosition - 764, topIdx: currentIdx + 4 })
     }
 
     moveTopCarouselRight(e) {
         e.preventDefault();
         let currentPosition = this.state.topLeft
         let currentIdx = this.state.topIdx
-        this.setState({ topLeft: currentPosition + 1017, topIdx: currentIdx - 4 })
+        this.setState({ topLeft: currentPosition + 764, topIdx: currentIdx - 4 })
     }
 
     moveBottomCarouselLeft(e) {
         e.preventDefault();
         let currentPosition = this.state.bottomLeft
         let currentIdx = this.state.bottomIdx
-        this.setState({ bottomLeft: currentPosition - 1017, bottomIdx: currentIdx + 4 })
+        this.setState({ bottomLeft: currentPosition - 764, bottomIdx: currentIdx + 4 })
     }
 
     moveBottomCarouselRight(e) {
         e.preventDefault();
         let currentPosition = this.state.bottomLeft
         let currentIdx = this.state.bottomIdx
-        this.setState({ bottomLeft: currentPosition + 1017, bottomIdx: currentIdx - 4 })
+        this.setState({ bottomLeft: currentPosition + 764, bottomIdx: currentIdx - 4 })
     }
 
     render() {
@@ -83,7 +83,13 @@ class HomePage extends React.Component {
                             <div className="recipe-card-overflow-left" style={{ display: topLeft }} ><i onClick={this.moveTopCarouselRight} className="fas fa-chevron-left"></i></div>
                             <div className="recipe-card-extra-overflow-left"></div>
                             <ul className="recipe-card" style={{ left: this.state.topLeft + 'px' }} >
+                            {/* <ul className="recipe-card" style={{ left: '-1528px' }} > */}
                                 {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} /> )}
+                                <Link to="/" style={{ textDecoration: 'none' }}>
+                                    <div className="see-all-link-wrapper">
+                                        <div className="see-all-link" >See all recipes</div>
+                                    </div>
+                                </Link>
                             </ul>
                             <div className="recipe-card-overflow" style={{ display: topRight }} ><i onClick={this.moveTopCarouselLeft} className="fas fa-chevron-right"></i></div>
                             <div className="recipe-card-extra-overflow"></div>
@@ -99,6 +105,11 @@ class HomePage extends React.Component {
                             <div className="recipe-card-extra-overflow-left"></div>
                             <ul className="recipe-card" style={{ left: this.state.bottomLeft + 'px' }} >
                                 {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
+                                <Link to="/" style={{ textDecoration: 'none' }}>
+                                    <div className="see-all-link-wrapper">
+                                        <div className="see-all-link" >See all recipes</div>
+                                    </div>
+                                </Link>
                             </ul>
                             <div className="recipe-card-overflow" style={{ display: bottomRight }} ><i onClick={this.moveBottomCarouselLeft} className="fas fa-chevron-right"></i></div>
                             <div className="recipe-card-extra-overflow"></div>
