@@ -59,12 +59,14 @@
   // letter-spacing: .5px;
   border-radius: 5px;
   box-sizing: border-box;
+  line-height: 1.5;
 }
 
 .modal-btn {
   background-color: $btn-red;
   color: $white;
-  border: 1px solid $btn-red;;
+  padding-bottom: 2px;
+  border: 1px solid $btn-red;
 }
 
 .demo-btn {
@@ -72,6 +74,7 @@
   color: $darkest-gray;
   border: 1px solid $light-gray;
   cursor: pointer;
+  padding-bottom: 2px;
 }
 
 .modal-submit-btn {
@@ -173,7 +176,7 @@
     box-sizing: border-box;
     background-color: $white;
     border: 1px solid $lighter-gray;
-    padding: 0 10px;
+    padding: 0 10px 4px;
   }
 }
 
