@@ -1,18 +1,61 @@
 @import "../base/colors.scss";
 @import "../base/fonts.scss";
 
+.home-page-recipe-card-container {
+    position: relative;
+    width: 1000px;
+    height: 450px;
+    overflow: visible;
+}
+
+.recipe-card-overflow,
+.recipe-card-extra-overflow,
+.recipe-card-overflow-left,
+.recipe-card-extra-overflow-left {
+    height: 280px;
+    z-index: 10;
+    position: absolute;
+}
+
+.recipe-card-overflow {
+    background-image: linear-gradient(to right, rgba(242, 243, 239, 0.7), rgba(242, 243, 239, 1));
+    width: 50px;
+    left: 1015px;
+}
+
+.recipe-card-overflow-left {
+    background-image: linear-gradient(to left, rgba(242, 243, 239, 0.7), rgba(242, 243, 239, 1));
+    width: 50px;
+    right: 1015px;
+}
+
+.recipe-card-extra-overflow {
+    background-color: $main-light-gray;
+    width: 100%;
+    left: 1065px;
+}
+
+.recipe-card-extra-overflow-left {
+    background-color: $main-light-gray;
+    width: 100%;
+    right: 1065px;
+}
+
 .recipe-card-container {
     display: flex;
     justify-content: center;
-    overflow: scroll;
-    width: 100%;
+    // width: 1vh;
+    // width: 100%;
 }
 
 .recipe-card {
     display: flex;
+    position: absolute;
+    left: -1017px;
+    // left: 0px;
     box-sizing: border-box;
     justify-content: center;
-    width: 1168px;
+    // width: 1168px;
     padding-bottom: 40px;
 }
 
@@ -21,7 +64,7 @@
     width: 235.5px;
     position: relative;
     background-color: $white;
-    margin: 10px;
+    margin-right: 17px;
     border: 1px solid $photo-background;
 }
 
@@ -37,7 +80,7 @@
 
 
 .recipe-card-text {
-    padding: 12px 16px 6px 16px;
+    padding: 12px 14px 6px 14px;
     height: 106px;
     
     .recipe-card-title {
@@ -71,7 +114,7 @@
         font-size: 12px;
         font-family: $sans-serif-thin;
         color: #999999;
-        padding-left: 16px;
+        padding-left: 14px;
     }
     
 }

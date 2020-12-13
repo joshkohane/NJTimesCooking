@@ -32,26 +32,50 @@ class HomePage extends React.Component {
                         <h1 className="home-page-title">What to Cook This Week</h1>
                         <h2 className="home-page-subtitle">Recipes, guides and more</h2>
                     </div>
-                    <div className="recipe-card-header">
-                        <h1 className="recipe-card-header-title" >Suggestions</h1>
-                        <h2 className="recipe-card-header-subtitle" >Recipes selected by the editor for cooking this week.</h2>
+                    <div className="home-page-recipe-card-container" >
+                        <div className="recipe-card-header" >
+                            <h1 className="recipe-card-header-title" >Suggestions</h1>
+                            <h2 className="recipe-card-header-subtitle" >Recipes selected by the editor for cooking this week.</h2>
+                        </div>
+                        <div className="recipe-card-container">
+                            <div className="recipe-card-overflow-left"></div>
+                            <div className="recipe-card-extra-overflow-left"></div>
+                            <ul className="recipe-card" >
+                                {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} /> )}
+                                {/* {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)} */}
+                            </ul>
+                            <div className="recipe-card-overflow"></div>
+                            <div className="recipe-card-extra-overflow"></div>
+                        </div>
                     </div>
-                    <div className="recipe-card-container">
-                        <ul className="recipe-card" >
-                            {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} /> )}
-                            {/* {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)} */}
-                        </ul>
+                    <div className="home-page-recipe-card-container" >
+                        <div className="recipe-card-header" >
+                            <h1 className="recipe-card-header-title" >Suggestions</h1>
+                            <h2 className="recipe-card-header-subtitle" >Recipes selected by the editor for cooking this week.</h2>
+                        </div>
+                        <div className="recipe-card-container">
+                            <div className="recipe-card-overflow-left"></div>
+                            <div className="recipe-card-extra-overflow-left"></div>
+                            <ul className="recipe-card" >
+                                {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
+                                {/* {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)} */}
+                            </ul>
+                            <div className="recipe-card-overflow"></div>
+                            <div className="recipe-card-extra-overflow"></div>
+                        </div>
                     </div>
-                    <div className="recipe-card-header">
-                        <h1 className="recipe-card-header-title" >Recipes We Think You'll Love</h1>
-                        <h2 className="recipe-card-header-subtitle" >Some of our most popular dishes.</h2>
-                    </div>
-                    <div className="recipe-card-container">
-                        <ul className="recipe-card" >
-                            {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
-                            {/* {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)} */}
-                        </ul>
-                    </div>
+                    {/* <div className="home-page-recipe-card-container" > */}
+                        {/* <div className="recipe-card-header">
+                            <h1 className="recipe-card-header-title" >Recipes We Think You'll Love</h1>
+                            <h2 className="recipe-card-header-subtitle" >Some of our most popular dishes.</h2>
+                        </div>
+                        <div className="recipe-card-container">
+                            <ul className="recipe-card" >
+                                {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
+                                {/* {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)} */}
+                            {/* </ul>
+                        </div> */}
+                    {/* </div> */}
                 </div>
             </div>
         )
