@@ -38,13 +38,13 @@ class HomePage extends React.Component {
                             <h2 className="recipe-card-header-subtitle" >Recipes selected by the editor for cooking this week.</h2>
                         </div>
                         <div className="recipe-card-container">
-                            <div className="recipe-card-overflow-left"></div>
+                            <div className="recipe-card-overflow-left"><i class="fas fa-chevron-left"></i></div>
                             <div className="recipe-card-extra-overflow-left"></div>
                             <ul className="recipe-card" >
                                 {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} /> )}
                                 {/* {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)} */}
                             </ul>
-                            <div className="recipe-card-overflow"></div>
+                            <div className="recipe-card-overflow"><i class="fas fa-chevron-right"></i></div>
                             <div className="recipe-card-extra-overflow"></div>
                         </div>
                     </div>

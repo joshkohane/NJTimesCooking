@@ -29,6 +29,20 @@
     right: 1015px;
 }
 
+.fa-chevron-right {
+    position: absolute;
+    left: 30px;
+    top: 110px;
+    font-size: 20px;
+}
+
+.fa-chevron-left {
+    position: absolute;
+    right: 30px;
+    top: 110px;
+    font-size: 20px;
+}
+
 .recipe-card-extra-overflow {
     background-color: $main-light-gray;
     width: 100%;
