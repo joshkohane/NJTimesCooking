@@ -26,4 +26,9 @@ class Recipe < ApplicationRecord
         through: :ingredient_lists,
         source: :ingredients
     has_one_attached :photo
+    has_many :saves,
+        class_name: :Save,
+        foreign_key: :recipe_id,
+        dependent: :destroy
+
 end

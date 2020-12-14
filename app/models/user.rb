@@ -45,5 +45,14 @@ class User < ApplicationRecord
         self.session_token ||= SecureRandom::urlsafe_base64(16)
     end
 
-    has_many :recipes
+    has_many :recipes,
+        class_name: :Recipe,
+        foreign_key: :author_id
+    has_many :saves,
+        class_name: :Save,
+        foreign_key: :user_id, 
+        dependent: :destroy
+    has_many :saved_recipes,
+        through: :saves,
+        source: :recipe
 end
