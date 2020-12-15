@@ -12,12 +12,15 @@ class HomePage extends React.Component {
             topIdx: 0,
             bottomLeft: 0,
             bottomIdx: 0,
+            className: "modal-save-background-closed"
         }
         this.moveTopCarouselLeft = this.moveTopCarouselLeft.bind(this);
         this.moveTopCarouselRight = this.moveTopCarouselRight.bind(this);
         this.moveBottomCarouselLeft = this.moveBottomCarouselLeft.bind(this);
         this.moveBottomCarouselRight = this.moveBottomCarouselRight.bind(this);
         this.handleSave = this.handleSave.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.clickEvent = this.clickEvent.bind(this);
     }
 
     componentDidMount() {
@@ -57,12 +60,21 @@ class HomePage extends React.Component {
         // e.stopPropagation();
         // debugger;
         if (splashRecipe.saveId) {
-            this.props.deleteThisSave(splashRecipe.saveId)
+            this.toggleModal();
         } else {
-            this.props.saveThisRecipe(splashRecipe.id)
+            this.props.saveThisRecipe(splashRecipe.id);
         }
     }
 
+    toggleModal() {
+        let newName = (this.state.className === "modal-save-background") ? "modal-save-background-closed" : "modal-save-background"
+        this.setState({ className: newName })
+    }
+
+    clickEvent(recipe) {
+        this.props.deleteThisSave(recipe.saveId);
+        this.toggleModal();
+    }
 
     render() {
         let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, openModal, isModalOpen, saveThisRecipe, deleteThisSave, loggedIn } = this.props
@@ -103,6 +115,18 @@ class HomePage extends React.Component {
                         </div>
                     }
                     </button>
+                </div>
+                <div className={this.state.className} onClick={this.toggleModal} >
+                    <div className="modal-save-child" onClick={e => e.stopPropagation()}>
+                        <span className="close-modal-btn" onClick={this.toggleModal} >&#x2715;</span>
+                        <div className="modal-save-body">
+                            <p className="modal-image-text">Are you sure you want to remove <span className="modal-save-title" >{splashRecipe.title}</span> from your recipe box?</p>
+                            <div className="modal-save-btns">
+                                <button type="button" onClick={this.toggleModal} className="modal-save-no">NO</button>
+                                <button type="button" onClick={() => this.clickEvent(splashRecipe)} className="modal-save-yes">YES</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="home-page-main-body">
                     <div className="home-page-header">

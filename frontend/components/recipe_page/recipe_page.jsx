@@ -7,7 +7,12 @@ import { Link } from 'react-router-dom';
 class RecipePage extends React.Component {
     constructor(props) {
         super(props);
-        this.handleSave = this.handleSave.bind(this)
+        this.state = {
+            className: "modal-save-background-closed"
+        }
+        this.handleSave = this.handleSave.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.clickEvent = this.clickEvent.bind(this);
     }
     
     componentDidMount() {
@@ -22,14 +27,24 @@ class RecipePage extends React.Component {
         // e.stopPropagation();
         // debugger;
         if (recipe.saveId) {
-            this.props.deleteThisSave(recipe.saveId)
+            this.toggleModal();
         } else {
-            this.props.saveThisRecipe(recipe.id)
+            this.props.saveThisRecipe(recipe.id);
         }
+    }
+
+    toggleModal() {
+        let newName = (this.state.className === "modal-save-background") ? "modal-save-background-closed" : "modal-save-background"
+        this.setState({ className: newName })
+    }
+
+    clickEvent(recipe) {
+        this.props.deleteThisSave(recipe.saveId);
+        this.toggleModal();
     }
     
     render() {
-        let { recipe, ingredients, ingredientLists, author, loggedIn, isModalOpen } = this.props
+        let { recipe, ingredients, ingredientLists, author, loggedIn, openModal, isModalOpen } = this.props
         // debugger;
         if (ingredientLists.length === 0 || !recipe) return null;
         { !loggedIn && !isModalOpen ? this.props.openModal('signup') : '' }
@@ -55,6 +70,18 @@ class RecipePage extends React.Component {
                             </div>
                             <p className="splash-bookmark-text" >{recipe.saveId ? "Saved" : "Save To Recipe Box"}</p>
                         </button>
+                    </div>
+                    <div className={this.state.className} onClick={this.toggleModal} >
+                        <div className="modal-save-child" onClick={e => e.stopPropagation()}>
+                            <span className="close-modal-btn" onClick={this.toggleModal} >&#x2715;</span>
+                            <div className="modal-save-body">
+                                <p className="modal-image-text">Are you sure you want to remove <span className="modal-save-title" >{recipe.title}</span> from your recipe box?</p>
+                                <div className="modal-save-btns">
+                                    <button type="button" onClick={this.toggleModal} className="modal-save-no">NO</button>
+                                    <button type="button" onClick={() => this.clickEvent(recipe)} className="modal-save-yes">YES</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="recipe-page-label" >
                         <p className="recipe-page-subheader" >Yield</p>
