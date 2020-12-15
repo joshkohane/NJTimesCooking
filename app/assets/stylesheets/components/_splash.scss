@@ -143,3 +143,91 @@
         border-bottom: 4px solid $btn-red;
     }
 }
+
+.save-recipe-btn .logged-in-pop-up {
+    position: absolute;
+    display: none;
+    align-items: center;
+    width: 200px;
+    height: 170px;
+    background-color: $white;
+    opacity: 1;
+    bottom: 47px;
+    right: -1px;
+    border: 1px solid $lighter-gray;
+    cursor: pointer;
+    opacity: 1;
+    z-index: 1;
+}
+
+.logged-in-pop-up:before,
+.logged-in-pop-up:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    bottom: -10px;
+    border-top: 10px solid $lighter-gray;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.logged-in-pop-up:after {
+    border-top: 10px solid $white;
+    bottom: -8px
+}
+
+.logged-in-pop-up-spacer {
+    position: absolute;
+    width: 200px;
+    height: 170px;
+    background-color: transparent;
+    opacity: 1;
+    bottom: -20px;
+    // right: -1px;
+    z-index: -1;
+    // right: 15px;
+}
+
+.logged-in-pop-up-title {
+    font-family: $sans-serif-bold;
+    color: $black;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.logged-in-pop-up-body {
+    text-align: center;
+    color: #666666;
+    font-family: $sans-serif;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.logged-in-pop-up-text {
+    text-align: center;
+    color: $black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: $sans-serif-bold;
+    font-size: 15px;
+
+    padding: 0 10px 10px 0px;
+}
+
+.logged-in-pop-up-link {
+    color: $btn-red;
+    cursor: pointer;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+.logged-in-pop-up-link:hover {
+    text-decoration: underline;
+}
+
+.save-recipe-btn:hover .logged-in-pop-up {
+    display: block;
+}

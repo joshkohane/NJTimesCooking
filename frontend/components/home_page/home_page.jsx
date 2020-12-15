@@ -64,7 +64,7 @@ class HomePage extends React.Component {
     }
 
     render() {
-        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, isModalOpen, saveThisRecipe, deleteThisSave } = this.props
+        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, isModalOpen, saveThisRecipe, deleteThisSave, loggedIn } = this.props
         if (!splashRecipe) return null;
         let topLeft = this.state.topLeft === 0 ? 'none' : '';
         let topRight = this.state.topIdx === 8 ? 'none' : '';
@@ -83,13 +83,24 @@ class HomePage extends React.Component {
                     <Link to={`/api/recipes/${splashRecipe.id}`} style={{ textDecoration: 'none' }}>
                         <Splash recipe={splashRecipe} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} />
                     </Link>
-                    <button className="save-recipe-btn" onClick={() => this.handleSave(splashRecipe)}>
-                        <div className="splash-outer-bookmark">
+                    <button className="save-recipe-btn" >
+                        <div className="splash-outer-bookmark" onClick={() => this.handleSave(splashRecipe)}>
                             <div className={splashRecipe.saveId ? "splash-bookmark splash-bookmark-saved" : "splash-bookmark"} ></div>
-                            {/* <div className={splashRecipe.saveId ? "splash-bookmark" : "splash-bookmark"}></div> */}
-                            {/* <i class="far fa-bookmark" ></i> */}
                             <p className="splash-bookmark-text" >{splashRecipe.saveId ? "Saved" : "Save To Recipe Box"}</p>
                         </div>
+                    { loggedIn ? '' :
+                        <div className="logged-in-pop-up" >
+                            <div className="logged-in-pop-up-spacer" ></div>
+                            <h1 className="logged-in-pop-up-title" >Build Your Recipe Box</h1>
+                            <p className="logged-in-pop-up-body" >Save your favorite recipes in one place</p>
+                            <div className="logged-in-pop-up-text" >
+                                <span onClick={() => this.props.openModal('login')} className="logged-in-pop-up-link" >Log in</span>
+                                <p> or </p>
+                                <span onClick={() => this.props.openModal('signup')} className="logged-in-pop-up-link" >Sign up</span>
+                                to save this recipe.
+                            </div>
+                        </div>
+                    }
                     </button>
                 </div>
                 <div className="home-page-main-body">

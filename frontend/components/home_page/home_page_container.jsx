@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchEveryRecipe, fetchOneRecipe } from '../../actions/recipe_actions';
 import { saveThisRecipe, deleteThisSave } from '../../actions/save_actions';
 import { selectSplashRecipe, selectSuggested, selectLoved } from '../../reducers/selectors';
-import { closeModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapSTP = state => {
     // debugger;
@@ -12,7 +12,8 @@ const mapSTP = state => {
         suggestedRecipes: selectSuggested(state),
         lovedRecipes: selectLoved(state),
         splashRecipe: selectSplashRecipe(state),
-        isModalOpen: !!state.ui.modal,
+        isModalOpen: Boolean(state.ui.modal),
+        loggedIn: Boolean(state.session.currentUser),
     }
 }
 
@@ -22,6 +23,7 @@ const mapDTP = dispatch => ({
     closeModal: () => dispatch(closeModal()),
     saveThisRecipe: (recipeId) => dispatch(saveThisRecipe(recipeId)),
     deleteThisSave: (recipeId) => dispatch(deleteThisSave(recipeId)),
+    openModal: (modal) => dispatch(openModal(modal)),
 })
 
 export default connect(mapSTP, mapDTP)(HomePage);
