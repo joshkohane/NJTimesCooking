@@ -9,6 +9,7 @@ class NavBar extends React.Component {
         }
         this.getShow = this.getShow.bind(this);
         this.hideShow = this.hideShow.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     getShow(e) {
@@ -19,6 +20,11 @@ class NavBar extends React.Component {
     hideShow(e) {
         e.preventDefault();
         this.setState({ show: false })
+    }
+
+    handleLogout() {
+        this.props.logout();
+        this.render();
     }
 
     render() {
@@ -45,9 +51,6 @@ class NavBar extends React.Component {
                         {loggedIn ? 
                             <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
                                 <p className="recipe-box-text" >Your Recipe Box</p>
-                                { loggedIn ? '' : 
-                                    <div className="recipe-box-login" >Log In</div>
-                                }
                             </Link>
                         :
                             <div className="recipe-box-login-container" >
@@ -61,7 +64,7 @@ class NavBar extends React.Component {
                             <div className="nav-bar-dropdown-spacer" ></div>
                             {currentUser ? 
                                 <button className="nav-bar-dropdown-show" onClick={() => logout()}>Log Out</button> :
-                                <button className="nav-bar-dropdown-show" onClick={() => this.props.openModal('login')}>Log In</button>
+                                <button className="nav-bar-dropdown-show" onClick={this.handleLogout}>Log In</button>
                             }
                     </div>
                 </div>

@@ -8,9 +8,9 @@ class RecipeCard extends React.Component {
         this.state = {
             className: "modal-save-background-closed"
         }
-        this.handleSave = this.handleSave.bind(this)
-        this.toggleModal = this.toggleModal.bind(this)
-        this.clickEvent = this.clickEvent.bind(this)
+        this.handleSave = this.handleSave.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.clickEvent = this.clickEvent.bind(this);
     }
 
     handleSave(recipe) {
@@ -46,7 +46,7 @@ class RecipeCard extends React.Component {
                             <p className="recipe-card-time" >{recipe.time}</p>
                         </div>
                     </Link>
-                    <div className="recipe-card-bookmark-container"  onClick={loggedIn ? () => this.handleSave(recipe): () => {}} >
+                    <div className="recipe-card-bookmark-container"  onClick={loggedIn ? () => this.handleSave(recipe): () => openModal('login')} >
                     {loggedIn ? '' :
                         <div className="recipe-card-pop-up" >
                             <div className="recipe-card-pop-up-spacer" ></div>

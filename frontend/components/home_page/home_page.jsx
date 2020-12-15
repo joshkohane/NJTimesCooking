@@ -63,8 +63,9 @@ class HomePage extends React.Component {
         }
     }
 
+
     render() {
-        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, isModalOpen, saveThisRecipe, deleteThisSave, loggedIn } = this.props
+        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, openModal, isModalOpen, saveThisRecipe, deleteThisSave, loggedIn } = this.props
         if (!splashRecipe) return null;
         let topLeft = this.state.topLeft === 0 ? 'none' : '';
         let topRight = this.state.topIdx === 8 ? 'none' : '';
@@ -84,7 +85,7 @@ class HomePage extends React.Component {
                         <Splash recipe={splashRecipe} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} />
                     </Link>
                     <button className="save-recipe-btn" >
-                        <div className="splash-outer-bookmark" onClick={() => this.handleSave(splashRecipe)}>
+                        <div className="splash-outer-bookmark" onClick={loggedIn ? () => this.handleSave(splashRecipe) : () => openModal('login') }>
                             <div className={splashRecipe.saveId ? "splash-bookmark splash-bookmark-saved" : "splash-bookmark"} ></div>
                             <p className="splash-bookmark-text" >{splashRecipe.saveId ? "Saved" : "Save To Recipe Box"}</p>
                         </div>
