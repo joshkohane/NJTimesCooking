@@ -20,8 +20,8 @@ class RecipeCard extends React.Component {
         let { recipe,loggedIn, openModal } = this.props;
         return (
             <div className="recipe-card-outer-container" >
-                <Link to={`/api/recipes/${recipe.id}`} style={{ textDecoration: 'none' }} >
-                    <div className="recipe-card-wrapper" >
+                <div className="recipe-card-wrapper" >
+                    <Link to={`/api/recipes/${recipe.id}`} style={{ textDecoration: 'none' }} >
                         <img className="recipe-card-photo" src={recipe.photoUrl} alt="" />
                         <div className="recipe-card-text" >
                             <li className="recipe-card-title" >{recipe.title}</li>
@@ -32,21 +32,21 @@ class RecipeCard extends React.Component {
                             {/* <i class="far fa-bookmark recipe-card-bookmark" ></i>
                                                     <i class="fas fa-bookmark recipe-card-bookmark-dark"></i> */}
                         </div>
-                    </div>
-                </Link>
-                <div className="recipe-card-bookmark-container"  onClick={() => this.handleSave(recipe)} >
-                {loggedIn ? '' :
-                    <div className="recipe-card-pop-up" >
-                        <div className="recipe-card-pop-up-spacer" ></div>
-                        <div className="recipe-card-pop-up-text" >
-                            <span onClick={() => this.props.openModal('login')} className="logged-in-pop-up-link" >Log in</span>
-                            <p> or </p>
-                            <span onClick={() => this.props.openModal('signup')} className="logged-in-pop-up-link" >Sign up</span>
-                                            to save this recipe.
+                    </Link>
+                    <div className="recipe-card-bookmark-container"  onClick={() => this.handleSave(recipe)} >
+                    {loggedIn ? '' :
+                        <div className="recipe-card-pop-up" >
+                            <div className="recipe-card-pop-up-spacer" ></div>
+                            <div className="recipe-card-pop-up-text" >
+                                <span onClick={() => openModal('login')} className="logged-in-pop-up-link" >Log in</span>
+                                <p> or </p>
+                                <span onClick={() => openModal('signup')} className="logged-in-pop-up-link" >Sign up</span>
+                                to save this recipe.
+                            </div>
                         </div>
-                    </div>
-                }
+                    }
                     <div className={recipe.saveId ? "recipe-card-bookmark recipe-card-bookmark-saved" : "recipe-card-bookmark"} ></div>
+                    </div>
                 </div>
             </div>
         )
