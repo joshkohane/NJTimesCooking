@@ -63,8 +63,8 @@ class NavBar extends React.Component {
                             <i className="fas fa-cog"></i>
                             <div className="nav-bar-dropdown-spacer" ></div>
                             {currentUser ? 
-                                <button className="nav-bar-dropdown-show" onClick={() => logout()}>Log Out</button> :
-                                <button className="nav-bar-dropdown-show" onClick={this.handleLogout}>Log In</button>
+                                <button className="nav-bar-dropdown-show" onClick={this.handleLogout}>Log Out</button> :
+                                <button className="nav-bar-dropdown-show" onClick={() => this.props.openModal('login')}>Log In</button>
                             }
                     </div>
                 </div>
