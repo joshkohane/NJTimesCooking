@@ -6,6 +6,7 @@
     width: 1000px;
     height: 450px;
     overflow: visible;
+    list-style: none;
 }
 
 .recipe-card-overflow,
@@ -157,6 +158,7 @@
 .recipe-card-outer-container {
     position: relative;
     padding-right: 2px;
+    padding-bottom: 20px;
 }
 
 .recipe-card-bookmark-container {

@@ -24,11 +24,11 @@ class RecipeCard extends React.Component {
                     <Link to={`/api/recipes/${recipe.id}`} style={{ textDecoration: 'none' }} >
                         <img className="recipe-card-photo" src={recipe.photoUrl} alt="" />
                         <div className="recipe-card-text" >
-                            <li className="recipe-card-title" >{recipe.title}</li>
-                            <li className="recipe-card-name">{recipe.authorFirstName} {recipe.authorLastName}</li>
+                            <p className="recipe-card-title" >{recipe.title}</p>
+                            <p className="recipe-card-name">{recipe.authorFirstName} {recipe.authorLastName}</p>
                         </div>
                         <div className="recipe-card-footer">
-                            <li className="recipe-card-time" >{recipe.time}</li>
+                            <p className="recipe-card-time" >{recipe.time}</p>
                             {/* <i class="far fa-bookmark recipe-card-bookmark" ></i>
                                                     <i class="fas fa-bookmark recipe-card-bookmark-dark"></i> */}
                         </div>

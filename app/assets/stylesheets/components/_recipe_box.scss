@@ -1,0 +1,36 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
+.recipe-box-outer-container {
+    padding-top: 64px;
+    display: flex;
+    justify-content: center;
+    background-color: $main-light-gray;
+    
+    .recipe-box-container {
+        width: 1030px;
+        display: flex;
+        flex-direction: column;
+
+        .recipe-box-title {
+            font-family: $sans-serif-bold;
+            font-size: 24px;
+            color: $darker-gray;
+            padding-top: 40px;
+        }
+        
+        .recipe-box-subtitle {
+            font-family: $sans-serif;
+            font-size: 16px;
+            color: #666666;
+            padding-bottom: 30px;
+            padding-top: 15px;
+        }
+
+        .recipe-box-recipes-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 50px;
+        }
+    }
+}

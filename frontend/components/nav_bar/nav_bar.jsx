@@ -40,7 +40,7 @@ class NavBar extends React.Component {
                     <i onClick={this.hideShow} className={this.state.show ? "fas fa-times-circle" : ''}></i>
                 </div>
                 <div className="nav-bar-end">
-                    <div className="recipe-box" onClick={loggedIn ? '' : () => this.props.openModal('login')} >
+                    <div className="recipe-box" onClick={loggedIn ? () => {} : () => this.props.openModal('login')} >
                         <div className="recipe-spacer"></div>
                         {loggedIn ? 
                             <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
