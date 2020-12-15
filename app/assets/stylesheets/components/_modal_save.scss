@@ -1,0 +1,88 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.modal-save-background-closed {
+  display: none;
+}
+
+.modal-save-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 10;
+  animation: fade-in .5s ease-in-out;
+}
+
+.modal-save-child {
+  position: absolute;
+  display: flex;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 189px;
+  background-color: $white;
+  border-radius: 5px;
+}
+
+.modal-save-body {
+    padding: 30px;
+    font-family: $sans-serif;
+    font-size: 18px;
+    color: $darker-gray;
+
+    .modal-save-title {
+        font-family: $sans-serif-bold;
+    }
+}
+
+.modal-save-btns {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+
+    .modal-save-no {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 81px;
+        height: 38px;
+        border: 1px solid $black;
+        border-radius: 5px;
+        margin: 0 20px;
+        color: $darker-gray;
+        font-size: 14px;
+    }
+
+    .modal-save-no:hover {
+        background-color: $black;
+        color: $white;
+    }
+
+    .modal-save-yes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 81px;
+        height: 38px;
+        border: 1px solid $btn-red;
+        background-color: $btn-red;
+        border-radius: 5px;
+        margin: 0 2px;
+        color: $white;
+        font-size: 14px;
+    }
+
+    .modal-save-yes:hover {
+        background-color: $darker-red;
+        border: 1px solid $darker-red;
+    }
+}

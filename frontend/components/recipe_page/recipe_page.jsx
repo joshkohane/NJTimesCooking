@@ -2,6 +2,7 @@ import React from 'react'
 import { openModal } from '../../actions/modal_actions';
 import Directions from './directions';
 import IngredientLists from './ingredient_lists';
+import { Link } from 'react-router-dom';
 
 class RecipePage extends React.Component {
     constructor(props) {

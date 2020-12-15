@@ -5,19 +5,34 @@ import { Link } from 'react-router-dom';
 class RecipeCard extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            className: "modal-save-background-closed"
+        }
         this.handleSave = this.handleSave.bind(this)
+        this.toggleModal = this.toggleModal.bind(this)
+        this.clickEvent = this.clickEvent.bind(this)
     }
 
     handleSave(recipe) {
         if (recipe.saveId) {
-            this.props.deleteThisSave(recipe.saveId)
+            this.toggleModal();
         } else {
-            this.props.saveThisRecipe(recipe.id)
+            this.props.saveThisRecipe(recipe.id);
         }
     }
 
+    toggleModal() {
+        let newName = (this.state.className === "modal-save-background") ? "modal-save-background-closed" : "modal-save-background"
+        this.setState({ className: newName })
+    }
+
+    clickEvent(recipe) {
+        this.props.deleteThisSave(recipe.saveId);
+        this.toggleModal();
+    }
+
     render() {
-        let { recipe,loggedIn, openModal } = this.props;
+        let { recipe, loggedIn, openModal } = this.props;
         return (
             <div className="recipe-card-outer-container" >
                 <div className="recipe-card-wrapper" >
@@ -29,11 +44,9 @@ class RecipeCard extends React.Component {
                         </div>
                         <div className="recipe-card-footer">
                             <p className="recipe-card-time" >{recipe.time}</p>
-                            {/* <i class="far fa-bookmark recipe-card-bookmark" ></i>
-                                                    <i class="fas fa-bookmark recipe-card-bookmark-dark"></i> */}
                         </div>
                     </Link>
-                    <div className="recipe-card-bookmark-container"  onClick={() => this.handleSave(recipe)} >
+                    <div className="recipe-card-bookmark-container"  onClick={loggedIn ? () => this.handleSave(recipe): () => {}} >
                     {loggedIn ? '' :
                         <div className="recipe-card-pop-up" >
                             <div className="recipe-card-pop-up-spacer" ></div>
@@ -48,6 +61,18 @@ class RecipeCard extends React.Component {
                     <div className={recipe.saveId ? "recipe-card-bookmark recipe-card-bookmark-saved" : "recipe-card-bookmark"} ></div>
                     </div>
                 </div>
+                <div className={this.state.className} onClick={this.toggleModal} >
+                    <div className="modal-save-child" onClick={e => e.stopPropagation()}>
+                        <span className="close-modal-btn" onClick={this.toggleModal} >&#x2715;</span>
+                        <div className="modal-save-body">
+                            <p className="modal-image-text">Are you sure you want to remove <span className="modal-save-title" >{recipe.title}</span> from your recipe box?</p>
+                            <div className="modal-save-btns">
+                                <button type="button" onClick={this.toggleModal} className="modal-save-no">NO</button>
+                                <button type="button" onClick={() => this.clickEvent(recipe)} className="modal-save-yes">YES</button>
+                            </div>
+                         </div>
+                     </div>
+                </div>
             </div>
         )
     }
@@ -55,3 +80,25 @@ class RecipeCard extends React.Component {
 
 
 export default RecipeCard
+
+// import React from 'react'
+
+// class SaveModal extends React.Component {
+//     render() {
+//         let { recipe, closeModal, openModal } = this.props
+//         return (
+//             <div className="modal-background" onClick={closeModal} >
+//                 <div className="modal-child" onClick={e => e.stopPropagation()}>
+//                     <div className="modal-form">
+//                         <span onClick={closeModal} className="close-modal-btn">&#x2715;</span>
+//                         <p className="modal-image-text">Are you sure you want to remoce {recipe.title} from your recipe box?</p>
+//                         <button type="button" onClick={closeModal} className="modal-link">NO</button>
+//                         <button type="button" onClick={() => openModal('signup')} className="modal-link">YES</button> :
+//                     </div>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
+
+// export default SaveModal;
