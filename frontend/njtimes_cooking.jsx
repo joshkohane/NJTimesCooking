@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import { signup, login, logout } from './actions/session_actions';
 import { fetchAllRecipes, fetchRecipe } from './util/recipe_util';
+import { fetchThisUser } from './actions/user_actions';
 import { saveRecipe, deleteSave } from './util/saves_util';
 import { fetchOneRecipe, fetchEveryRecipe } from './actions/recipe_actions';
 import { saveThisRecipe, deleteThisSave } from './actions/save_actions';
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.deleteSave = deleteSave;
     window.saveThisRecipe = saveThisRecipe;
     window.deleteThisSave = deleteThisSave;
+    window.fetchThisUser = fetchThisUser;
     // 
 
     ReactDOM.render(<Root store={store} />, root)
