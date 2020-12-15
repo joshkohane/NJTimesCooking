@@ -151,7 +151,7 @@ class HomePage extends React.Component {
                             <div className="recipe-card-overflow-left" style={{ display: bottomLeft }} ><i onClick={this.moveBottomCarouselRight} className="fas fa-chevron-left"></i></div>
                             <div className="recipe-card-extra-overflow-left"></div>
                             <ul className="recipe-card" style={{ left: this.state.bottomLeft + 'px' }} >
-                                {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} />)}
+                                {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} loggedIn={loggedIn} openModal={this.props.openModal} />)}
                                 <Link to="/" style={{ textDecoration: 'none' }}>
                                     <div className="see-all-link-wrapper">
                                         <div className="see-all-link" >See all recipes</div>

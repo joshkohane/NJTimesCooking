@@ -42,12 +42,19 @@ class NavBar extends React.Component {
                 <div className="nav-bar-end">
                     <div className="recipe-box" onClick={loggedIn ? '' : () => this.props.openModal('login')} >
                         <div className="recipe-spacer"></div>
-                        <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
-                            <p className="recipe-box-text" >Your Recipe Box</p>
-                            { loggedIn ? '' : 
+                        {loggedIn ? 
+                            <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
+                                <p className="recipe-box-text" >Your Recipe Box</p>
+                                { loggedIn ? '' : 
+                                    <div className="recipe-box-login" >Log In</div>
+                                }
+                            </Link>
+                        :
+                            <div className="recipe-box-login-container" >
+                                <p className="recipe-box-text" >Your Recipe Box</p>
                                 <div className="recipe-box-login" >Log In</div>
-                            }
-                        </Link>
+                            </div>
+                        }
                     </div>
                     <div className="nav-bar-dropdown">
                             <i className="fas fa-cog"></i>
