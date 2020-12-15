@@ -76,6 +76,7 @@
 
     .recipe-box {
         display: flex;
+        // position: absolute;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -90,21 +91,33 @@
             border-top: 1px solid $lighter-gray;
             border-left: 1px solid $lighter-gray;
             border-right: 1px solid $lighter-gray;
-            border-bottom: none;
-            padding: 15px 15px 2px 15px;
+            border-bottom: 1px solid transparent;
+            padding: 15px 15px 0px 15px;
             text-transform: uppercase;
             font-family: $sans-serif-bold;
             font-weight: 700;
-            font-size: 12px;;
+            font-size: 12px;
             letter-spacing: .5px;
             color: $btn-red;
-            height: 50px;
+            height: 39px;
             cursor: pointer;
         }
 
         .recipe-box-text:hover {
             background-color: $main-light-gray;
             border-bottom: 1px solid $lighter-gray;
+        }
+
+        .recipe-box-login {
+            position: absolute;
+            // display: flex;
+            bottom: 8px;
+            left: 58px;
+            color: $dark-gray;
+            text-align: center;
+            font-family: $sans-serif;
+            font-size: 12px;
+            // max-height: 10px;
         }
     }
 

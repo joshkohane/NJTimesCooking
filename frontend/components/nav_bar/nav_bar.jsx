@@ -22,7 +22,7 @@ class NavBar extends React.Component {
     }
 
     render() {
-        const { currentUser, logout } = this.props;
+        const { currentUser, logout, loggedIn } = this.props;
         return (
             <div className="nav-bar-container">
                 <Link to="/" style={{ textDecoration: 'none' }} >
@@ -40,9 +40,14 @@ class NavBar extends React.Component {
                     <i onClick={this.hideShow} className={this.state.show ? "fas fa-times-circle" : ''}></i>
                 </div>
                 <div className="nav-bar-end">
-                    <div className="recipe-box" >
+                    <div className="recipe-box" onClick={loggedIn ? '' : () => this.props.openModal('login')} >
                         <div className="recipe-spacer"></div>
-                        <p className="recipe-box-text" >Your Recipe Box</p>
+                        <Link to="/" style={{ textDecoration: 'none' }}>
+                            <p className="recipe-box-text" >Your Recipe Box</p>
+                            { loggedIn ? '' : 
+                                <div className="recipe-box-login" >Log In</div>
+                            }
+                        </Link>
                     </div>
                     <div className="nav-bar-dropdown">
                             <i className="fas fa-cog"></i>

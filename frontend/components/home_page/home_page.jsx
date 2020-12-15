@@ -118,12 +118,25 @@ class HomePage extends React.Component {
                             <div className="recipe-card-extra-overflow-left"></div>
                             <ul className="recipe-card" style={{ left: this.state.topLeft + 'px' }} >
                             {/* <ul className="recipe-card" style={{ left: '-1528px' }} > */}
-                                {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave}/> )}
+                                {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} loggedIn={loggedIn} openModal={this.props.openModal} /> )}
                                 <Link to="/" style={{ textDecoration: 'none' }}>
                                     <div className="see-all-link-wrapper">
                                         <div className="see-all-link" >See all recipes</div>
                                     </div>
                                 </Link>
+                                {/* {loggedIn ? '' :
+                                    <div className="recipe-card-pop-up" >
+                                        <div className="recipe-card-pop-up-spacer" ></div>
+                                        <h1 className="recipe-card-pop-up-title" >Build Your Recipe Box</h1>
+                                        <p className="recipe-card-pop-up-body" >Save your favorite recipes in one place</p>
+                                        <div className="recipe-card-pop-up-text" >
+                                            <span onClick={() => this.props.openModal('login')} className="logged-in-pop-up-link" >Log in</span>
+                                            <p> or </p>
+                                            <span onClick={() => this.props.openModal('signup')} className="logged-in-pop-up-link" >Sign up</span>
+                                            to save this recipe.
+                                        </div>
+                                    </div>
+                                } */}
                             </ul>
                             <div className="recipe-card-overflow" style={{ display: topRight }} ><i onClick={this.moveTopCarouselLeft} className="fas fa-chevron-right"></i></div>
                             <div className="recipe-card-extra-overflow"></div>

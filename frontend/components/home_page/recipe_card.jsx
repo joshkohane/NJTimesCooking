@@ -17,7 +17,7 @@ class RecipeCard extends React.Component {
     }
 
     render() {
-        let { recipe } = this.props;
+        let { recipe,loggedIn, openModal } = this.props;
         return (
             <div className="recipe-card-outer-container" >
                 <Link to={`/api/recipes/${recipe.id}`} style={{ textDecoration: 'none' }} >
@@ -35,6 +35,17 @@ class RecipeCard extends React.Component {
                     </div>
                 </Link>
                 <div className="recipe-card-bookmark-container"  onClick={() => this.handleSave(recipe)} >
+                {loggedIn ? '' :
+                    <div className="recipe-card-pop-up" >
+                        <div className="recipe-card-pop-up-spacer" ></div>
+                        <div className="recipe-card-pop-up-text" >
+                            <span onClick={() => this.props.openModal('login')} className="logged-in-pop-up-link" >Log in</span>
+                            <p> or </p>
+                            <span onClick={() => this.props.openModal('signup')} className="logged-in-pop-up-link" >Sign up</span>
+                                            to save this recipe.
+                        </div>
+                    </div>
+                }
                     <div className={recipe.saveId ? "recipe-card-bookmark recipe-card-bookmark-saved" : "recipe-card-bookmark"} ></div>
                 </div>
             </div>

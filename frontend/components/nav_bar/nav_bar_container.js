@@ -5,6 +5,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapSTP = state => ({
     currentUser: state.session.currentUser,
+    loggedIn: Boolean(state.session.currentUser),
 })
 
 const mapDTP = dispatch => ({
