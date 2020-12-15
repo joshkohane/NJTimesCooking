@@ -50,10 +50,10 @@ class RecipePage extends React.Component {
         { !loggedIn && !isModalOpen ? this.props.openModal('signup') : '' }
         // debugger;
         //  || (recipe.id && recipe.id.toString() !== this.props.match.params.recipeId)
-        console.log(recipe)
-        console.log(ingredients)
-        console.log(ingredientLists)
-        console.log(author)
+        // console.log(recipe)
+        // console.log(ingredients)
+        // console.log(ingredientLists)
+        // console.log(author)
 
 
         return (
