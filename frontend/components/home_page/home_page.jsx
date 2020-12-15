@@ -17,6 +17,7 @@ class HomePage extends React.Component {
         this.moveTopCarouselRight = this.moveTopCarouselRight.bind(this);
         this.moveBottomCarouselLeft = this.moveBottomCarouselLeft.bind(this);
         this.moveBottomCarouselRight = this.moveBottomCarouselRight.bind(this);
+        this.handleSave = this.handleSave.bind(this);
     }
 
     componentDidMount() {
@@ -52,13 +53,25 @@ class HomePage extends React.Component {
         this.setState({ bottomLeft: currentPosition + 764, bottomIdx: currentIdx - 4 })
     }
 
+    handleSave(splashRecipe) {
+        // e.stopPropagation();
+        // debugger;
+        if (splashRecipe.saveId) {
+            this.props.deleteThisSave(splashRecipe.saveId)
+        } else {
+            this.props.saveThisRecipe(splashRecipe.id)
+        }
+    }
+
     render() {
-        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, isModalOpen } = this.props
+        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, isModalOpen, saveThisRecipe, deleteThisSave } = this.props
         if (!splashRecipe) return null;
         let topLeft = this.state.topLeft === 0 ? 'none' : '';
         let topRight = this.state.topIdx === 8 ? 'none' : '';
         let bottomLeft = this.state.bottomLeft === 0 ? 'none' : '';
         let bottomRight = this.state.bottomIdx === 8 ? 'none' : '';
+        let action = splashRecipe.saveId ? deleteThisSave : saveThisRecipe
+
         // debugger;
         // console.log(splashRecipe)
         // console.log(suggestedRecipes)
@@ -66,9 +79,19 @@ class HomePage extends React.Component {
         // recipes.forEach(recipe => recipe.title === 'Pizza Margherita' ? splashId = recipe.id : '' )
         return (
             <div className="main-app" >
-                <Link to={`/api/recipes/${splashRecipe.id}`} style={{ textDecoration: 'none' }}>
-                    <Splash recipe={splashRecipe} />
-                </Link>
+                <div className="splash-outer-container" >
+                    <Link to={`/api/recipes/${splashRecipe.id}`} style={{ textDecoration: 'none' }}>
+                        <Splash recipe={splashRecipe} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} />
+                    </Link>
+                    <button className="save-recipe-btn" onClick={() => this.handleSave(splashRecipe)}>
+                        <div className="splash-outer-bookmark">
+                            <div className={splashRecipe.saveId ? "splash-bookmark splash-bookmark-saved" : "splash-bookmark"} ></div>
+                            {/* <div className={splashRecipe.saveId ? "splash-bookmark" : "splash-bookmark"}></div> */}
+                            {/* <i class="far fa-bookmark" ></i> */}
+                            <p className="splash-bookmark-text" >{splashRecipe.saveId ? "Saved" : "Save To Recipe Box"}</p>
+                        </div>
+                    </button>
+                </div>
                 <div className="home-page-main-body">
                     <div className="home-page-header">
                         <h1 className="home-page-title">What to Cook This Week</h1>
@@ -84,7 +107,7 @@ class HomePage extends React.Component {
                             <div className="recipe-card-extra-overflow-left"></div>
                             <ul className="recipe-card" style={{ left: this.state.topLeft + 'px' }} >
                             {/* <ul className="recipe-card" style={{ left: '-1528px' }} > */}
-                                {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} /> )}
+                                {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave}/> )}
                                 <Link to="/" style={{ textDecoration: 'none' }}>
                                     <div className="see-all-link-wrapper">
                                         <div className="see-all-link" >See all recipes</div>
@@ -104,7 +127,7 @@ class HomePage extends React.Component {
                             <div className="recipe-card-overflow-left" style={{ display: bottomLeft }} ><i onClick={this.moveBottomCarouselRight} className="fas fa-chevron-left"></i></div>
                             <div className="recipe-card-extra-overflow-left"></div>
                             <ul className="recipe-card" style={{ left: this.state.bottomLeft + 'px' }} >
-                                {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} />)}
+                                {lovedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} />)}
                                 <Link to="/" style={{ textDecoration: 'none' }}>
                                     <div className="see-all-link-wrapper">
                                         <div className="see-all-link" >See all recipes</div>

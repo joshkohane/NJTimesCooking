@@ -155,6 +155,10 @@
     
 }
 
+// .recipe-card-outer-container {
+//     position: relative;
+// }
+
 .recipe-card-bookmark-container {
     position: relative;
     padding-right: 15px;
@@ -165,8 +169,8 @@
 .recipe-card-bookmark:after {
     content: '';
     position: absolute;
-    right: 15px;
-    bottom: 1px;
+    right: -2px;
+    bottom: -1px;
     border-bottom: 7.5px solid #b3b3b3;
     border-right: 7.5px solid transparent;
     border-left: 7.5px solid transparent;
@@ -175,7 +179,7 @@
 }
 
 .recipe-card-bookmark:before {
-    bottom: -1.5px;
+    bottom: -3px;
     // left: 1px;
     border-bottom: 7.5px solid $white;
     z-index: 1;
@@ -183,12 +187,19 @@
 
 .recipe-card-bookmark {
     // color: #b3b3b3;
+    position: absolute;
     width: 15px;
     height: 20px;
     border: 2px solid #b3b3b3;
     // padding-bottom: 3px;
     background-color: $white;
     box-sizing: border-box;
+    right: 30px;
+    bottom: 15px;
+}
+
+.recipe-card-bookmark-saved {
+    background-color: #b3b3b3;
 }
 
 .recipe-card-bookmark:hover {

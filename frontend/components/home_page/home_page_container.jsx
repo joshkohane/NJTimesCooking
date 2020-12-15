@@ -1,6 +1,7 @@
 import HomePage from './home_page';
 import { connect } from 'react-redux';
 import { fetchEveryRecipe, fetchOneRecipe } from '../../actions/recipe_actions';
+import { saveThisRecipe, deleteThisSave } from '../../actions/save_actions';
 import { selectSplashRecipe, selectSuggested, selectLoved } from '../../reducers/selectors';
 import { closeModal } from '../../actions/modal_actions';
 
@@ -18,7 +19,9 @@ const mapSTP = state => {
 const mapDTP = dispatch => ({
     fetchEveryRecipe: () => dispatch(fetchEveryRecipe()),
     fetchOneRecipe: (recipeId) => dispatch(fetchOneRecipe(recipeId)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    saveThisRecipe: (recipeId) => dispatch(saveThisRecipe(recipeId)),
+    deleteThisSave: (recipeId) => dispatch(deleteThisSave(recipeId)),
 })
 
 export default connect(mapSTP, mapDTP)(HomePage);

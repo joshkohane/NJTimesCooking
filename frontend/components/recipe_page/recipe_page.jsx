@@ -4,12 +4,27 @@ import Directions from './directions';
 import IngredientLists from './ingredient_lists';
 
 class RecipePage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleSave = this.handleSave.bind(this)
+    }
+    
     componentDidMount() {
         // debugger;
         this.props.fetchOneRecipe(this.props.match.params.recipeId)
         const recipe = this.props.recipe
         const list = this.props.ingredientLists
         // debugger;
+    }
+
+    handleSave(recipe) {
+        // e.stopPropagation();
+        // debugger;
+        if (recipe.saveId) {
+            this.props.deleteThisSave(recipe.saveId)
+        } else {
+            this.props.saveThisRecipe(recipe.id)
+        }
     }
     
     render() {
@@ -31,6 +46,15 @@ class RecipePage extends React.Component {
                     <div className="spacer"></div>
                     <p className="recipe-page-title" >{recipe.title}</p>
                     <p className="recipe-page-author" >By <span className="recipe-page-author-name" >{recipe.authorFirstName} {recipe.authorLastName}</span></p>
+                    <div className="outer-bookmark">
+                        <button className="save-recipe-btn recipe-page-btn" onClick={() => this.handleSave(recipe)} >
+                            <div className="splash-outer-bookmark bookmark-outer-recipe">
+                                {/* {splashRecipe.saveId ? "splash-bookmark bookmark-recipe splash-bookmark-saved" : "splash-bookmark bookmark-recipe"} */}
+                                <div className={recipe.saveId ? "splash-bookmark bookmark-recipe bookmark-recipe-saved" : "splash-bookmark bookmark-recipe"}></div>
+                            </div>
+                            <p className="splash-bookmark-text" >{recipe.saveId ? "Saved" : "Save To Recipe Box"}</p>
+                        </button>
+                    </div>
                     <div className="recipe-page-label" >
                         <p className="recipe-page-subheader" >Yield</p>
                         <p className="recipe-page-yield" >{recipe.yield}</p>
@@ -43,12 +67,6 @@ class RecipePage extends React.Component {
                         <p className="recipe-page-description" >{recipe.description}</p>
                         <img className="recipe-page-photo" src={recipe.photoUrl} alt="" />
                     </div>
-                    <button className="save-recipe-btn recipe-page-btn">
-                        <div className="splash-outer-bookmark bookmark-outer-recipe">
-                            <div className="splash-bookmark bookmark-recipe"></div>
-                        </div>
-                        Save To Recipe Box
-                    </button>
                 </div>
                 <div className="directions-outer-container">
                     <div className="ingredients-container">

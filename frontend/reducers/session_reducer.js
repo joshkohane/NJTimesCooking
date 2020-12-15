@@ -9,6 +9,7 @@ export default (oldState = _nullSession, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             newState.currentUser = action.user.id;
+            // newState.currentUser = parseInt(Object.keys(action.user.user)[0]);
             return newState;
         case LOGOUT_CURRENT_USER:
             return _nullSession;

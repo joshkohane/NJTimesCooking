@@ -2,6 +2,7 @@ import RecipePage from './recipe_page';
 import { connect } from 'react-redux';
 import { fetchOneRecipe } from '../../actions/recipe_actions';
 import { openModal } from '../../actions/modal_actions';
+import { saveThisRecipe, deleteThisSave } from '../../actions/save_actions';
 
 const mapSTP = (state, ownProps) => {
     // debugger;
@@ -17,6 +18,8 @@ const mapSTP = (state, ownProps) => {
 const mapDTP = dispatch => ({
     fetchOneRecipe: (recipeId) => dispatch(fetchOneRecipe(recipeId)),
     openModal: (modal) => dispatch(openModal(modal)),
+    saveThisRecipe: (recipeId) => dispatch(saveThisRecipe(recipeId)),
+    deleteThisSave: (recipeId) => dispatch(deleteThisSave(recipeId)),
 })
 
 export default connect(mapSTP, mapDTP)(RecipePage);

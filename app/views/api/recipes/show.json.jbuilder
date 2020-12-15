@@ -4,6 +4,13 @@ json.recipe do
         json.photoUrl url_for(@recipe.photo)
         json.author_first_name @recipe.author.first_name 
         json.author_last_name @recipe.author.last_name
+        if current_user
+            @recipe.saves.each do |save|
+                if save.user_id === current_user.id
+                    json.save_id save.id
+                end
+            end 
+        end
     end
 end
 
@@ -26,6 +33,16 @@ json.ingredient_lists do
             end
         end
     end
+end
+
+if current_user
+    @recipe.saves.each do |save|
+        if save.user_id === current_user.id
+            json.set! save.recipe_id do
+                json.extract! save, :id, :recipe_id, :user_id
+            end
+        end
+    end 
 end
 
 # json.ingredient_lists do 
