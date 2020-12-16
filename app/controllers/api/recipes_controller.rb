@@ -14,7 +14,7 @@ class Api::RecipesController < ApplicationController
     end
 
     def search
-        @recipes = Recipe.where("title like ?", "%#{params[:query]}%")
+        @recipes = Recipe.where("lower(title) like lower(?)", "%#{params[:query]}%")
         render :search
     end
 end

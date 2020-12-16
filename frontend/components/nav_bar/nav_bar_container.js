@@ -4,10 +4,10 @@ import { logout } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { search, clearSearch } from '../../actions/recipe_actions';
 
-const mapSTP = state => ({
+const mapSTP = (state, ownProps) => ({
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser),
-    searches: state.entities.search
+    searches: state.entities.search,
 })
 
 const mapDTP = dispatch => ({
