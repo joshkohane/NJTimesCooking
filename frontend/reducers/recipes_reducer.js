@@ -19,7 +19,8 @@ export default (oldState = {}, action) => {
             delete newState[action.save.recipeId].saveId
             return newState;
         case RECEIVE_CURRENT_USER:
-            if (Object.values(action.user.saves > 0)) {
+            // debugger;
+            if (action.user.saves) {
                 Object.values(action.user.saves).map(save => {
                     newState[save.recipeId].saveId = save.id;
                 })
