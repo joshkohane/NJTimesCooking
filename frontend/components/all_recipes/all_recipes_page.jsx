@@ -3,7 +3,8 @@ import RecipeCard from '../home_page/recipe_card';
 
 class AllRecipesPage extends React.Component {
     componentDidMount() {
-        this.props.fetchEveryRecipe()
+        this.props.fetchEveryRecipe();
+        this.props.clearSearch();
     }
 
     render() {

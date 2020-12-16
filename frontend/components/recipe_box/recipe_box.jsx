@@ -4,8 +4,9 @@ import { Redirect } from 'react-router-dom';
 
 class RecipeBox extends React.Component {
     componentDidMount() {
-        this.props.fetchEveryRecipe()
-        this.props.fetchThisUser(parseInt(this.props.match.params.userId))
+        this.props.fetchEveryRecipe();
+        this.props.fetchThisUser(parseInt(this.props.match.params.userId));
+        this.props.clearSearch();
         // debugger;
     }
 
