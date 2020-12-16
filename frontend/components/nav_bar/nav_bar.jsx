@@ -6,12 +6,10 @@ class NavBar extends React.Component {
         super(props);
         this.state = {
             show: false,
-            input: ''
         }
         this.getShow = this.getShow.bind(this);
         this.hideShow = this.hideShow.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
     getShow(e) {
@@ -29,14 +27,8 @@ class NavBar extends React.Component {
         // this.forceUpdate();
     }
 
-    handleChange(e) {
-        this.setState({ input: e.target.value })
-        console.log(this.state.input)
-    }
-
     render() {
         const { currentUser, logout, loggedIn } = this.props;
-        console.log(store.getState())
         return (
             <div className="nav-bar-container">
                 <Link to="/" style={{ textDecoration: 'none' }} >
@@ -49,7 +41,7 @@ class NavBar extends React.Component {
                 <div className="nav-bar-search" >
                     <i className="fas fa-search"></i>
                     <form className="search-form" >
-                        <input onClick={this.getShow} onChange={this.handleChange} type="text" className="search-input" placeholder="What would you like to cook?" />
+                        <input onClick={this.getShow} type="text" className="search-input" placeholder="What would you like to cook?" />
                     </form>
                     <i onClick={this.hideShow} className={this.state.show ? "fas fa-times-circle" : ''}></i>
                 </div>

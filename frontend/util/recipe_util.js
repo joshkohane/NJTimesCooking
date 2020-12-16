@@ -9,3 +9,9 @@ export const fetchRecipe = (recipeId) => (
         url: `/api/recipes/${recipeId}`
     })
 )
+
+export const searchRecipes = (query) => (
+    $.ajax({
+        url: `/api/search/${query}`
+    })
+)

@@ -10,6 +10,7 @@ export default (oldState = {}, action) => {
         case RECEIVE_ALL_RECIPES:
             return action.recipes.recipes;
         case RECEIVE_RECIPE:
+            // debugger;
             return Object.assign({}, oldState, action.recipe.recipe);
         case RECEIVE_SAVE:
             newState[action.save.recipeId].saveId = action.save.id;
@@ -18,9 +19,11 @@ export default (oldState = {}, action) => {
             delete newState[action.save.recipeId].saveId
             return newState;
         case RECEIVE_CURRENT_USER:
-            Object.values(action.user.saves).map(save => {
-                newState[save.recipeId].saveId = save.id;
-            })
+            if (Object.values(action.user.saves > 0)) {
+                Object.values(action.user.saves).map(save => {
+                    newState[save.recipeId].saveId = save.id;
+                })
+            }
             return newState;
         default:
             return oldState;

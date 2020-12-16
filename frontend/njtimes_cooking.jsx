@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import { signup, login, logout } from './actions/session_actions';
-import { fetchAllRecipes, fetchRecipe } from './util/recipe_util';
+import { fetchAllRecipes, fetchRecipe, searchRecipes } from './util/recipe_util';
 import { fetchThisUser } from './actions/user_actions';
 import { saveRecipe, deleteSave } from './util/saves_util';
-import { fetchOneRecipe, fetchEveryRecipe } from './actions/recipe_actions';
+import { fetchOneRecipe, fetchEveryRecipe, search } from './actions/recipe_actions';
 import { saveThisRecipe, deleteThisSave } from './actions/save_actions';
 import { selectSearched } from './reducers/selectors';
 import configureStore from './store/store';
@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.deleteThisSave = deleteThisSave;
     window.fetchThisUser = fetchThisUser;
     window.selectSearched = selectSearched;
+    window.search = search;
+    window.searchRecipes = searchRecipes;
     // 
 
     ReactDOM.render(<Root store={store} />, root)

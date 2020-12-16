@@ -12,4 +12,9 @@ class Api::RecipesController < ApplicationController
             render json: @recipe.errors.full_messages, status: 401
         end
     end
+
+    def search
+        @recipes = Recipe.where("title like ?", "%#{params[:query]}%")
+        render :search
+    end
 end
