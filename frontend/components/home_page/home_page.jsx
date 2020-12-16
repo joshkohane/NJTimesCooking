@@ -98,8 +98,16 @@ class HomePage extends React.Component {
                     </Link>
                     <button className="save-recipe-btn" >
                         <div className="splash-outer-bookmark" onClick={loggedIn ? () => this.handleSave(splashRecipe) : () => openModal('login') }>
-                            <div className={splashRecipe.saveId ? "splash-bookmark splash-bookmark-saved" : "splash-bookmark"} ></div>
-                            <p className="splash-bookmark-text" >{splashRecipe.saveId ? "Saved" : "Save To Recipe Box"}</p>
+                            {loggedIn ? 
+                                <div className={splashRecipe.saveId ? "splash-bookmark splash-bookmark-saved" : "splash-bookmark"} ></div>
+                            :
+                                <div className="splash-bookmark" ></div>
+                            }
+                            {loggedIn ? 
+                                <p className="splash-bookmark-text" >{splashRecipe.saveId ? "Saved" : "Save To Recipe Box"}</p>
+                            :
+                                <p className="splash-bookmark-text" >Save To Recipe Box</p>
+                            }
                         </div>
                     { loggedIn ? '' :
                         <div className="logged-in-pop-up" >

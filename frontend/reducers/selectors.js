@@ -37,3 +37,13 @@ export const selectSaved = state => {
     })
     return saved;
 }
+
+export const selectSearched = (state, keyword) => {
+    let searched = [];
+    Object.values(state.entities.recipes).forEach(recipe => {
+        if (recipe.title.includes(keyword) || recipe.title.toUpperCase().includes(keyword) || recipe.title.toLowerCase().includes(keyword)) {
+            searched.push(recipe)
+        }
+    })
+    return searched;
+}

@@ -58,7 +58,11 @@ class RecipeCard extends React.Component {
                             </div>
                         </div>
                     }
-                    <div className={recipe.saveId ? "recipe-card-bookmark recipe-card-bookmark-saved" : "recipe-card-bookmark"} ></div>
+                    {loggedIn ?
+                        <div className={recipe.saveId ? "recipe-card-bookmark recipe-card-bookmark-saved" : "recipe-card-bookmark"} ></div>
+                    :
+                        <div className="recipe-card-bookmark" ></div>
+                    }
                     </div>
                 </div>
                 <div className={this.state.className} onClick={this.toggleModal} >

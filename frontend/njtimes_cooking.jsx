@@ -7,6 +7,7 @@ import { fetchThisUser } from './actions/user_actions';
 import { saveRecipe, deleteSave } from './util/saves_util';
 import { fetchOneRecipe, fetchEveryRecipe } from './actions/recipe_actions';
 import { saveThisRecipe, deleteThisSave } from './actions/save_actions';
+import { selectSearched } from './reducers/selectors';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.saveThisRecipe = saveThisRecipe;
     window.deleteThisSave = deleteThisSave;
     window.fetchThisUser = fetchThisUser;
+    window.selectSearched = selectSearched;
     // 
 
     ReactDOM.render(<Root store={store} />, root)

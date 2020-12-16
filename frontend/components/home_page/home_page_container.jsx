@@ -14,6 +14,7 @@ const mapSTP = state => {
         splashRecipe: selectSplashRecipe(state),
         isModalOpen: Boolean(state.ui.modal),
         loggedIn: Boolean(state.session.currentUser),
+        selectSearched: selectSearched(state, ''),
     }
 }
 
