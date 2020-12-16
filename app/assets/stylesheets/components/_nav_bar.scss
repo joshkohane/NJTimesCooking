@@ -130,13 +130,33 @@
             color: $btn-red;
             height: 39px;
             cursor: pointer;
+            
         }
-
+        
+        
         .recipe-box-text:hover {
             background-color: $main-light-gray;
             border-bottom: 1px solid $lighter-gray;
         }
-
+        
+        .recipe-box-show {
+            background-color: $main-light-gray;
+            border-right: 1px solid $lighter-gray;
+            border-top: 1px solid $lighter-gray;
+            border-left: 1px solid $lighter-gray;
+            border-bottom: 1px solid $main-light-gray;
+            padding: 15px 18px 0px 17px;
+            text-transform: uppercase;
+            font-family: $sans-serif-bold;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .5px;
+            color: $btn-red;
+            height: 39px;
+            cursor: pointer;
+        }
+        
+        
         .recipe-box-login-container:hover {
             background-color: $main-light-gray;
             border-bottom: none;

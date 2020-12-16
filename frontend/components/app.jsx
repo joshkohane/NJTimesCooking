@@ -9,6 +9,7 @@ import HomePageContainer from './home_page/home_page_container';
 import Footer from './static_elements/footer';
 import RecipePageContainer from './recipe_page/recipe_page_container';
 import RecipeBoxContainer from './recipe_box/recipe_box_container';
+import AllRecipesPageContainer from './all_recipes/all_recipes_page_container';
 
 
 const App = () => (
@@ -16,8 +17,9 @@ const App = () => (
         <Modal />
         <NavBarContainer />
         <Switch>
-            <Route path={`/api/recipes/:recipeId`} component={RecipePageContainer} />
+            <Route exact path={`/api/recipes/:recipeId`} component={RecipePageContainer} />
             <Route path={`/api/user/:userId/recipeBox`} component={RecipeBoxContainer} />
+            <Route path={`/api/recipes/`} component={AllRecipesPageContainer} />
             <Route exact path='/' component={HomePageContainer} />
             <Redirect to='/'/>
         </Switch>

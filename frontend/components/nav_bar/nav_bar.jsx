@@ -6,10 +6,12 @@ class NavBar extends React.Component {
         super(props);
         this.state = {
             show: false,
+            className: 'recipe-box-text'
         }
         this.getShow = this.getShow.bind(this);
         this.hideShow = this.hideShow.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        // this.toggleClass = this.toggleClass.bind(this);
     }
 
     getShow(e) {
@@ -33,8 +35,14 @@ class NavBar extends React.Component {
         }
     }
 
+    // toggleClass() {
+    //     let newClass = this.state.className === 'recipe-box-text' ? "recipe-box-show" : "recipe-box-text"
+    //     this.setState({className: newClass})
+    // }
+
     render() {
         const { currentUser, logout, loggedIn, searches } = this.props;
+        // debugger;
         return (
             <div className="nav-bar-container">
                 <Link to="/" style={{ textDecoration: 'none' }} >
@@ -70,7 +78,9 @@ class NavBar extends React.Component {
                         <div className="recipe-spacer"></div>
                         {loggedIn ? 
                             <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
+                                {/* <p className={location.hash.includes('recipeBox') ? "recipe-box-show" : "recipe-box-text"} >Your Recipe Box</p> */}
                                 <p className="recipe-box-text" >Your Recipe Box</p>
+                                {/* <p className={this.state.className} onClick={this.toggleClass} >Your Recipe Box</p> */}
                             </Link>
                         :
                             <div className="recipe-box-login-container" >

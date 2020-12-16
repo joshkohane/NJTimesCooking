@@ -17,14 +17,14 @@
   right: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.55);
-  z-index: 10;
+  z-index: 101;
   animation: fade-in .5s ease-in-out;
 }
 
 .modal-save-child {
   position: absolute;
   display: flex;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 480px;
