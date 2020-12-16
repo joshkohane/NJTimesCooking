@@ -19,8 +19,16 @@ class RecipePage extends React.Component {
         // debugger;
         this.props.fetchOneRecipe(this.props.match.params.recipeId)
         this.props.clearSearch();
-        const recipe = this.props.recipe
-        const list = this.props.ingredientLists
+        // const recipe = this.props.recipe
+        // const list = this.props.ingredientLists
+        // debugger;
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.recipeId !== prevProps.match.params.recipeId) {
+            this.props.fetchOneRecipe(this.props.match.params.recipeId)
+            this.props.clearSearch();
+        }
         // debugger;
     }
 

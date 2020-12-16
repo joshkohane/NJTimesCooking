@@ -32,8 +32,11 @@ class NavBar extends React.Component {
     handleChange(e) {
         let input = e.target.value;
         this.setState({inputValue: input})
+        // debugger;
         if (input === '') {
             this.props.clearSearch();
+        } else if (location.hash.includes('search')) {
+
         } else {
             Object.values(this.props.search(input));
         }

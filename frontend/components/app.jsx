@@ -18,7 +18,7 @@ const App = () => (
         <Modal />
         <NavBarContainer />
         <Switch>
-            <Route exact path={`/api/recipes/:recipeId`} component={RecipePageContainer} />
+            <Route path={`/api/recipes/:recipeId`} component={RecipePageContainer} />
             <Route path={`/api/user/:userId/recipeBox`} component={RecipeBoxContainer} />
             <Route path={`/api/search/:query`} component={SearchRecipesContainer} />
             <Route path={`/api/recipes/`} component={AllRecipesPageContainer} />
