@@ -1,4 +1,5 @@
 import { RECEIVE_RECIPE, RECEIVE_ALL_RECIPES } from '../actions/recipe_actions';
+import { RECEIVE_SEARCH, CLEAR_SEARCH } from '../actions/recipe_actions';
 
 export default (oldState = {}, action) => {
     Object.freeze(oldState);

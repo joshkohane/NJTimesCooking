@@ -18,8 +18,13 @@ export default (oldState = {}, action) => {
         case DELETE_A_SAVE:
             delete newState[action.save.recipeId].saveId
             return newState;
-        // case RECEIVE_SEARCH:
-        //     return action.recipes;
+        case RECEIVE_SEARCH:
+            Object.values(action.recipes).map(recipe => {
+                // if (!newState[recipe.id]) {
+                    newState[recipe.id] = recipe;
+                // }
+            });
+            return newState;
         case RECEIVE_CURRENT_USER:
             // debugger;
             if (action.user.saves) {

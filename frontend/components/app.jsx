@@ -10,6 +10,7 @@ import Footer from './static_elements/footer';
 import RecipePageContainer from './recipe_page/recipe_page_container';
 import RecipeBoxContainer from './recipe_box/recipe_box_container';
 import AllRecipesPageContainer from './all_recipes/all_recipes_page_container';
+import SearchRecipesContainer from './search_recipes/search_recipes_container';
 
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
         <Switch>
             <Route exact path={`/api/recipes/:recipeId`} component={RecipePageContainer} />
             <Route path={`/api/user/:userId/recipeBox`} component={RecipeBoxContainer} />
+            <Route path={`/api/search/:query`} component={SearchRecipesContainer} />
             <Route path={`/api/recipes/`} component={AllRecipesPageContainer} />
             <Route exact path='/' component={HomePageContainer} />
             <Redirect to='/'/>

@@ -1,16 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link, withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             show: false,
-            className: 'recipe-box-text'
+            className: 'recipe-box-text',
+            inputValue: '',
+            redirect: false,
         }
         this.getShow = this.getShow.bind(this);
         this.hideShow = this.hideShow.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         // this.toggleClass = this.toggleClass.bind(this);
     }
 
@@ -23,16 +26,29 @@ class NavBar extends React.Component {
         e.preventDefault();
         this.setState({ show: false })
         this.props.clearSearch();
-        e.target.value = '';
+        this.setState({inputValue: ''});
     }
 
     handleChange(e) {
         let input = e.target.value;
+        this.setState({inputValue: input})
         if (input === '') {
             this.props.clearSearch();
         } else {
             Object.values(this.props.search(input));
         }
+    }
+
+    handleSubmit(e) {
+        // e.preventDefault();
+        // this.hideShow();
+        // debugger;
+        // let result = !this.state.redirect
+        this.props.history.push(`/api/search/${this.state.inputValue}`)
+        this.setState({inputValue: ""})
+        this.props.clearSearch();
+        // this.setState({ redirect: result });
+        // debugger;
     }
 
     // toggleClass() {
@@ -42,6 +58,10 @@ class NavBar extends React.Component {
 
     render() {
         const { currentUser, logout, loggedIn, searches } = this.props;
+        // <Redirect to="/recipes/all"></Redirect>
+        // if (this.state.redirect) {
+        //     <Redirect to="/recipes/all"></Redirect> 
+        // } 
         // debugger;
         return (
             <div className="nav-bar-container">
@@ -54,11 +74,12 @@ class NavBar extends React.Component {
                 </Link>
                 <div className="nav-bar-search" >
                     <i className="fas fa-search"></i>
-                    <form className="search-form" >
-                        <input onClick={this.getShow} onChange={this.handleChange} type="text" className="search-input" placeholder="What would you like to cook?" />
+                    <form className="search-form" onSubmit={this.handleSubmit} >
+                        <input onClick={this.getShow} onChange={this.handleChange} value={this.state.inputValue} type="text" className="search-input" placeholder="What would you like to cook?" />
                     </form>
                     <i onClick={this.hideShow} className={this.state.show ? "fas fa-times-circle" : ''}></i>
-                    {!searches ? '' :
+                    {!searches || location.hash.includes('search') ? 
+                        '' :
                         <ul className="search-results" >
                             {Object.values(searches).map((recipe, idx) => (
                                 <li key={idx} className="search-results-wrapper" >
@@ -103,4 +124,4 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar
+export default withRouter(NavBar);
