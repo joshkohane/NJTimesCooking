@@ -19,6 +19,7 @@ class RecipePage extends React.Component {
         // debugger;
         this.props.fetchOneRecipe(this.props.match.params.recipeId)
         this.props.clearSearch();
+        window.scrollTo(0, 0);
         // const recipe = this.props.recipe
         // const list = this.props.ingredientLists
         // debugger;
@@ -55,7 +56,7 @@ class RecipePage extends React.Component {
     render() {
         let { recipe, ingredients, ingredientLists, author, loggedIn, openModal, isModalOpen } = this.props
         // debugger;
-        if (ingredientLists.length === 0 || !recipe) return null;
+        if (ingredientLists.length === 0 || !recipe) return (<div className="no-search-results"></div>);
         { !loggedIn && !isModalOpen ? this.props.openModal('signup') : '' }
         // debugger;
         //  || (recipe.id && recipe.id.toString() !== this.props.match.params.recipeId)

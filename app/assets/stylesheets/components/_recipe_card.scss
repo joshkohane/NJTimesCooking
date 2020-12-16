@@ -348,3 +348,23 @@
         z-index: 10;
     }
 }
+
+.no-search-results {
+    height: 500px;
+    background-color: $main-light-gray;
+}
+
+.no-search-results-heading {
+    padding-top: 200px;
+    font-family: $sans-serif-bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+.no-search-results-subheading {
+    padding-top: 20px;
+    font-family: $sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: $gray;
+}

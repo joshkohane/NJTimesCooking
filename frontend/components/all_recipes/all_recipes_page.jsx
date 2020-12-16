@@ -5,12 +5,13 @@ class AllRecipesPage extends React.Component {
     componentDidMount() {
         this.props.fetchEveryRecipe();
         this.props.clearSearch();
+        window.scrollTo(0, 0);
     }
 
     render() {
         let { recipes, saveThisRecipe, deleteThisSave, loggedIn, openModal, isModalOpen } = this.props
         { !loggedIn && !isModalOpen ? openModal('signup') : '' }
-        if (Object.keys(recipes).length === 0) return null;
+        if (Object.keys(recipes).length === 0) return (<div className="no-search-results"></div>);
         
         return (
             <div className="recipe-box-outer-container" >

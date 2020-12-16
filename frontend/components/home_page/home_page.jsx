@@ -27,6 +27,7 @@ class HomePage extends React.Component {
         this.props.fetchEveryRecipe();
         this.props.closeModal();
         this.props.clearSearch();
+        window.scrollTo(0, 0);
     }
 
     moveTopCarouselLeft(e) {
@@ -79,7 +80,7 @@ class HomePage extends React.Component {
 
     render() {
         let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, openModal, isModalOpen, saveThisRecipe, deleteThisSave, loggedIn } = this.props
-        if (!splashRecipe) return null;
+        if (!splashRecipe) return (<div className="no-search-results"></div>);
         let topLeft = this.state.topLeft === 0 ? 'none' : '';
         let topRight = this.state.topIdx === 8 ? 'none' : '';
         let bottomLeft = this.state.bottomLeft === 0 ? 'none' : '';

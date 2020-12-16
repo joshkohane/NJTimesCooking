@@ -7,6 +7,7 @@ class RecipeBox extends React.Component {
         this.props.fetchEveryRecipe();
         this.props.fetchThisUser(parseInt(this.props.match.params.userId));
         this.props.clearSearch();
+        window.scrollTo(0, 0);
         // debugger;
     }
 
@@ -14,7 +15,7 @@ class RecipeBox extends React.Component {
         // debugger;
         let { saves, recipes, saveThisRecipe, deleteThisSave, loggedIn, openModal, isModalOpen } = this.props
         { !loggedIn && !isModalOpen ? openModal('signup') : '' }
-        if (Object.keys(recipes).length === 0) return null;
+        if (Object.keys(recipes).length === 0) return <div className="no-search-results"></div>;
         // console.log(recipes)
         // debugger;
 

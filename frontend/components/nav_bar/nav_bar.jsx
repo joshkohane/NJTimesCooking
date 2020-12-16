@@ -8,13 +8,20 @@ class NavBar extends React.Component {
             show: false,
             className: 'recipe-box-text',
             inputValue: '',
-            redirect: false,
         }
         this.getShow = this.getShow.bind(this);
         this.hideShow = this.hideShow.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.toggleClass = this.toggleClass.bind(this);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            this.props.clearSearch();
+            this.setState({ inputValue: '' });
+        }
+        // debugger;
     }
 
     getShow(e) {
@@ -35,8 +42,6 @@ class NavBar extends React.Component {
         // debugger;
         if (input === '') {
             this.props.clearSearch();
-        } else if (location.hash.includes('search')) {
-
         } else {
             Object.values(this.props.search(input));
         }
@@ -45,9 +50,13 @@ class NavBar extends React.Component {
     handleSubmit(e) {
         // e.preventDefault();
         // this.hideShow();
+        let thisSearch = [];
+        Object.values(this.props.searches).forEach((search => thisSearch.push(search)));
         // debugger;
         // let result = !this.state.redirect
-        this.props.history.push(`/api/search/${this.state.inputValue}`)
+        this.props.history.push({pathname: `/api/search/${this.state.inputValue}`,
+            state: {theseSearches: Object.freeze(thisSearch), saveThisRecipe: this.props.saveThisRecipe, deleteThisSave: this.props.deleteThisSave, loggedIn: this.props.loggedIn, openModal: this.props.openModal}
+        })
         this.setState({inputValue: ""})
         this.props.clearSearch();
         // this.setState({ redirect: result });
@@ -81,7 +90,7 @@ class NavBar extends React.Component {
                         <input onClick={this.getShow} onChange={this.handleChange} value={this.state.inputValue} type="text" className="search-input" placeholder="What would you like to cook?" />
                     </form>
                     <i onClick={this.hideShow} className={this.state.show ? "fas fa-times-circle" : ''}></i>
-                    {!searches || location.hash.includes('search') ? 
+                    {!searches ? 
                         '' :
                         <ul className="search-results" >
                             {Object.values(searches).map((recipe, idx) => (
@@ -102,7 +111,7 @@ class NavBar extends React.Component {
                         <div className="recipe-spacer"></div>
                         {loggedIn ? 
                             <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
-                                <p className={location.hash.includes('recipeBox') ? "recipe-box-show" : "recipe-box-text"} >Your Recipe Box</p>
+                                <p className={this.props.location.pathname.includes('recipeBox') ? "recipe-box-show" : "recipe-box-text"} >Your Recipe Box</p>
                                 {/* <p className="recipe-box-text" >Your Recipe Box</p> */}
                                 {/* <p className={this.state.className} onClick={this.toggleClass} >Your Recipe Box</p> */}
                             </Link>
@@ -127,4 +136,4 @@ class NavBar extends React.Component {
     }
 }
 
-export default withRouter(NavBar);
+export default NavBar;
