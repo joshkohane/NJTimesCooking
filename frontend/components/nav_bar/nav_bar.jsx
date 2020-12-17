@@ -54,9 +54,11 @@ class NavBar extends React.Component {
         Object.values(this.props.searches).forEach((search => thisSearch.push(search)));
         // debugger;
         // let result = !this.state.redirect
+        localStorage.setItem('theseSearches', JSON.stringify(thisSearch))
         this.props.history.push({pathname: `/api/search/${this.state.inputValue}`,
             state: {theseSearches: Object.freeze(thisSearch), saveThisRecipe: this.props.saveThisRecipe, deleteThisSave: this.props.deleteThisSave, loggedIn: this.props.loggedIn, openModal: this.props.openModal}
         })
+        // console.log('after search recipe')
         this.setState({inputValue: ""})
         this.props.clearSearch();
         // this.setState({ redirect: result });
