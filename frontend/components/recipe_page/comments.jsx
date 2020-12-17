@@ -37,22 +37,24 @@ class Comments extends React.Component {
         return (
             <div>
                 <h1 className="comments-header" >Cooking Notes</h1>
-                {this.state.show ? 
-                    <form className="comments-form-open" >
-                        <div className="comments-form-inner-container" >
-                            <textarea className="comments-open-input" onChange={this.handleChange} value={this.state.input} placeholder="Share your notes with other cooks." ></textarea>
-                            <div className="comments-form-btns" >
-                                <div className="comments-form-cancel" onClick={this.hideShow} >Cancel</div>
-                                <div className={this.state.input.length >= 5 ? "comments-form-note" : "comments-form-note-no"} 
-                                    onClick={this.state.input.length >= 5 ? this.handleSubmit : () => {} } >Add Note</div>
+                <div className="comments-form-container" >
+                    {this.state.show ? 
+                        <form className="comments-form-open" >
+                            <div className="comments-form-inner-container" >
+                                <textarea className="comments-open-input" onChange={this.handleChange} value={this.state.input} placeholder="Share your notes with other cooks." ></textarea>
+                                <div className="comments-form-btns" >
+                                    <div className="comments-form-cancel" onClick={this.hideShow} >Cancel</div>
+                                    <div className={this.state.input.length >= 5 ? "comments-form-note" : "comments-form-note-no"} 
+                                        onClick={this.state.input.length >= 5 ? this.handleSubmit : () => {} } >Add Note</div>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                : 
-                    <form className="comments-form" onClick={this.getShow} >
-                        <input  className="comments-input" type="text" placeholder="Share your notes with other cooks." />
-                    </form>
-                }
+                        </form>
+                    : 
+                        <form className="comments-form" onClick={this.getShow} >
+                            <input  className="comments-input" type="text" placeholder="Share your notes with other cooks." />
+                        </form>
+                    }
+                </div>
                 <div className="comments-section-heading-container">
                     <div className="comments-section-heading">
                         <h1 className="comments-section-heading-title" >All <span className="comments-section-heading-number" >{comments.length}</span></h1>
