@@ -35,6 +35,14 @@ json.ingredient_lists do
     end
 end
 
+json.comments do
+    @recipe.comments.each do |comment|
+        json.set! comment.id do
+            json.extract! @comment, :recipe_id, :author_id, :text
+        end
+    end
+end
+
 if current_user
     @recipe.saves.each do |save|
         if save.user_id === current_user.id
