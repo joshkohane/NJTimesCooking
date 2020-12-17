@@ -6,15 +6,12 @@ import { selectSplashRecipe, selectSuggested, selectLoved } from '../../reducers
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { clearSearch } from '../../actions/recipe_actions';
 
-const mapSTP = state => {
-    // debugger;
-    return {
-        suggestedRecipes: selectSuggested(state),
-        lovedRecipes: selectLoved(state),
-        splashRecipe: selectSplashRecipe(state),
-        loggedIn: Boolean(state.session.currentUser),
-    }
-}
+const mapSTP = state => ({
+    suggestedRecipes: selectSuggested(state),
+    lovedRecipes: selectLoved(state),
+    splashRecipe: selectSplashRecipe(state),
+    loggedIn: Boolean(state.session.currentUser),
+})
 
 const mapDTP = dispatch => ({
     fetchEveryRecipe: () => dispatch(fetchEveryRecipe()),
