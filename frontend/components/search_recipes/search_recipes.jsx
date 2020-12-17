@@ -22,9 +22,9 @@ class SearchRecipes extends React.Component {
         }
     }
 
-    componentWillUnmount() {
-        localStorage.removeItem('theseSearches');
-    }
+    // componentWillUnmount() {
+    //     localStorage.removeItem('theseSearches');
+    // }
 
     render() {
         let { saveThisRecipe, deleteThisSave, loggedIn, openModal } = this.props

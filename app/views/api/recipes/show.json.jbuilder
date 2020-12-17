@@ -39,7 +39,8 @@ if @recipe.comments
     json.comments do
         @recipe.comments.each do |comment|
             json.set! comment.id do
-                json.extract! comment, :recipe_id, :author_id, :text
+                json.extract! comment, :id, :recipe_id, :author_id, :text, :created_at
+                json.author_first_name comment.author.first_name
             end
         end
     end

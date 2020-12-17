@@ -7,13 +7,18 @@ export default (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_COMMENT:
-            newState[action.comment.id] = action.comment
-            return newState
+            return Object.assign({}, newState, action.comment.comment);
         case DELETE_COMMENT:
-            delete newState[action.comment.id]
+            // debugger;
+            delete newState[parseInt(Object.keys(action.comment.comment)[0])]
             return newState;
         case RECEIVE_RECIPE:
-            return Object.assign({}, newState, action.recipe.comments);
+            // debugger;
+            if (action.recipe.comments) {
+                return action.recipe.comments;
+            } else {
+                return {};
+            }
         default:
             return oldState;
     }

@@ -12,6 +12,7 @@ const mapSTP = (state, ownProps) => ({
     loggedIn: Boolean(state.session.currentUser),
     isModalOpen: Boolean(state.ui.modal),
     comments: Object.values(state.entities.comments),
+    currentUser: state.session.currentUser
 })
 
 const mapDTP = dispatch => ({
