@@ -6,14 +6,12 @@ import { fetchThisUser } from '../../actions/user_actions';
 import { fetchOneRecipe, fetchEveryRecipe } from '../../actions/recipe_actions';
 import { clearSearch } from '../../actions/recipe_actions';
 
-const mapSTP = (state, ownProps) => {
-    // debugger;
-    return {
+const mapSTP = state => ({
     saves: Object.values(state.entities.saves),
     recipes: state.entities.recipes,
     loggedIn: Boolean(state.session.currentUser),
     isModalOpen: Boolean(state.ui.modal)
-}}
+})
 
 const mapDTP = dispatch => ({
     saveThisRecipe: (recipeId) => dispatch(saveThisRecipe(recipeId)),

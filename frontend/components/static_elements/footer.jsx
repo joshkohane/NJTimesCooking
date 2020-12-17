@@ -25,19 +25,17 @@ const Footer = () => {
                 </div>
             </div>
             <div className="home-footer" >
-                {/* <div className="home-footer-container"> */}
-                    <div className="about-us">
-                        <h1 className="footer-title">About us</h1>
-                        <p className="home-about-text" >NJT Cooking is a New Jersey themed clone of NYT Cooking from the New York Times. It provides any NJ based foods you could want and more. This site was created by Josh Kohane, a software developer based in New Jersey. Recipes lovingly borrowed from the real NYTimes Cooking.</p>
-                    </div>
-                    <div className="learn-more">
-                        <h1 className="footer-title" >Learn More</h1>
-                        <ul className="home-learn-text" >
-                            <a target="_blank" href="https://cooking.nytimes.com/" className="footer-links" >Original recipes</a>
-                            <a target="_blank" href="https://www.bonappetit.com/" className="footer-links" >Additional recipes</a>
-                        </ul>
-                    </div>
-                {/* </div> */}
+                <div className="about-us">
+                    <h1 className="footer-title">About us</h1>
+                    <p className="home-about-text" >NJT Cooking is a New Jersey themed clone of NYT Cooking from the New York Times. It provides any NJ based foods you could want and more. This site was created by Josh Kohane, a software developer based in New Jersey. Recipes lovingly borrowed from the real NYTimes Cooking.</p>
+                </div>
+                <div className="learn-more">
+                    <h1 className="footer-title" >Learn More</h1>
+                    <ul className="home-learn-text" >
+                        <a target="_blank" href="https://cooking.nytimes.com/" className="footer-links" >Original recipes</a>
+                        <a target="_blank" href="https://www.bonappetit.com/" className="footer-links" >Additional recipes</a>
+                    </ul>
+                </div>
             </div>
         </div>
     )

@@ -1,8 +1,6 @@
 import React from 'react'
-import { openModal } from '../../actions/modal_actions';
 import Directions from './directions';
 import IngredientLists from './ingredient_lists';
-import { Link } from 'react-router-dom';
 import Comments from './comments';
 
 class RecipePage extends React.Component {
@@ -48,9 +46,9 @@ class RecipePage extends React.Component {
     }
     
     render() {
-        let { recipe, ingredients, ingredientLists, author, loggedIn, openModal, isModalOpen, comments, addThisComment, deleteThisComment } = this.props
+        let { recipe, ingredientLists, loggedIn, openModal, isModalOpen, comments, addThisComment, deleteThisComment } = this.props
         if (ingredientLists.length === 0 || !recipe) return (<div className="no-search-results"></div>);
-        { !loggedIn && !isModalOpen ? this.props.openModal('signup') : '' }
+        { !loggedIn && !isModalOpen ? openModal('signup') : '' }
 
         return (
             <div className="recipe-page-outer-container" >
@@ -107,7 +105,7 @@ class RecipePage extends React.Component {
                             </div>
                         : ''}
                         <div className="comments-container" >
-                            <Comments comments={comments} addThisComment={addThisComment} deleteComment={deleteComment} />
+                            <Comments comments={comments} addThisComment={addThisComment} deleteThisComment={deleteThisComment} />
                         </div>
                     </div>
                 </div>

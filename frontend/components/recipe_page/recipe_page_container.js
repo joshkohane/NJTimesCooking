@@ -6,17 +6,13 @@ import { saveThisRecipe, deleteThisSave } from '../../actions/save_actions';
 import { clearSearch } from '../../actions/recipe_actions';
 import { addThisComment, deleteThisComment } from '../../actions/comment_actions';
 
-const mapSTP = (state, ownProps) => {
-    // debugger;
-    return {
+const mapSTP = (state, ownProps) => ({
     recipe: state.entities.recipes[ownProps.match.params.recipeId],
-    // ingredients: state.entities.ingredients,
     ingredientLists: Object.values(state.entities.ingredientLists),
     loggedIn: Boolean(state.session.currentUser),
     isModalOpen: Boolean(state.ui.modal),
     comments: Object.values(state.entities.comments),
-    // author: state.entities.author,
-}}
+})
 
 const mapDTP = dispatch => ({
     fetchOneRecipe: (recipeId) => dispatch(fetchOneRecipe(recipeId)),

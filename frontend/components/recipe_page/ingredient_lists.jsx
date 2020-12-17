@@ -2,7 +2,6 @@ import React from 'react';
 import Ingredients from './ingredients';
 
 const IngredientLists = ({ list }) => {
-    // debugger
     return (
         <div>
             {list.header === "Ingredients" ? '' :

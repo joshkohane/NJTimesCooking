@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -37,7 +37,6 @@ class NavBar extends React.Component {
     handleChange(e) {
         let input = e.target.value;
         this.setState({inputValue: input})
-        // debugger;
         if (input === '') {
             this.props.clearSearch();
         } else {
@@ -46,39 +45,24 @@ class NavBar extends React.Component {
     }
 
     handleSubmit(e) {
-        // e.preventDefault();
-        // this.hideShow();
         let thisSearch = [];
         Object.values(this.props.searches).forEach((search => thisSearch.push(search)));
-        // let result = !this.state.redirect
         localStorage.setItem('theseSearches', JSON.stringify(thisSearch))
         this.props.history.push({pathname: `/api/search/${this.state.inputValue}`,
             state: {theseSearches: Object.freeze(thisSearch), saveThisRecipe: this.props.saveThisRecipe, deleteThisSave: this.props.deleteThisSave, loggedIn: this.props.loggedIn, openModal: this.props.openModal}
         })
-        // console.log('after search recipe')
         this.setState({inputValue: ""})
         this.props.clearSearch();
-        // this.setState({ redirect: result });
     }
-
-    // toggleClass() {
-    //     let newClass = this.state.className === 'recipe-box-text' ? "recipe-box-show" : "recipe-box-text"
-    //     this.setState({className: newClass})
-    // }
 
     render() {
         const { currentUser, logout, loggedIn, searches } = this.props;
-        // <Redirect to="/recipes/all"></Redirect>
-        // if (this.state.redirect) {
-        //     <Redirect to="/recipes/all"></Redirect> 
-        // } 
         return (
             <div className="nav-bar-container">
                 <Link to="/" style={{ textDecoration: 'none' }} >
                     <div className="main-logo">
                         <img className="logo-left" src={window.njIMG} alt="The NJTimesCooking Logo" />
                         <p className="logo-right" >Cooking</p>
-                        {/* <img className="logo-right" src={window.logoIMG} alt="The NJTimesCooking Logo" /> */}
                     </div>
                 </Link>
                 <div className="nav-bar-search" >
@@ -93,9 +77,7 @@ class NavBar extends React.Component {
                             {Object.values(searches).map((recipe, idx) => (
                                 <li key={idx} className="search-results-wrapper" >
                                     <Link className="search-results-child" to={`/api/recipes/${recipe.id}`} style={{ textDecoration: 'none', height: '0px' }} key={idx} >
-                                        {/* <p className="search-results-child" > */}
                                         {recipe.title}
-                                        {/* </p> */}
                                     </Link>
                                 </li>
                             )
@@ -109,8 +91,6 @@ class NavBar extends React.Component {
                         {loggedIn ? 
                             <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
                                 <p className={this.props.location.pathname.includes('recipeBox') ? "recipe-box-show" : "recipe-box-text"} >Your Recipe Box</p>
-                                {/* <p className="recipe-box-text" >Your Recipe Box</p> */}
-                                {/* <p className={this.state.className} onClick={this.toggleClass} >Your Recipe Box</p> */}
                             </Link>
                         :
                             <div className="recipe-box-login-container" >

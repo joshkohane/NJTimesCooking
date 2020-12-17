@@ -6,7 +6,7 @@ import { search, clearSearch } from '../../actions/recipe_actions';
 import { withRouter } from 'react-router-dom';
 import { saveThisRecipe, deleteThisSave } from '../../actions/save_actions';
 
-const mapSTP = (state, ownProps) => ({
+const mapSTP = state => ({
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser),
     searches: state.entities.search,
