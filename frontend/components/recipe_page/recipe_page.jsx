@@ -3,6 +3,7 @@ import { openModal } from '../../actions/modal_actions';
 import Directions from './directions';
 import IngredientLists from './ingredient_lists';
 import { Link } from 'react-router-dom';
+import Comments from './comments';
 
 class RecipePage extends React.Component {
     constructor(props) {
@@ -47,7 +48,7 @@ class RecipePage extends React.Component {
     }
     
     render() {
-        let { recipe, ingredients, ingredientLists, author, loggedIn, openModal, isModalOpen } = this.props
+        let { recipe, ingredients, ingredientLists, author, loggedIn, openModal, isModalOpen, comments, addThisComment, deleteThisComment } = this.props
         if (ingredientLists.length === 0 || !recipe) return (<div className="no-search-results"></div>);
         { !loggedIn && !isModalOpen ? this.props.openModal('signup') : '' }
 
@@ -105,6 +106,9 @@ class RecipePage extends React.Component {
                                 <p className="direction-tip" >{recipe.tip}</p>
                             </div>
                         : ''}
+                        <div className="comments-container" >
+                            <Comments comments={comments} addThisComment={addThisComment} deleteComment={deleteComment} />
+                        </div>
                     </div>
                 </div>
             </div>
