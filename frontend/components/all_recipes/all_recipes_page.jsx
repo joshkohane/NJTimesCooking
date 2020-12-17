@@ -20,8 +20,6 @@ class AllRecipesPage extends React.Component {
                     <h2 className="recipe-box-subtitle" >{Object.values(recipes).length} recipes</h2>
                     <div className="recipe-box-recipes-container">
                         {Object.values(recipes).map((recipe, idx) => {
-                            // let saveId = save.recipeId
-                            // let recipe = recipes[saveId]
                             return <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} loggedIn={loggedIn} openModal={openModal} />
                         }
                         )}

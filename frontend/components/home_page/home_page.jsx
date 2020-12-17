@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RecipeCard from './recipe_card';
 import Splash from './splash';
-import SplashContainer from './splash_container'
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -59,8 +58,6 @@ class HomePage extends React.Component {
     }
 
     handleSave(splashRecipe) {
-        // e.stopPropagation();
-        // debugger;
         if (splashRecipe.saveId) {
             this.toggleModal();
         } else {
@@ -79,19 +76,13 @@ class HomePage extends React.Component {
     }
 
     render() {
-        let { recipes, splashRecipe, suggestedRecipes, lovedRecipes, openModal, isModalOpen, saveThisRecipe, deleteThisSave, loggedIn } = this.props
+        let { splashRecipe, suggestedRecipes, lovedRecipes, openModal, saveThisRecipe, deleteThisSave, loggedIn } = this.props
         if (!splashRecipe) return (<div className="no-search-results"></div>);
         let topLeft = this.state.topLeft === 0 ? 'none' : '';
         let topRight = this.state.topIdx === 8 ? 'none' : '';
         let bottomLeft = this.state.bottomLeft === 0 ? 'none' : '';
         let bottomRight = this.state.bottomIdx === 8 ? 'none' : '';
-        let action = splashRecipe.saveId ? deleteThisSave : saveThisRecipe
 
-        // debugger;
-        // console.log(splashRecipe)
-        // console.log(suggestedRecipes)
-        // let splashId = 0;
-        // recipes.forEach(recipe => recipe.title === 'Pizza Margherita' ? splashId = recipe.id : '' )
         return (
             <div className="main-app" >
                 <div className="splash-outer-container" >
@@ -152,26 +143,12 @@ class HomePage extends React.Component {
                             <div className="recipe-card-overflow-left" style={{ display: topLeft }} ><i onClick={this.moveTopCarouselRight} className="fas fa-chevron-left"></i></div>
                             <div className="recipe-card-extra-overflow-left"></div>
                             <ul className="recipe-card" style={{ left: this.state.topLeft + 'px' }} >
-                            {/* <ul className="recipe-card" style={{ left: '-1528px' }} > */}
                                 {suggestedRecipes.map((recipe, idx) => <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} loggedIn={loggedIn} openModal={this.props.openModal} /> )}
                                 <Link to={`/api/recipes/`} style={{ textDecoration: 'none' }}>
                                     <div className="see-all-link-wrapper">
                                         <div className="see-all-link" >See all recipes</div>
                                     </div>
                                 </Link>
-                                {/* {loggedIn ? '' :
-                                    <div className="recipe-card-pop-up" >
-                                        <div className="recipe-card-pop-up-spacer" ></div>
-                                        <h1 className="recipe-card-pop-up-title" >Build Your Recipe Box</h1>
-                                        <p className="recipe-card-pop-up-body" >Save your favorite recipes in one place</p>
-                                        <div className="recipe-card-pop-up-text" >
-                                            <span onClick={() => this.props.openModal('login')} className="logged-in-pop-up-link" >Log in</span>
-                                            <p> or </p>
-                                            <span onClick={() => this.props.openModal('signup')} className="logged-in-pop-up-link" >Sign up</span>
-                                            to save this recipe.
-                                        </div>
-                                    </div>
-                                } */}
                             </ul>
                             <div className="recipe-card-overflow" style={{ display: topRight }} ><i onClick={this.moveTopCarouselLeft} className="fas fa-chevron-right"></i></div>
                             <div className="recipe-card-extra-overflow"></div>

@@ -9,13 +9,10 @@ import { clearSearch } from '../../actions/recipe_actions';
 const mapSTP = state => {
     // debugger;
     return {
-        recipes: Object.values(state.entities.recipes),
         suggestedRecipes: selectSuggested(state),
         lovedRecipes: selectLoved(state),
         splashRecipe: selectSplashRecipe(state),
-        isModalOpen: Boolean(state.ui.modal),
         loggedIn: Boolean(state.session.currentUser),
-        selectSearched: selectSearched(state, ''),
     }
 }
 
