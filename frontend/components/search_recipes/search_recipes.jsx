@@ -22,6 +22,10 @@ class SearchRecipes extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        localStorage.removeItem('theseSearches');
+    }
+
     render() {
         let { saveThisRecipe, deleteThisSave, loggedIn, openModal } = this.props
         if (this.state.searches.length === 0) return (
