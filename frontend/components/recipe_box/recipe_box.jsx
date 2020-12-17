@@ -24,14 +24,16 @@ class RecipeBox extends React.Component {
                 <div className="recipe-box-container" >
                     <h1 className="recipe-box-title" >Saved Recipes</h1>
                     <h2 className="recipe-box-subtitle" >{saves.length} recipes</h2>
-                    <div className="recipe-box-recipes-container">
-                        {this.props.saves.map((save, idx) => {
-                            let saveId = save.recipeId
-                            let recipe = recipes[saveId]
-                            return <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} loggedIn={loggedIn} openModal={openModal} />
-                        }
-                        )}
-                    </div>
+                    {saves.length === 0 ? <div className="no-search-results"></div> :
+                        <div className="recipe-box-recipes-container">
+                            {this.props.saves.map((save, idx) => {
+                                let saveId = save.recipeId
+                                let recipe = recipes[saveId]
+                                return <RecipeCard recipe={recipe} key={idx} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} loggedIn={loggedIn} openModal={openModal} />
+                            }
+                            )}
+                        </div>
+                    }
                 </div>
             </div>
         )
