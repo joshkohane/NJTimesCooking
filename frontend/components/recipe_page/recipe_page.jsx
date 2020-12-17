@@ -16,13 +16,9 @@ class RecipePage extends React.Component {
     }
     
     componentDidMount() {
-        // debugger;
         this.props.fetchOneRecipe(this.props.match.params.recipeId)
         this.props.clearSearch();
         window.scrollTo(0, 0);
-        // const recipe = this.props.recipe
-        // const list = this.props.ingredientLists
-        // debugger;
     }
 
     componentDidUpdate(prevProps) {
@@ -30,12 +26,9 @@ class RecipePage extends React.Component {
             this.props.fetchOneRecipe(this.props.match.params.recipeId)
             this.props.clearSearch();
         }
-        // debugger;
     }
 
     handleSave(recipe) {
-        // e.stopPropagation();
-        // debugger;
         if (recipe.saveId) {
             this.toggleModal();
         } else {
@@ -55,16 +48,8 @@ class RecipePage extends React.Component {
     
     render() {
         let { recipe, ingredients, ingredientLists, author, loggedIn, openModal, isModalOpen } = this.props
-        // debugger;
         if (ingredientLists.length === 0 || !recipe) return (<div className="no-search-results"></div>);
         { !loggedIn && !isModalOpen ? this.props.openModal('signup') : '' }
-        // debugger;
-        //  || (recipe.id && recipe.id.toString() !== this.props.match.params.recipeId)
-        // console.log(recipe)
-        // console.log(ingredients)
-        // console.log(ingredientLists)
-        // console.log(author)
-
 
         return (
             <div className="recipe-page-outer-container" >

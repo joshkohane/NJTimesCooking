@@ -13,7 +13,6 @@ class NavBar extends React.Component {
         this.hideShow = this.hideShow.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.toggleClass = this.toggleClass.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -21,7 +20,6 @@ class NavBar extends React.Component {
             this.props.clearSearch();
             this.setState({ inputValue: '' });
         }
-        // debugger;
     }
 
     getShow(e) {
@@ -52,7 +50,6 @@ class NavBar extends React.Component {
         // this.hideShow();
         let thisSearch = [];
         Object.values(this.props.searches).forEach((search => thisSearch.push(search)));
-        // debugger;
         // let result = !this.state.redirect
         localStorage.setItem('theseSearches', JSON.stringify(thisSearch))
         this.props.history.push({pathname: `/api/search/${this.state.inputValue}`,
@@ -62,7 +59,6 @@ class NavBar extends React.Component {
         this.setState({inputValue: ""})
         this.props.clearSearch();
         // this.setState({ redirect: result });
-        // debugger;
     }
 
     // toggleClass() {
@@ -76,7 +72,6 @@ class NavBar extends React.Component {
         // if (this.state.redirect) {
         //     <Redirect to="/recipes/all"></Redirect> 
         // } 
-        // debugger;
         return (
             <div className="nav-bar-container">
                 <Link to="/" style={{ textDecoration: 'none' }} >
