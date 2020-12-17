@@ -1,6 +1,5 @@
 import { RECEIVE_SAVE, DELETE_A_SAVE } from '../actions/save_actions';
 import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_ALL_RECIPES, RECEIVE_RECIPE } from '../actions/recipe_actions';
 import { GET_THIS_USER } from '../actions/user_actions';
 
 export default (oldState = {}, action) => {
@@ -8,11 +7,6 @@ export default (oldState = {}, action) => {
     let newState = Object.assign({}, oldState);
 
     switch (action.type) {
-        // case RECEIVE_ALL_RECIPES:
-        //     return Object.assign({}, action.recipes.saves);
-        //     // return Object.assign({}, oldState, action.user.saves);
-        // case RECEIVE_RECIPE:
-        //     return Object.assign({}, action.recipe.saves);
         case RECEIVE_SAVE:
             newState[action.save.id] = action.save;
             return newState;

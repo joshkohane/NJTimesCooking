@@ -2,7 +2,6 @@ export const saveRecipe = (recipeId) => (
     $.ajax({
         url: `/api/recipes/${recipeId}/saves`,
         method: 'POST',
-        // data: { userId }
     })
 )
 
