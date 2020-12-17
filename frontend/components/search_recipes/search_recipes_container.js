@@ -2,6 +2,7 @@ import SearchRecipes from './search_recipes'
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import { saveThisRecipe, deleteThisSave } from '../../actions/save_actions';
+import { clearSearch } from '../../actions/recipe_actions';
 
 const mapSTP = state => ({
     loggedIn: Boolean(state.session.currentUser),

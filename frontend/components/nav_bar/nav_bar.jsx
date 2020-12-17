@@ -76,9 +76,9 @@ class NavBar extends React.Component {
                         <ul className="search-results" >
                             {Object.values(searches).map((recipe, idx) => (
                                 <Link key={idx} to={`/api/recipes/${recipe.id}`} className="search-results-wrapper" style={{ textDecoration: 'none' }}>
-                                    <list className="search-results-child"   >
+                                    <li className="search-results-child"   >
                                         {recipe.title}
-                                    </list>
+                                    </li>
                                 </Link>
                             )
                             )}
