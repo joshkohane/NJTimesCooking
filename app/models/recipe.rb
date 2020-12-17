@@ -30,5 +30,5 @@ class Recipe < ApplicationRecord
         class_name: :Save,
         foreign_key: :recipe_id,
         dependent: :destroy
-
+    has_many :comments, dependent: :destroy
 end

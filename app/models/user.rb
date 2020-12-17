@@ -55,4 +55,8 @@ class User < ApplicationRecord
     has_many :saved_recipes,
         through: :saves,
         source: :recipe
+    has_many :comments, 
+        dependent: :destroy,
+        foreign_key: :author_id,
+        class_name: :Comment
 end
