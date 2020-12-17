@@ -9,6 +9,7 @@ import { fetchOneRecipe, fetchEveryRecipe, search, clearSearch } from './actions
 import { saveThisRecipe, deleteThisSave } from './actions/save_actions';
 import { selectSearched } from './reducers/selectors';
 import { addComment, deleteComment } from './util/comment_util';
+import { addThisComment, deleteThisComment } from './actions/comment_actions'
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.clearSearch = clearSearch;
     window.addComment = addComment;
     window.deleteComment = deleteComment;
+    window.addThisComment = addThisComment;
+    window.deleteThisComment = deleteThisComment;
     // 
 
     ReactDOM.render(<Root store={store} />, root)

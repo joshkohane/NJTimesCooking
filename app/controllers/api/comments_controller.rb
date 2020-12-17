@@ -1,10 +1,9 @@
 class Api::CommentsController < ApplicationController
     def create
         @comment = Comment.new(comment_params)
-        @comment.recipe_id = params[:recipe_id]
         @comment.author_id = current_user.id
         @comment.save
-        render 'api/recipes/show'
+        render :show
     end
 
     def destroy
@@ -16,6 +15,6 @@ class Api::CommentsController < ApplicationController
     private
     
     def comment_params
-        params.require(:comment).permit(:text)
+        params.require(:comment).permit(:recipe_id, :text)
     end
 end

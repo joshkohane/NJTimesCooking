@@ -35,10 +35,12 @@ json.ingredient_lists do
     end
 end
 
-json.comments do
-    @recipe.comments.each do |comment|
-        json.set! comment.id do
-            json.extract! @comment, :recipe_id, :author_id, :text
+if @recipe.comments
+    json.comments do
+        @recipe.comments.each do |comment|
+            json.set! comment.id do
+                json.extract! comment, :recipe_id, :author_id, :text
+            end
         end
     end
 end

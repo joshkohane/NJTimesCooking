@@ -5,6 +5,7 @@ import IngredientListsReducer from './ingredient_lists_reducer';
 import IngredientsReducer from './ingredients_reducer';
 import SavesReducer from './saves_reducer';
 import SearchReducer from './search_reducer';
+import CommentsReducer from './comments_reducer';
 
 export default combineReducers({
     users: UsersReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     ingredientLists: IngredientListsReducer,
     ingredients: IngredientsReducer,
     saves: SavesReducer,
-    search: SearchReducer
+    search: SearchReducer,
+    comments: CommentsReducer,
 })

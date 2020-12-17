@@ -1,14 +1,14 @@
 export const addComment = (recipeId, text) => (
     $.ajax({
-        url: `/api/recipes/${recipeId}/comments`,
+        url: `/api/comments`,
         method: 'POST',
-        data: { comment: { text } }
+        data: { comment: { recipe_id: recipeId, text }}
     })
 )
 
-export const deleteComment = (recipeId) => (
+export const deleteComment = (commentId) => (
     $.ajax({
-        url: `/api/comments/${recipeId}`,
+        url: `/api/comments/${commentId}`,
         method: 'DELETE'
     })
 )
