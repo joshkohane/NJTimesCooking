@@ -76,6 +76,20 @@ Another exciting CRUD feature of the site is the Recipe Box component. The recip
    
 ```
 
+## Search
+
+The nav bar contains a search feature allowing a user to search for recipes on the site. Each matching result shows up as an option below the nav bar, containing a link to a recipe page:
+
 ![NJTimes_Search](https://github.com/joshkohane/NJTimesCooking/blob/master/app/assets/images/search_screenshot.png)
 
+For this functionality, I used ActiveRecord to query the database. From the frontend, I implemented an ajax call the specify the query search. On submit of the search, the search results are pushed the localStorage and used to display each search result on a new page.
 
+```javascript
+    handleSubmit(e) {
+        let thisSearch = [];
+        Object.values(this.props.searches).forEach((search => thisSearch.push(search)));
+        localStorage.setItem('theseSearches', JSON.stringify(thisSearch))
+        this.setState({inputValue: ""})
+        this.props.clearSearch();
+    }
+```
