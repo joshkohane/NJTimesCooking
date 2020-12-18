@@ -94,7 +94,6 @@
 
     
     .splash-outer-bookmark {
-        // padding-left: 7px;
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -104,7 +103,6 @@
         }
         
         .splash-bookmark {
-            // color: #b3b3b3;
             width: 9px;
             height: 14px;
             border: 2px solid $white;
@@ -185,9 +183,7 @@
     background-color: transparent;
     opacity: 1;
     bottom: -20px;
-    // right: -1px;
     z-index: -1;
-    // right: 15px;
 }
 
 .logged-in-pop-up-title {

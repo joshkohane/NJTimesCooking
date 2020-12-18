@@ -67,7 +67,6 @@
         top: 64px;
         z-index: 100;
         background-color: $main-light-gray;
-        // font-size: 60px;
         width: 100%;
         border-bottom: 1px solid $lighter-gray;
         border-right: 1px solid $lighter-gray;
@@ -173,14 +172,12 @@
 
         .recipe-box-login {
             position: absolute;
-            // display: flex;
             bottom: 8px;
             left: 58px;
             color: $dark-gray;
             text-align: center;
             font-family: $sans-serif;
             font-size: 12px;
-            // max-height: 10px;
             cursor: pointer;
         }
     }

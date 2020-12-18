@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="above-footer">
                 <div className="about-us">
                     <h1 className="above-footer-title" >Get Our Newsletter</h1>
-                    <p className="above-footer-text" >For more recipes and information, keep coming back for recipe updates.</p>
+                    <p className="above-footer-text" >For more recipes and information, keep coming back for updates.</p>
                 </div>
                 <div className="learn-more">
                     <h1 className="footer-title" >Follow us</h1>

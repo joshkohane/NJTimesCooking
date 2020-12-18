@@ -80,12 +80,9 @@
 .recipe-card {
     display: flex;
     position: absolute;
-    // left: -1017px;
-    // left: 1px;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    // width: 1168px;
     padding-bottom: 40px;
     transition: all .5s ease-in 0s;
 
@@ -99,10 +96,6 @@
     border: 1px solid $photo-background;
     margin-right: 17px;
 }
-
-// .recipe-card-wrapper:first-child {
-//     margin-right: 0;
-// }
 
 .recipe-card-wrapper:hover {
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -139,11 +132,9 @@
 .recipe-card-footer {
     position: absolute;
     display: flex;
-    // width: 100%;
     justify-content: space-between;
     align-items: center;
     bottom: 12px;
-    // padding: 15px 15px 0 15px;
     width: 235.5px;
     
     .recipe-card-time {
