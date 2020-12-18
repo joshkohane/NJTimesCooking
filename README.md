@@ -82,7 +82,7 @@ The nav bar contains a search feature allowing a user to search for recipes on t
 
 ![NJTimes_Search](https://github.com/joshkohane/NJTimesCooking/blob/master/app/assets/images/search_screenshot.png)
 
-For this functionality, I used ActiveRecord to query the database. From the frontend, I implemented an ajax call the specify the query search. On submit of the search, the search results are pushed the localStorage and used to display each search result on a new page.
+For this functionality, I used ActiveRecord to query the database. From the frontend, I implemented an ajax call the specify the query search. On submit of the search, the search results are pushed the localStorage and used to display each search result on a new page. Initially, I tied the search results page to the search slice of state. This seemed like the right idea at first, however, every new input into the search bar updated the results page. Because I wanted the results to remain the same as the first submit, I decided the best way to keep results consistent was to use localStorage.
 
 ```javascript
     handleSubmit(e) {
@@ -91,5 +91,27 @@ For this functionality, I used ActiveRecord to query the database. From the fron
         localStorage.setItem('theseSearches', JSON.stringify(thisSearch))
         this.setState({inputValue: ""})
         this.props.clearSearch();
+    } 
+```
+
+```javascript
+    constructor(props) {
+        super(props)
+        this.state = {
+            searches: JSON.parse(localStorage.getItem('theseSearches')),
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            this.props.clearSearch();
+            this.setState({ searches: JSON.parse(localStorage.getItem('theseSearches'))});
+            window.scrollTo(0, 0);
+        }
     }
 ```
+
+## Additional Resources
+Special thanks to the artists and creators who's images and fonts I have used in this project:
+
+Polina Tankilevitch, Lum3n, Ponya Sakana, Jhon Marquez, Karolina Grabowska, Angele J, Amirali Mirhashemian, Andy Hay, Claudi Pantoni, Ali Nafezarefi, Dilyara Garifullina, Mali Maeder, Katerina Jerabkova, Roberto Valdivia, Marta Dzedyshko, Daria Nepriakhina, Manuel Cortina, Jonathan Pielmayer, Atharva Tulsi, Syed F Hashemi, Frances Coronel
