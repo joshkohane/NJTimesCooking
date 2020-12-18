@@ -4,7 +4,7 @@
 
 ## 
 
-![NJTimes Cooking Logo](https://github.com/joshkohane/NJTimesCooking/blob/master/app/assets/images/logo_screenshot.png)
+![NJTimes Cooking Logo](https://github.com/joshkohane/NJTimesCooking/blob/master/app/assets/images/logo_screenshot2.png)
 
 
 This README would normally document whatever steps are necessary to get the
