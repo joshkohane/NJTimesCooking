@@ -37,7 +37,7 @@ class Comments extends React.Component {
         return (
             <div>
                 <h1 className="comments-header" >Cooking Notes</h1>
-                <div className="comments-form-container" >
+                {/* <div className="comments-form-container" >
                     {this.state.show ? 
                         <form className="comments-form-open" >
                             <div className="comments-form-inner-container" >
@@ -54,6 +54,28 @@ class Comments extends React.Component {
                             <input  className="comments-input" type="text" placeholder="Share your notes with other cooks." />
                         </form>
                     }
+                </div> */}
+                <div className="comments-form-container" >
+
+                    {/* {this.state.show ? */}
+                    <form className={this.state.show ? "comments-form-open" : "comments-form"} onClick={this.state.show ? () => {} : this.getShow} >
+                        <div className="comments-form-inner-container" >
+                            <textarea className={this.state.show ? "comments-open-input" : "comments-input"} onChange={this.handleChange} value={this.state.input} placeholder="Share your notes with other cooks." ></textarea>
+                            {this.state.show ? 
+                                <div className="comments-form-btns" >
+                                    <div className="comments-form-cancel" onClick={this.hideShow} >Cancel</div>
+                                    <div className={this.state.input.length >= 5 ? "comments-form-note" : "comments-form-note-no"}
+                                        onClick={this.state.input.length >= 5 ? this.handleSubmit : () => { }} >Add Note</div>
+                                </div>
+                            : ""
+                            }
+                        </div>
+                    </form>
+                        {/* : */}
+                        {/* <form className="comments-form" onClick={this.getShow} > */}
+                            {/* <input className="comments-input" type="text" placeholder="Share your notes with other cooks." /> */}
+                        {/* </form> */}
+                    {/* } */}
                 </div>
                 <div className="comments-section-heading-container">
                     <div className="comments-section-heading">
@@ -66,21 +88,14 @@ class Comments extends React.Component {
                 :
                     <div className="comments-section-comments" >
                         {comments.map((comment, idx) => {
-                            // let date = new Date(comment.createdAt);
-                            // debugger;
-                            // let time = comment.time
-
-                            // debugger;
                             return <div key={idx} className="comments-section-comment-outer-container" >
                                 {currentUser && currentUser === comment.authorId ? 
-                                    <span onClick={() => this.props.deleteThisComment(comment.id)} className="delete-comment-btn">&#x2715;</span>
+                                    <span onClick={() => deleteThisComment(comment.id)} className="delete-comment-btn">&#x2715;</span>
                                 : ''}
                                 <div className="comments-section-image-container" >
                                     <img className="comments-section-image" src={window.tomato} alt="User Image"/>
                                 </div>
                                 <div className="comments-section-comment-container" >
-                                    {/* <div>{Date.prototype.toTimeString(date)}</div> */}
-                                    {/* <div>{Time.now.to_datetime(comment.createdAt)}</div> */}
                                     <div className="comments-section-comment-info">
                                         <div className="comments-section-comment-name" >{comment.authorFirstName}</div>
                                         <div className="comments-section-comment-time" >{comment.timestamp} ago</div>

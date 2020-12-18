@@ -11,6 +11,10 @@
     padding-top: 30px;
 }
 
+// .comments-form-container {
+//     transition: all .5s ease-in-out;
+// }
+
 .comments-header {
     font-family: $karnak;
     color: $darker-gray;
@@ -24,30 +28,54 @@
     font-family: $sans-serif-thin;
     color: $lightish-gray;
     width: 100%;
+    height: 45px;
     border: 1px solid $lighter-gray;
-    box-shadow: inset 0 1px 6px $main-light-gray;
-    transition: all 3s ease-in-out;
+    transition: all .5s ease-in-out;
+    padding: 0;
 
-    .comments-input {
-        width: 100%;
-        padding: 13px 10px 15px 15px;
-        transition: all 3s ease-in-out;
-    }
+    // .comments-form-inner-container {
+    //     background-color: $white;
+    //     padding: 0px;
+    //     transition: all .5s ease-in-out;
+    
+        .comments-input {
+            display: flex;
+            align-items: center;
+            width: 600px;
+            height: 18px;
+            padding: 10px 10px 15px 15px;
+            resize: none;
+            transition: all .5s ease-in-out;
+            border: none;
+            box-shadow: inset 0 1px 6px $main-light-gray;
+            background-color: $white;
+            border-radius: none;
+            font-family: $sans-serif;
+            color: $black;
+            font-size: 16px;
+            // transition: all .5s ease-in-out;
+        }
+
+        .comments-input:focus {
+            outline: none;
+        }
+    // }
 }
 
-.comments-form-open:focus {
-    transition: all 3s ease-in-out;
-}
+// .comments-form-open:focus {
+//     transition: all .5s ease-in-out;
+// }
 
 .comments-form-open {
     border: 1px solid #dddddd;
     width: 100%;
-    transition: all 3s ease-in-out;
+    height: 334px;
+    transition: all .5s ease-in-out;
     
     .comments-form-inner-container {
         background-color: $main-light-gray;
         padding: 10px;
-        transition: all 3s ease-in-out;
+        transition: all .5s ease-in-out;
 
         .comments-open-input {
             width: 538px;
@@ -61,6 +89,7 @@
             font-family: $sans-serif;
             color: $black;
             font-size: 16px;
+            transition: all .5s ease-in-out;
         }
 
         .comments-open-input:focus {
