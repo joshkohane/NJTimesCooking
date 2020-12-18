@@ -46,7 +46,7 @@ class RecipeCard extends React.Component {
                             <p className="recipe-card-time" >{recipe.time}</p>
                         </div>
                     </Link>
-                    <div className="recipe-card-bookmark-container"  onClick={loggedIn ? () => this.handleSave(recipe): () => openModal('login')} >
+                    <div className="recipe-card-bookmark-container"  onClick={loggedIn ? () => this.handleSave(recipe): () => {}} >
                     {loggedIn ? '' :
                         <div className="recipe-card-pop-up" >
                             <div className="recipe-card-pop-up-spacer" ></div>

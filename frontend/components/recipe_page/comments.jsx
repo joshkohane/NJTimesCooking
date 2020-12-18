@@ -66,7 +66,10 @@ class Comments extends React.Component {
                 :
                     <div className="comments-section-comments" >
                         {comments.map((comment, idx) => {
-                            let date = new Date(comment.createdAt);
+                            // let date = new Date(comment.createdAt);
+                            // debugger;
+                            // let time = comment.time
+
                             // debugger;
                             return <div key={idx} className="comments-section-comment-outer-container" >
                                 {currentUser && currentUser === comment.authorId ? 
@@ -80,7 +83,7 @@ class Comments extends React.Component {
                                     {/* <div>{Time.now.to_datetime(comment.createdAt)}</div> */}
                                     <div className="comments-section-comment-info">
                                         <div className="comments-section-comment-name" >{comment.authorFirstName}</div>
-                                        <div className="comments-section-comment-time" >1 week ago</div>
+                                        <div className="comments-section-comment-time" >{comment.timestamp} ago</div>
                                     </div>
                                     <div className="comments-section-comment-text" >{comment.text}</div>
                                 </div>

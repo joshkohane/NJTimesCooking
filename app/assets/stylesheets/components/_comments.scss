@@ -26,25 +26,28 @@
     width: 100%;
     border: 1px solid $lighter-gray;
     box-shadow: inset 0 1px 6px $main-light-gray;
-    transition: all .5s ease-in-out;
+    transition: all 3s ease-in-out;
 
     .comments-input {
         width: 100%;
         padding: 13px 10px 15px 15px;
+        transition: all 3s ease-in-out;
     }
 }
 
-// .comments-form-container {
-// }
+.comments-form-open:focus {
+    transition: all 3s ease-in-out;
+}
 
 .comments-form-open {
     border: 1px solid #dddddd;
     width: 100%;
-    transition: all .5s ease-in-out;
+    transition: all 3s ease-in-out;
     
     .comments-form-inner-container {
         background-color: $main-light-gray;
         padding: 10px;
+        transition: all 3s ease-in-out;
 
         .comments-open-input {
             width: 538px;

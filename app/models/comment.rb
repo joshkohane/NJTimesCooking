@@ -10,10 +10,15 @@
 #  text       :text             not null
 #
 class Comment < ApplicationRecord
+    include ActionView::Helpers::DateHelper
     validates :author_id, :recipe_id, :text, presence: true
 
     belongs_to :recipe
     belongs_to :author,
         foreign_key: :author_id,
         class_name: :User
+
+    def timestamp
+        time_ago_in_words(created_at)
+    end
 end
