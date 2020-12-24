@@ -11,6 +11,7 @@ class SearchRecipes extends React.Component {
 
     componentDidMount() {
         this.props.clearSearch();
+        this.props.closeModal();
         window.scrollTo(0, 0);
     }
 

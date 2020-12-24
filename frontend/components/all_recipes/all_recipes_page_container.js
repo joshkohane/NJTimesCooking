@@ -16,6 +16,7 @@ const mapDTP = dispatch => ({
     saveThisRecipe: (recipeId) => dispatch(saveThisRecipe(recipeId)),
     deleteThisSave: (recipeId) => dispatch(deleteThisSave(recipeId)),
     openModal: (modal) => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal()),
     fetchEveryRecipe: () => dispatch(fetchEveryRecipe()),
     clearSearch: () => dispatch(clearSearch()),
 })
