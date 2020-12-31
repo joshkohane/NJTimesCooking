@@ -235,16 +235,18 @@
 }
 
 .modal-errors {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
   color: $btn-red;
   position: absolute;
   bottom: -28px;
+  font-family: $sans-serif;
 }
 
 .modal-password-errors {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
   color: $btn-red;
+  font-family: $sans-serif;
 }
 
