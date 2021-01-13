@@ -45,11 +45,11 @@ class NavBar extends React.Component {
     }
 
     handleSubmit(e) {
-        let thisSearch = [];
-        Object.values(this.props.searches).forEach((search => thisSearch.push(search)));
-        localStorage.setItem('theseSearches', JSON.stringify(thisSearch))
+        // let thisSearch = [];
+        // Object.values(this.props.searches).forEach((search => thisSearch.push(search)));
+        // localStorage.setItem('theseSearches', JSON.stringify(thisSearch))
         this.props.history.push({pathname: `/api/search/${this.state.inputValue}`,
-            state: {theseSearches: Object.freeze(thisSearch), saveThisRecipe: this.props.saveThisRecipe, deleteThisSave: this.props.deleteThisSave, loggedIn: this.props.loggedIn, openModal: this.props.openModal}
+            // state: {theseSearches: Object.freeze(thisSearch), saveThisRecipe: this.props.saveThisRecipe, deleteThisSave: this.props.deleteThisSave, loggedIn: this.props.loggedIn, openModal: this.props.openModal}
         })
         this.setState({inputValue: ""})
         this.props.clearSearch();

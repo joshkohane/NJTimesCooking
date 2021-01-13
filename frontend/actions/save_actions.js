@@ -3,12 +3,10 @@ import { saveRecipe, deleteSave } from '../util/saves_util';
 export const RECEIVE_SAVE = 'RECEIVE_SAVE';
 export const DELETE_A_SAVE = 'DELETE_A_SAVE';
 
-export const receiveSave = (save) => {
-    // debugger
-    return {
+export const receiveSave = (save) => ({
     type: RECEIVE_SAVE,
     save
-}}
+})
 
 export const deleteASave = (save) => ({
     type: DELETE_A_SAVE,

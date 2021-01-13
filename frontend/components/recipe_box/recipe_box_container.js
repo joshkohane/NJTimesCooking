@@ -1,6 +1,6 @@
 import RecipeBox from './recipe_box';
 import { connect } from 'react-redux';
-import { openModal, closeModal } from '../../actions/modal_actions';
+import { openModal } from '../../actions/modal_actions';
 import { saveThisRecipe, deleteThisSave } from '../../actions/save_actions';
 import { fetchThisUser } from '../../actions/user_actions';
 import { fetchOneRecipe, fetchEveryRecipe } from '../../actions/recipe_actions';
