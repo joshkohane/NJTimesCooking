@@ -18,7 +18,7 @@ class NavBar extends React.Component {
     componentDidUpdate(prevProps) {
         if (this.props.location.pathname !== prevProps.location.pathname) {
             this.props.clearSearch();
-            this.setState({ inputValue: '' });
+            this.setState({ inputValue: '', show: false });
         }
     }
 
