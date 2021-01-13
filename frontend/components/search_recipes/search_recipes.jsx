@@ -2,18 +2,9 @@ import React from 'react'
 import RecipeCard from '../home_page/recipe_card';
 
 class SearchRecipes extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         searches: JSON.parse(localStorage.getItem('theseSearches')),
-    //     }
-    // }
-
     componentDidMount() {
         this.props.clearSearch();
-        // this.props.clearSearchPage();
         this.props.fetchEveryRecipe();
-
         this.props.searchPage(this.props.match.params.query);
         this.props.closeModal();
         window.scrollTo(0, 0);
@@ -23,15 +14,9 @@ class SearchRecipes extends React.Component {
         if (this.props.location.pathname !== prevProps.location.pathname) {
             this.props.clearSearchPage();
             this.props.searchPage(this.props.match.params.query);
-            // this.setState({ searches: JSON.parse(localStorage.getItem('theseSearches'))});
             window.scrollTo(0, 0);
         }
     }
-    
-    // componentWillUnmount() {
-    //     // this.props.clearSearchPage();
-    //     // localStorage.removeItem('theseSearches');
-    // }
 
     render() {
         let { saveThisRecipe, deleteThisSave, loggedIn, openModal, recipes, searches } = this.props

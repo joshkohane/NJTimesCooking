@@ -11,7 +11,6 @@ class AllRecipesPage extends React.Component {
 
     render() {
         let { recipes, saveThisRecipe, deleteThisSave, loggedIn, openModal, isModalOpen } = this.props
-        // { !loggedIn && !isModalOpen ? openModal('signup') : '' }
         if (Object.keys(recipes).length === 0) return (<div className="no-search-results"></div>);
         
         return (

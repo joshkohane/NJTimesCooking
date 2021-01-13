@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
                         <input
                             type="text"
                             value={this.state.first_name}
-                            className="modal-input"
+                            className={this.props.errors.session.length > 0 ? "modal-input-red" : "modal-input"}
                             onChange={this.handleChange('first_name')} />
                         {this.props.errors.session.map(err => err.includes('First') ? <p className="modal-errors" >Please enter your first name.</p> : '')}
                     </label>
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
                         <input
                             type="text"
                             value={this.state.last_name}
-                            className="modal-input"
+                            className={this.props.errors.session.length > 0 ? "modal-input-red" : "modal-input"}
                             onChange={this.handleChange('last_name')} />
                         {this.props.errors.session.map(err => err.includes('Last') ? <p className="modal-errors" >Please enter your last name.</p> : '')}
                     </label>
@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
                     <input
                         type="text"
                         value={this.state.email}
-                        className="modal-input"
+                        className={this.props.errors.session.length > 0 ? "modal-input-red" : "modal-input"}
                         onChange={this.handleChange('email')} />
                     {this.props.errors.session.map(err => err.includes(`Email can't be blank`) ? <p className="modal-errors" >Please enter a valid email address.</p> : '')}
                     {this.props.errors.session.map(err => err.includes(`Email has already been taken`) ? <p className="modal-errors" >{err}</p> : '')}
@@ -102,7 +102,7 @@ class SessionForm extends React.Component {
                         <input
                             type={this.state.show ? "password" : "text"}
                             value={this.state.password}
-                            className="modal-input modal-password-input"
+                            className={this.props.errors.session.length > 0 ? "modal-input-red modal-password-input" : "modal-input modal-password-input"}
                             onChange={this.handleChange('password')} />
                         <div className={this.state.showClasses} onClick={this.toggleShow}>{this.state.show ? "Show" : "Hide"}</div>
                         {this.props.errors.session.map(err => err.includes('short') ? <p className="modal-password-errors" >Please provide a password that is between 6 and 255 characters in length.</p> : '')}

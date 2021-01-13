@@ -11,10 +11,6 @@
     padding-top: 30px;
 }
 
-// .comments-form-container {
-//     transition: all .5s ease-in-out;
-// }
-
 .comments-header {
     font-family: $karnak;
     color: $darker-gray;
@@ -32,11 +28,6 @@
     border: 1px solid $lighter-gray;
     transition: all .5s ease-in-out;
     padding: 0;
-
-    // .comments-form-inner-container {
-    //     background-color: $white;
-    //     padding: 0px;
-    //     transition: all .5s ease-in-out;
     
         .comments-input {
             display: flex;
@@ -53,18 +44,12 @@
             font-family: $sans-serif;
             color: $black;
             font-size: 16px;
-            // transition: all .5s ease-in-out;
         }
 
         .comments-input:focus {
             outline: none;
         }
-    // }
 }
-
-// .comments-form-open:focus {
-//     transition: all .5s ease-in-out;
-// }
 
 .comments-form-open {
     border: 1px solid #dddddd;

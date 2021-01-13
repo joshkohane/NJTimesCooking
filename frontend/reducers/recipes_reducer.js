@@ -12,11 +12,9 @@ export default (oldState = {}, action) => {
         case RECEIVE_RECIPE:
             return Object.assign({}, oldState, action.recipe.recipe);
         case RECEIVE_SAVE:
-            debugger;
             newState[action.save.recipeId].saveId = action.save.id;
             return newState;
         case DELETE_A_SAVE:
-            debugger;
             delete newState[action.save.recipeId].saveId
             return newState;
         case RECEIVE_SEARCH:
