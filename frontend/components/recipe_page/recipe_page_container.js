@@ -4,7 +4,7 @@ import { fetchOneRecipe } from '../../actions/recipe_actions';
 import { openModal } from '../../actions/modal_actions';
 import { saveThisRecipe, deleteThisSave } from '../../actions/save_actions';
 import { clearSearch } from '../../actions/recipe_actions';
-import { addThisComment, deleteThisComment } from '../../actions/comment_actions';
+import { addThisComment, updateThisComment, deleteThisComment } from '../../actions/comment_actions';
 
 const mapSTP = (state, ownProps) => ({
     recipe: state.entities.recipes[ownProps.match.params.recipeId],
@@ -22,6 +22,7 @@ const mapDTP = dispatch => ({
     deleteThisSave: (recipeId) => dispatch(deleteThisSave(recipeId)),
     clearSearch: () => dispatch(clearSearch()),
     addThisComment: (recipeId, text) => dispatch(addThisComment(recipeId, text)),
+    updateThisComment: (commentId, text) => dispatch(updateThisComment(commentId, text)),
     deleteThisComment: (commentId) => dispatch(deleteThisComment(commentId)),
 })
 

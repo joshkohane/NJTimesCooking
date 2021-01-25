@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import CommentItem from './comment_item';
 
 class Comments extends React.Component {
     constructor(props) {
@@ -7,6 +8,7 @@ class Comments extends React.Component {
             input: '',
             show: false
         }
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.getShow = this.getShow.bind(this);
@@ -33,7 +35,7 @@ class Comments extends React.Component {
     }
 
     render() {
-        let { comments, deleteThisComment, currentUser } = this.props
+        let { comments, updateThisComment, deleteThisComment, currentUser } = this.props
         return (
             <div>
                 <h1 className="comments-header" >Cooking Notes</h1>
@@ -63,21 +65,7 @@ class Comments extends React.Component {
                 :
                     <div className="comments-section-comments" >
                         {comments.map((comment, idx) => {
-                            return <div key={idx} className="comments-section-comment-outer-container" >
-                                {currentUser && currentUser === comment.authorId ? 
-                                    <span onClick={() => deleteThisComment(comment.id)} className="delete-comment-btn">&#x2715;</span>
-                                : ''}
-                                <div className="comments-section-image-container" >
-                                    <img className="comments-section-image" src={window.tomato} alt="User Image"/>
-                                </div>
-                                <div className="comments-section-comment-container" >
-                                    <div className="comments-section-comment-info">
-                                        <div className="comments-section-comment-name" >{comment.authorFirstName}</div>
-                                        <div className="comments-section-comment-time" >{comment.timestamp} ago</div>
-                                    </div>
-                                    <div className="comments-section-comment-text" >{comment.text}</div>
-                                </div>
-                            </div>
+                            return <CommentItem key={idx} comment={comment} updateThisComment={updateThisComment} deleteThisComment={deleteThisComment} currentUser={currentUser} />
                         })}
                     </div>
                 }

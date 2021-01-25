@@ -1,4 +1,4 @@
-import { addComment, updateComments, deleteComment } from '../util/comment_util';
+import { addComment, updateComment, deleteComment } from '../util/comment_util';
 
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';

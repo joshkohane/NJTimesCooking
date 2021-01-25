@@ -46,7 +46,7 @@ class RecipePage extends React.Component {
     }
     
     render() {
-        let { recipe, ingredientLists, loggedIn, openModal, isModalOpen, comments, addThisComment, deleteThisComment, currentUser } = this.props
+        let { recipe, ingredientLists, loggedIn, openModal, isModalOpen, comments, addThisComment, updateThisComment, deleteThisComment, currentUser } = this.props
         if (ingredientLists.length === 0 || !recipe) return (<div className="no-search-results"></div>);
         { !loggedIn && !isModalOpen ? openModal('signup') : '' }
 
@@ -105,7 +105,7 @@ class RecipePage extends React.Component {
                             </div>
                         : ''}
                         <div className="comments-container" >
-                            <Comments comments={comments} recipe={recipe} addThisComment={addThisComment} deleteThisComment={deleteThisComment} currentUser={currentUser} />
+                            <Comments comments={comments} recipe={recipe} addThisComment={addThisComment} updateThisComment={updateThisComment} deleteThisComment={deleteThisComment} currentUser={currentUser} />
                         </div>
                     </div>
                 </div>
