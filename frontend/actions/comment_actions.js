@@ -1,7 +1,8 @@
-import { addComment, deleteComment } from '../util/comment_util';
+import { addComment, updateComments, deleteComment } from '../util/comment_util';
 
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const UPDATE_COMMENT = 'UPDATE_COMMENT';
 
 export const receiveComment = (comment) => ({
     type: RECEIVE_COMMENT,
@@ -14,6 +15,9 @@ export const removeComment = (comment) => ({
 })
 
 export const addThisComment = (recipeId, text) => dispatch => addComment(recipeId, text)
+    .then(comment => dispatch(receiveComment(comment)))
+
+export const updateThisComment = (commentId, text) => dispatch => updateComment(commentId, text)
     .then(comment => dispatch(receiveComment(comment)))
 
 export const deleteThisComment = (commentId) => dispatch => deleteComment(commentId)

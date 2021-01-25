@@ -6,6 +6,16 @@ class Api::CommentsController < ApplicationController
         render :show
     end
 
+    def update
+        @comment = Comment.find_by(id: params[:id])
+        
+        if @comment.save
+            render :show
+        else
+            render json: @comment.errors.full_messages, status: 401
+        end
+    end
+
     def destroy
         @comment = Comment.find_by(id: params[:id])
         @comment.destroy
