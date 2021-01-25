@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
                 <label className="modal-input-field" >
                     <h2 className="modal-input-text" >Email Address</h2>
                     <input
-                        type="email"
+                        type="text"
                         value={this.state.email}
                         className={this.props.errors.session.length > 0 ? "modal-input-red" : "modal-input"}
                         onChange={this.handleChange('email')} />
