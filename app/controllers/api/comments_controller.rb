@@ -8,8 +8,8 @@ class Api::CommentsController < ApplicationController
 
     def update
         @comment = Comment.find_by(id: params[:id])
-        
-        if @comment.save
+
+        if @comment.update(comment_params)
             render :show
         else
             render json: @comment.errors.full_messages, status: 401
