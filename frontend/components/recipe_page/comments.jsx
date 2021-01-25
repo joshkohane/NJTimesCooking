@@ -65,7 +65,7 @@ class Comments extends React.Component {
                 :
                     <div className="comments-section-comments" >
                         {comments.map((comment, idx) => {
-                            return <CommentItem key={idx} comment={comment} updateThisComment={updateThisComment} deleteThisComment={deleteThisComment} currentUser={currentUser} />
+                            return <CommentItem key={comment.id} comment={comment} updateThisComment={updateThisComment} deleteThisComment={deleteThisComment} currentUser={currentUser} />
                         })}
                     </div>
                 }
