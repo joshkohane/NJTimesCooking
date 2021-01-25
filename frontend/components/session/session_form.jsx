@@ -93,6 +93,7 @@ class SessionForm extends React.Component {
                         value={this.state.email}
                         className={this.props.errors.session.length > 0 ? "modal-input-red" : "modal-input"}
                         onChange={this.handleChange('email')} />
+                    {this.props.errors.session.map(err => err.includes(`Email is invalid`) ? <p className="modal-errors" >Please enter a valid email address.</p> : '')}
                     {this.props.errors.session.map(err => err.includes(`Email can't be blank`) ? <p className="modal-errors" >Please enter a valid email address.</p> : '')}
                     {this.props.errors.session.map(err => err.includes(`Email has already been taken`) ? <p className="modal-errors" >{err}</p> : '')}
                 </label>
