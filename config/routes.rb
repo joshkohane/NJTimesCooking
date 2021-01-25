@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :saves, only: [:create]
     end
     resources :saves, only: [:destroy]
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy, :update]
   end
 
   root to: "static_pages#root"
