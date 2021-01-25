@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
     # validates_presence_of :email, :message => 'Please enter a valid email address.'
     validates :session_token, :email, presence: true, uniqueness: true
-    validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+    # validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
     validates :first_name, :last_name, :password_digest, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true 
