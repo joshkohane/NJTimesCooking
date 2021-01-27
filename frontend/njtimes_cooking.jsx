@@ -4,12 +4,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 import ReactGA from 'react-ga';
 
-function initializeReactGA() {
-    ReactGA.initialize('UA-G-T2K095V92Z');
-    ReactGA.pageview(window.location.pathname + window.location.search);
-}
-
-initializeReactGA();
+ReactGA.initialize('UA-G-T2K095V92Z');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
