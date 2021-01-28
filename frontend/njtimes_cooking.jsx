@@ -8,7 +8,7 @@ import ReactGA from 'react-ga';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     
-    ReactGA.initialize('G-T2K095V92Z');
+    ReactGA.initialize('UA-188191709-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
 
     let store;
