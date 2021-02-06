@@ -142,3 +142,81 @@
         }
 
 }
+
+@media only screen and (max-width: 870px){
+    .recipe-page-outer-container {
+        
+        .recipe-page-container {
+
+            .recipe-page-title {
+
+            }
+
+            .recipe-page-author {
+
+            }
+
+            .recipe-page-label {
+                
+                .recipe-page-subheader {
+
+                }
+
+                .recipe-page-yield {
+
+                }
+            }
+
+            .recipe-page-splash {
+
+
+                .recipe-page-description {
+
+                }
+
+                .recipe-page-photo {
+
+                }
+            }
+        }
+    
+        .outer-bookmark {
+
+            .recipe-page-btn {
+        
+                
+                .splash-outer-bookmark {
+
+                    .splash-bookmark {
+
+                    }
+
+                    .bookmark-recipe-saved {
+                    }
+                    
+                    .splash-bookmark:before,
+                    .splash-bookmark:after {
+
+                    }
+                    
+                    .splash-bookmark:before {
+
+                    }
+                }
+            }
+        }
+            
+        .save-recipe-btn:hover {
+        
+            .bookmark-outer-recipe .splash-bookmark:before {
+                
+            }
+        }
+
+    }
+    //MOBILE ONLY STYLES
+}
+
+// @media only screen and (min-width:771px) and (max-width:1040px){
+//     //TABLET ONLY STYLES
+// }
