@@ -81,7 +81,7 @@ class RecipePage extends React.Component {
                         <p className="recipe-page-subheader" >Yield</p>
                         <p className="recipe-page-yield" >{recipe.yield}</p>
                     </div>
-                    <div className="recipe-page-label" >
+                    <div className="recipe-page-label label-time" >
                         <p className="recipe-page-subheader" >Time</p>
                         <p className="recipe-page-yield" >{recipe.time}</p>
                     </div>

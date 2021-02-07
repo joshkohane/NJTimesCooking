@@ -79,8 +79,8 @@
     }
     
     .outer-bookmark {
-
         position: relative;
+
             .recipe-page-btn {
                 position: absolute;
                 display: flex;
@@ -143,23 +143,29 @@
 
 }
 
-@media only screen and (max-width: 870px){
+@media (max-width: 870px) {
     .recipe-page-outer-container {
-        
+        padding: 1em;
+
         .recipe-page-container {
+            width: 100%;
+            border-bottom: none;
+            padding-bottom: 7px;
 
             .recipe-page-title {
-
+                padding: 15px 0;
             }
 
             .recipe-page-author {
-
+                border-bottom: none;
+                padding-bottom: 24px;
+                margin-bottom: 0px;
             }
 
             .recipe-page-label {
                 
                 .recipe-page-subheader {
-
+                    min-width: 60px;
                 }
 
                 .recipe-page-yield {
@@ -167,15 +173,22 @@
                 }
             }
 
-            .recipe-page-splash {
+            .label-time {
+                padding-bottom: 60px;
+            }
 
+            .recipe-page-splash {
+                display: flex;
+                flex-direction: column-reverse;
 
                 .recipe-page-description {
 
                 }
 
                 .recipe-page-photo {
-
+                    margin-left: 0px;
+                    width: calc(100% - 20px);
+                    height: auto;
                 }
             }
         }
@@ -183,7 +196,8 @@
         .outer-bookmark {
 
             .recipe-page-btn {
-        
+                left: 0;
+                top: 85px;
                 
                 .splash-outer-bookmark {
 
@@ -209,7 +223,7 @@
         .save-recipe-btn:hover {
         
             .bookmark-outer-recipe .splash-bookmark:before {
-                
+
             }
         }
 
