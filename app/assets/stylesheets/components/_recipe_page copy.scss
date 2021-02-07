@@ -145,8 +145,7 @@
 
 @media (max-width: 870px) {
     .recipe-page-outer-container {
-        padding: 0px 1em 1em;
-        width: calc(100% - 2em);
+        padding: 1em;
 
         .recipe-page-container {
             width: 100%;
@@ -188,9 +187,8 @@
 
                 .recipe-page-photo {
                     margin-left: 0px;
-                    width: 100%;
+                    width: calc(100% - 20px);
                     height: auto;
-                    padding-bottom: 20px;
                 }
             }
         }
