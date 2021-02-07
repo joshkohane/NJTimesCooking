@@ -140,3 +140,87 @@
         }
     }
 }
+
+@media (max-width: 870px) {
+    .home-footer {
+        display: block;
+        width: 100%;
+        padding: 30px 20px;
+
+        .about-us {
+            padding: 0px;
+
+            .home-about-text {
+                width: 100%;
+            }
+        }
+
+        .footer-title {
+
+        }
+
+        .learn-more {
+            width: auto;
+            padding-left: 0px;
+            padding-top: 30px;
+
+            .home-learn-text {
+
+                .footer-links {
+
+                }
+
+                .footer-links:hover {
+
+                }
+            }
+        }
+    }
+
+    .above-footer {
+        display: block;
+        width: 100%;
+        padding: 30px 20px;
+
+        .about-us {
+            padding: 0px;
+
+            .above-footer-title {
+
+            }
+
+            .above-footer-text {
+                width: 100%;
+            }
+        }
+
+        .footer-title {
+
+        }
+
+        .learn-more {
+
+            .home-icon-text {
+
+                .footer-icon {
+                    
+                    .footer-inner-icon {
+                        
+                        .links-icons-git {
+                            
+                        }
+
+                        .links-icons-linked {
+
+                        }
+                    }
+
+                    .footer-inner-icon:hover .links-icons-git,
+                    .footer-inner-icon:hover .links-icons-linked {
+
+                    }
+                }
+            }
+        }
+    }
+}

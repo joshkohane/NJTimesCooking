@@ -255,3 +255,125 @@
         }
     }
 }
+
+@media (max-width: 870px) {
+    .nav-bar-container {
+
+    }
+
+    .main-logo {
+        padding: 20px 10px;
+
+        .logo-left {
+            height: 15px;
+        }
+        
+        .logo-right {
+            font-size: 20px;
+        }
+    }
+
+    .nav-bar-search {
+        width: 100%;
+
+        .fa-search {
+            padding-left: 10px;
+            font-size: 15px;
+        }
+        
+        .search-form {
+            
+            .search-input {
+                font-size: 17px;
+            }
+        }
+
+        .search-results {
+            
+            .search-results-wrapper {
+
+                .search-results-child {
+                    
+                }
+            }
+            
+            .search-results-wrapper:hover {
+
+                .search-results-child {
+
+                }
+            }
+        }
+        
+
+        .fa-times-circle {
+            
+        }
+    }
+
+    .nav-bar-end {
+        
+
+        .recipe-box {
+            
+
+            .recipe-spacer {
+            }
+
+            .recipe-box-text {
+                
+            }
+            
+            
+            .recipe-box-text:hover {
+            }
+            
+            .recipe-box-show {
+                
+            }
+            
+            
+            .recipe-box-login-container:hover {
+            }
+
+            .recipe-box-login {
+                
+            }
+        }
+
+        .nav-bar-dropdown {
+            
+            .fa-cog {
+            }
+
+            .nav-bar-dropdown-show {
+            }
+            
+        }
+
+        .nav-bar-dropdown:hover{
+            
+            .fa-cog{
+            }
+
+            .nav-bar-dropdown-spacer {
+
+            }
+
+            .nav-bar-dropdown-show {
+                
+            }
+
+            .nav-bar-dropdown-show:before,
+            .nav-bar-dropdown-show:after {
+
+            }
+
+            .nav-bar-dropdown-show:after {
+            }
+
+            .nav-bar-dropdown-show:hover {
+            }
+        }
+    }
+}
