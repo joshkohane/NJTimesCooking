@@ -290,3 +290,170 @@
         }
     }
 }
+
+@media (max-width: 870px) {
+    .comments-container {
+        width: 100%;
+    }
+
+    .comments-header {
+
+    }
+
+    .comments-form {
+        
+            .comments-input {
+                width: calc(100% - 25px);
+                height: 20px;
+            }
+
+            .comments-input:focus {
+
+            }
+    }
+
+    .comments-form-open {
+        
+        .comments-form-inner-container {
+
+            .comments-open-input {
+                width: calc(100% - 68px);
+            }
+
+            .comments-open-input:focus {
+
+            }
+            
+            .comments-form-btns {
+
+                .comments-form-cancel {
+
+                }
+
+                .comments-form-cancel:hover {
+
+                }
+
+                .comments-form-note-no {
+
+                }
+
+                .comments-form-note {
+
+                }
+
+                .comments-form-note:hover {
+
+                }
+            }
+        }
+    }
+
+    .comments-section-heading-container {
+        padding-top: 60px;
+
+        .comments-section-heading {
+
+            .comments-section-heading-title {
+
+                .comments-section-heading-number {
+
+                }
+            }
+        }
+    }
+            
+    .comments-section-no-comments {
+
+    }
+
+    .comments-section-comments {
+
+        .comments-section-comment-outer-container {
+            padding: 30px 0px 30px 15px;
+
+            .delete-comment-btn,
+            .update-comment-btn {
+
+            }
+            
+            .delete-comment-btn {
+
+            }
+
+            .update-comment-btn {
+
+            }
+
+            .comments-section-image-container {
+                
+                .comments-section-image {
+
+                }
+            }
+
+            .modal-save-background {
+
+                .modal-save-child {
+
+                    .modal-save-body {
+
+                        .modal-image-text {
+
+                        }
+                    }
+                }
+            }
+
+            .comments-section-comment-container {
+                width: 100%;
+
+                .comments-section-comment-info {
+
+                    .comments-section-comment-name {
+
+                    }
+
+                    .comments-section-comment-time {
+
+                    }
+                }
+
+                .edit-comment-form {
+                    
+                    .comments-form-btns {
+                        padding-right: 20px;
+                        
+                        .comments-form-cancel {
+
+                        }
+
+                        .comments-form-cancel:hover {
+
+                        }
+
+                        .comments-form-note-no {
+
+                        }
+
+                        .comments-form-note {
+
+                        }
+
+                        .comments-form-note:hover {
+
+                        }
+                    }
+
+                    .edit-comment-input {
+                        width: 85%;
+                    }
+                }
+
+                .comments-section-comment-text {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
