@@ -69,8 +69,9 @@
 
     .recipe-card-header {
 
-        .recipe-card-header-title {
-
+        .recipe-card-header-title,
+        .recipe-card-header-subtitle {
+            font-size: 24px;
         }
 
         .recipe-card-header-subtitle {
