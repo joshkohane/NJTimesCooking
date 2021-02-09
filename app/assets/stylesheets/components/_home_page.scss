@@ -44,3 +44,37 @@
     }
 }
 
+@media (max-width: 670px) {
+    .home-page-main-body {
+        width: 100%;
+        padding: 0 2em;
+        box-sizing: border-box;
+    }
+
+    .home-page-header {
+        padding: 0px 0px 10px;
+        margin-top: -40px;
+        z-index: 10;
+
+        .home-page-title {
+            font-size: 1.5rem;
+            text-align: left;
+            padding: 0px 0px 5px;
+        }
+
+        .home-page-subtitle {
+            text-align: left;
+        }
+    }
+
+    .recipe-card-header {
+
+        .recipe-card-header-title {
+
+        }
+
+        .recipe-card-header-subtitle {
+
+        }
+    }   
+}

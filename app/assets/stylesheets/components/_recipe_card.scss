@@ -358,3 +358,363 @@
     text-align: center;
     color: $gray;
 }
+
+@media (max-width: 670px) {
+    .home-page-recipe-card-container {
+        position: relative;
+        width: 1000px;
+        height: 450px;
+        overflow: visible;
+        list-style: none;
+    }
+
+    .recipe-card-overflow,
+    .recipe-card-extra-overflow,
+    .recipe-card-overflow-left,
+    .recipe-card-extra-overflow-left {
+        height: 280px;
+        z-index: 10;
+        position: absolute;
+    }
+
+    .recipe-card-overflow {
+        background-image: linear-gradient(to right, rgba(242, 243, 239, 0.7), rgba(242, 243, 239, 1));
+        width: 50px;
+        left: 1015px;
+    }
+
+    .recipe-card-overflow-left {
+        background-image: linear-gradient(to left, rgba(242, 243, 239, 0.7), rgba(242, 243, 239, 1));
+        width: 50px;
+        right: 1015px;
+    }
+
+    .recipe-card-container:hover {
+
+        .fas.fa-chevron-right {
+            display: block;
+            cursor: pointer;
+        }
+
+        .fas.fa-chevron-left {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    .fas.fa-chevron-right {
+        position: absolute;
+        left: 30px;
+        top: 110px;
+        font-size: 20px;
+        display: none;
+    }
+
+    .fas.fa-chevron-left {
+        position: absolute;
+        right: 30px;
+        top: 110px;
+        font-size: 20px;
+        display: none;
+    }
+
+    .recipe-card-extra-overflow {
+        background-color: $main-light-gray;
+        width: 100%;
+        left: 1065px;
+    }
+
+    .recipe-card-extra-overflow-left {
+        background-color: $main-light-gray;
+        width: 100%;
+        right: 1065px;
+    }
+
+    .recipe-card-container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .recipe-card {
+        display: flex;
+        position: absolute;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 40px;
+        transition: all .5s ease-in 0s;
+
+    }
+
+    .recipe-card-wrapper {
+        height: 278px;
+        width: 235.5px;
+        position: relative;
+        background-color: $white;
+        border: 1px solid $photo-background;
+        margin-right: 17px;
+    }
+
+    .recipe-card-wrapper:hover {
+        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+        transition: all .2s ease-in 0s;
+    }
+
+    .recipe-card-photo {
+        width: 235.5px;
+        height: 157px;
+    }
+
+
+    .recipe-card-text {
+        padding: 12px 14px 6px 14px;
+        height: 106px;
+        
+        .recipe-card-title {
+            font-size: 17px;
+            font-family: $sans-serif-bold;
+            font-weight: 700;
+            color: $darker-gray;
+            text-decoration: none;
+        }
+        
+        .recipe-card-name {
+            font-size: 13px;
+            padding-top: 3px;
+            font-family: $sans-serif;
+            color: $darker-gray;
+            text-decoration: none;
+        }
+    }
+
+    .recipe-card-footer {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 12px;
+        width: 235.5px;
+        
+        .recipe-card-time {
+            font-size: 12px;
+            font-family: $sans-serif-thin;
+            color: #999999;
+            padding-left: 14px;
+        }
+        
+    }
+
+    .recipe-card-outer-container {
+        position: relative;
+        padding-right: 2px;
+        padding-bottom: 20px;
+    }
+
+    .recipe-card-bookmark-container {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .recipe-card-bookmark:before,
+    .recipe-card-bookmark:after {
+        content: '';
+        position: absolute;
+        right: -2px;
+        bottom: -1px;
+        border-bottom: 7.5px solid #b3b3b3;
+        border-right: 7.5px solid transparent;
+        border-left: 7.5px solid transparent;
+        width: 0;
+        height: 0;
+    }
+
+    .recipe-card-bookmark:before {
+        bottom: -3px;
+        border-bottom: 7.5px solid $white;
+        z-index: 1;
+    }
+
+    .recipe-card-bookmark {
+        position: absolute;
+        width: 15px;
+        height: 20px;
+        border: 2px solid #b3b3b3;
+        background-color: $white;
+        box-sizing: border-box;
+        right: 11px;
+        bottom: 15px;
+    }
+
+    .recipe-card-bookmark-saved {
+        background-color: #b3b3b3;
+    }
+
+    .recipe-card-bookmark:hover {
+        background-color: #b3b3b3;
+
+    }
+
+    .recipe-card-wrapper .recipe-card-bookmark:hover .recipe-card-wrapper {
+        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+        transition: all .2s ease-in 0s;
+    }
+
+    .see-all-link-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .see-all-link {
+        font-size: 17px;
+        font-family: $sans-serif-bold;
+        font-weight: 700;
+        color: $btn-red;
+        padding-right: 17px;
+        width: 235px;
+        text-align: right;
+    }
+
+    .see-all-link:hover {
+        color: $darker-red;
+
+    }
+
+    .see-all-link:hover:after { 
+        border-left: 15px solid $darker-red;
+    }
+
+    .see-all-link:before,
+    .see-all-link:after {
+        content: '';
+        position: absolute;
+        right: -5px;
+        bottom: -7px;
+        border-left: 15px solid $btn-red;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        width: 0;
+        height: 0;
+        cursor: pointer;
+    }
+
+    .see-all-link:before {
+        right: -1px;
+        border-left: 15px solid $main-light-gray;
+        z-index: 1;
+    }
+
+    .recipe-card-pop-up {
+        position: absolute;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 70px;
+        background-color: $white;
+        opacity: 1;
+        bottom: 45px;
+        right: -9px;
+        border: 1px solid $lighter-gray;
+        cursor: pointer;
+        opacity: 1;
+        z-index: 1;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+
+    .recipe-card-pop-up:before,
+    .recipe-card-pop-up:after {
+        content: '';
+        position: absolute;
+        right: 17px;
+        bottom: -10px;
+        border-top: 10px solid $lighter-gray;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        width: 0;
+        height: 0;
+    }
+
+    .recipe-card-pop-up:after {
+        border-top: 10px solid $white;
+        bottom: -8px
+    }
+
+    .recipe-card-pop-up-spacer {
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        background-color: transparent;
+        opacity: 1;
+        bottom: -13px;
+        z-index: -1;
+    }
+
+    .recipe-card-pop-up-title {
+        font-family: $sans-serif-bold;
+        color: $black;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .recipe-card-pop-up-body {
+        text-align: center;
+        color: #666666;
+        font-family: $sans-serif;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .recipe-card-pop-up-text {
+        text-align: center;
+        color: $black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-family: $sans-serif-bold;
+        font-size: 15px;
+
+        padding: 0 10px 10px 0px;
+    }
+
+    .recipe-card-pop-up-link {
+        color: $btn-red;
+        cursor: pointer;
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+
+    .recipe-card-pop-up-link:hover {
+        text-decoration: underline;
+    }
+
+    .recipe-card-bookmark-container:hover {
+        .recipe-card-pop-up {
+            display: flex;
+            z-index: 10;
+        }
+    }
+
+    .no-search-results {
+        height: 500px;
+        background-color: $main-light-gray;
+    }
+
+    .no-search-results-heading {
+        padding-top: 200px;
+        font-family: $sans-serif-bold;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .no-search-results-subheading {
+        padding-top: 20px;
+        font-family: $sans-serif;
+        font-size: 25px;
+        text-align: center;
+        color: $gray;
+    }
+}
