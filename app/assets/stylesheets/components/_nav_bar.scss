@@ -140,7 +140,10 @@
             color: $btn-red;
             height: 39px;
             cursor: pointer;
-            
+
+            &::after {
+                content: "Your Recipe Box";
+            }
         }
         
         
@@ -164,6 +167,10 @@
             color: $btn-red;
             height: 39px;
             cursor: pointer;
+
+            &::after {
+                content: "Your Recipe Box";
+            }
         }
         
         
@@ -237,7 +244,7 @@
         .nav-bar-dropdown-show:after {
             content: '';
             position: absolute;
-            right: 13px;
+            right: 5px;
             top: -10px;
             border-bottom: 10px solid $light-gray;
             border-right: 10px solid transparent;
@@ -256,58 +263,63 @@
     }
 }
 
-@media (max-width: 870px) {
+@media (max-width: 670px) {
     .nav-bar-container {
-
+        height: 44px;
+        width: 100vw;
+        position: fixed;
     }
 
     .main-logo {
-        padding: 20px 10px;
+        padding: 13px 5px;
 
         .logo-left {
-            height: 15px;
+            height: 13px;
         }
         
         .logo-right {
-            font-size: 20px;
+            font-size: 15px;
         }
     }
 
     .nav-bar-search {
-        width: 100%;
+        width: 47%;
 
         .fa-search {
-            padding-left: 10px;
-            font-size: 15px;
+            padding-left: 5px;
+            padding-right: 3px;
+            font-size: 10px;
         }
         
         .search-form {
             
             .search-input {
-                font-size: 17px;
+                font-size: 11px;
+                width: 100%;
             }
         }
 
         .search-results {
-            
+            top: 44px;
+
             .search-results-wrapper {
 
                 .search-results-child {
-                    
+                    font-size: 15px;
                 }
             }
             
             .search-results-wrapper:hover {
 
                 .search-results-child {
-
                 }
             }
         }
         
 
         .fa-times-circle {
-            
+            font-size: 13px;
+            right: 7px;
         }
     }
 
@@ -315,13 +327,21 @@
         
 
         .recipe-box {
-            
+            height: 45px;
+            width: 73px;
 
             .recipe-spacer {
             }
 
-            .recipe-box-text {
+            .recipe-box-text,
+            .recipe-box-show {
+                padding: 10px 8px 0px 7px;
+                font-size: 9px;
+                height: 26px;
                 
+                &::after {
+                    content: "Recipe Box";
+                }
             }
             
             
@@ -329,7 +349,7 @@
             }
             
             .recipe-box-show {
-                
+                height: 27px;
             }
             
             
@@ -337,13 +357,17 @@
             }
 
             .recipe-box-login {
-                
+                font-size: 10px;
+                left: 23px;
+                bottom: 5px;
             }
         }
 
         .nav-bar-dropdown {
+            padding: 17px 8px 15px 7px;
             
             .fa-cog {
+                font-size: 12px;
             }
 
             .nav-bar-dropdown-show {

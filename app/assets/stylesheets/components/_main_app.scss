@@ -13,3 +13,15 @@
 .spacer {
     padding-top: 65px;
 }
+
+@media (max-width: 870px) {
+    .main-app {
+        width: 100%;
+    }
+}
+
+@media (max-width: 670px) {
+    .spacer {
+        padding-top: 44px;
+    }
+}

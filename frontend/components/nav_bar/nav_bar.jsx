@@ -85,11 +85,11 @@ class NavBar extends React.Component {
                         <div className="recipe-spacer"></div>
                         {loggedIn ? 
                             <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
-                                <p className={this.props.location.pathname.includes('recipeBox') ? "recipe-box-show" : "recipe-box-text"} >Your Recipe Box</p>
+                                <p className={this.props.location.pathname.includes('recipeBox') ? "recipe-box-show" : "recipe-box-text"} ></p>
                             </Link>
                         :
                             <div className="recipe-box-login-container" >
-                                <p className="recipe-box-text" >Your Recipe Box</p>
+                                <p className="recipe-box-text" ></p>
                                 <div className="recipe-box-login" >Log In</div>
                             </div>
                         }
