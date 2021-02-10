@@ -8,7 +8,8 @@
     background-color: $main-light-gray;
     
     .recipe-box-container {
-        width: 1030px;
+        max-width: 1030px;
+        width: calc(100% - 2em);
         display: flex;
         flex-direction: column;
 

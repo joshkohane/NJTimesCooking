@@ -95,6 +95,7 @@
     background-color: $white;
     border: 1px solid $photo-background;
     margin-right: 17px;
+    box-sizing: border-box;
 }
 
 .recipe-card-wrapper:hover {
@@ -103,13 +104,13 @@
 }
 
 .recipe-card-photo {
-    width: 235.5px;
+    width: 233.5px;
     height: 157px;
 }
 
 
 .recipe-card-text {
-    padding: 12px 14px 6px 14px;
+    margin: 12px 14px 6px 14px;
     height: 106px;
     
     .recipe-card-title {
@@ -135,15 +136,11 @@
     justify-content: space-between;
     align-items: center;
     bottom: 12px;
-    width: 235.5px;
-    
-    .recipe-card-time {
-        font-size: 12px;
-        font-family: $sans-serif-thin;
-        color: #999999;
-        padding-left: 14px;
-    }
-    
+    width: 210.5px;
+    font-size: 12px;
+    font-family: $sans-serif-thin;
+    color: #999999;
+    padding-left: 14px;
 }
 
 .recipe-card-outer-container {
@@ -410,30 +407,44 @@
     }
 
     .recipe-card-wrapper {
-        
+        width: 145px;
+        height: 212px;
     }
 
     .recipe-card-wrapper:hover {
     }
 
     .recipe-card-photo {
+        width: 144px;
+        height: 96px;
     }
 
 
     .recipe-card-text {
-        
+        margin: 12px 12px 6px 12px;
+
         .recipe-card-title {
+            font-size: 14px;
         }
         
         .recipe-card-name {
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 
     .recipe-card-footer {
+        bottom: 8px;
+        padding-left: 12px;
+        display: block;
+        max-width: 100px;
+        max-height: 14px;
+        font-size: 11px;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
-        
         .recipe-card-time {
-            
         }
         
     }
@@ -454,7 +465,7 @@
     }
 
     .recipe-card-bookmark {
-        
+        bottom: 17px;
     }
 
     .recipe-card-bookmark-saved {

@@ -296,6 +296,8 @@
             .search-input {
                 font-size: 11px;
                 width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
