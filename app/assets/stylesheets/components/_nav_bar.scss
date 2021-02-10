@@ -283,7 +283,7 @@
     }
 
     .nav-bar-search {
-        width: 47%;
+        width: calc(100% - 161px);
 
         .fa-search {
             padding-left: 5px;
