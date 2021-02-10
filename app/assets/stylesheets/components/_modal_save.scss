@@ -86,3 +86,42 @@
         border: 1px solid $darker-red;
     }
 }
+
+@media (max-width: 670px) {
+  .modal-save-background-closed {
+  }
+
+  .modal-save-background {
+    
+  }
+
+  .modal-save-child {
+    width: calc(100vw - 6px);
+    height: auto;
+    top: 3px;
+    left: 3px;
+    transform: none;
+    box-sizing: border-box;
+  }
+
+  .modal-save-body {
+
+      .modal-save-title {
+      }
+  }
+
+  .modal-save-btns {
+      padding-top: 25px;
+      display: block;
+
+      .modal-save-no,
+      .modal-save-yes {
+          margin: 0px;
+          width: 100%;
+      }
+
+      .modal-save-yes {
+          margin-top: 15px;
+      }
+  }
+}

@@ -43,9 +43,7 @@ class RecipeCard extends React.Component {
                             <p className="recipe-card-name">{recipe.authorFirstName} {recipe.authorLastName}</p>
                         </div>
                         <div className="recipe-card-footer">
-                            {/* <p className="recipe-card-time" > */}
-                                {recipe.time}
-                                {/* </p> */}
+                            {recipe.time}
                         </div>
                     </Link>
                     <div className="recipe-card-bookmark-container"  onClick={loggedIn ? () => this.handleSave(recipe): () => {}} >
