@@ -49,52 +49,42 @@
     justify-content: center;
     padding-top: 40px;
 
-    .modal-save-no {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 81px;
-        height: 38px;
-        border: 1px solid $black;
-        border-radius: 5px;
-        margin: 0 20px;
-        color: $darker-gray;
-        font-size: 14px;
-    }
-
-    .modal-save-no:hover {
-        background-color: $black;
-        color: $white;
-    }
-
+    .modal-save-no,
     .modal-save-yes {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 81px;
         height: 38px;
-        border: 1px solid $btn-red;
-        background-color: $btn-red;
         border-radius: 5px;
-        margin: 0 2px;
-        color: $white;
         font-size: 14px;
     }
 
-    .modal-save-yes:hover {
-        background-color: $darker-red;
-        border: 1px solid $darker-red;
+    .modal-save-no {
+        border: 1px solid $black;
+        margin: 0 20px 0 0;
+        color: $darker-gray;
+
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
+    }
+
+    .modal-save-yes {
+        border: 1px solid $btn-red;
+        background-color: $btn-red;
+        margin: 0 2px;
+        color: $white;
+
+        &:hover {
+          background-color: $darker-red;
+          border: 1px solid $darker-red;
+        }
     }
 }
 
 @media (max-width: 670px) {
-  .modal-save-background-closed {
-  }
-
-  .modal-save-background {
-    
-  }
-
   .modal-save-child {
     width: calc(100vw - 6px);
     height: auto;
@@ -102,12 +92,6 @@
     left: 3px;
     transform: none;
     box-sizing: border-box;
-  }
-
-  .modal-save-body {
-
-      .modal-save-title {
-      }
   }
 
   .modal-save-btns {

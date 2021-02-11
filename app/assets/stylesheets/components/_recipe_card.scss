@@ -419,6 +419,10 @@
         position: relative;
         overflow: scroll;
         justify-content: flex-start;
+
+        &::-webkit-scrollbar { 
+            display: none; 
+        }
     }
     
     .recipe-card-mobile {
