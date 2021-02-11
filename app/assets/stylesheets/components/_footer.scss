@@ -48,10 +48,10 @@
                 text-decoration: none;
                 color: $white;
                 font-size: 15px;
-            }
 
-            .footer-links:hover {
-                text-decoration: underline;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -115,18 +115,19 @@
                     border-radius: 50%;
                     position: relative;
                     
-                    .links-icons-git {
-                        color: #666666;
-                        font-size: 25px;
-                        position: absolute;
-                        top: 22%;
-                        right: 22%;
-                    }
-
+                    .links-icons-git,
                     .links-icons-linked {
                         color: #666666;
                         font-size: 25px;
                         position: absolute;
+                    }
+                    
+                    .links-icons-git {
+                        top: 22%;
+                        right: 22%;
+                    }
+                    
+                    .links-icons-linked {
                         top: 21%;
                         right: 24%;
                     }
@@ -157,25 +158,10 @@
             }
         }
 
-        .footer-title {
-
-        }
-
         .learn-more {
             width: auto;
             padding-left: 0px;
             padding-top: 40px;
-
-            .home-learn-text {
-
-                .footer-links {
-
-                }
-
-                .footer-links:hover {
-
-                }
-            }
         }
     }
 
@@ -189,41 +175,8 @@
         .about-us {
             padding: 0px;
 
-            .above-footer-title {
-
-            }
-
             .above-footer-text {
                 width: 100%;
-            }
-        }
-
-        .footer-title {
-
-        }
-
-        .learn-more {
-
-            .home-icon-text {
-
-                .footer-icon {
-                    
-                    .footer-inner-icon {
-                        
-                        .links-icons-git {
-                            
-                        }
-
-                        .links-icons-linked {
-
-                        }
-                    }
-
-                    .footer-inner-icon:hover .links-icons-git,
-                    .footer-inner-icon:hover .links-icons-linked {
-
-                    }
-                }
             }
         }
     }
