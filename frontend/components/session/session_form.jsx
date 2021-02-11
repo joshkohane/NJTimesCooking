@@ -58,7 +58,9 @@ class SessionForm extends React.Component {
                     <span onClick={this.props.closeModal} className="close-modal-btn">&#x2715;</span>
                     : ''
                 }
-                <input type="button" value="Continue as Demo User" className="btn demo-btn" onClick={this.handleDemoUser} />
+                <div className="modal-submit-btn">
+                    <input type="button" value="Continue as Demo User" className="btn demo-btn" onClick={this.handleDemoUser} />
+                </div>
                 <div className="modal-line-break">Or use your email</div>
                 {this.props.formType === 'signup' ? 
                     <label className="modal-input-field" >
