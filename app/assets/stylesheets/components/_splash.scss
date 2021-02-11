@@ -230,7 +230,8 @@
 
 @media (max-width: 870px) {
     .splash-container {
-
+        max-height: calc(202px + 100vw * .67);
+        
         .splash-image {
             margin-top: 20px;
         }
