@@ -169,10 +169,6 @@
                 .recipe-page-subheader {
                     min-width: 60px;
                 }
-
-                .recipe-page-yield {
-
-                }
             }
 
             .label-time {
@@ -182,10 +178,6 @@
             .recipe-page-splash {
                 display: flex;
                 flex-direction: column-reverse;
-
-                .recipe-page-description {
-
-                }
 
                 .recipe-page-photo {
                     margin-left: 0px;
@@ -201,39 +193,7 @@
             .recipe-page-btn {
                 left: 0;
                 top: 85px;
-                
-                .splash-outer-bookmark {
-
-                    .splash-bookmark {
-
-                    }
-
-                    .bookmark-recipe-saved {
-                    }
-                    
-                    .splash-bookmark:before,
-                    .splash-bookmark:after {
-
-                    }
-                    
-                    .splash-bookmark:before {
-
-                    }
-                }
             }
         }
-            
-        .save-recipe-btn:hover {
-        
-            .bookmark-outer-recipe .splash-bookmark:before {
-
-            }
-        }
-
     }
-    //MOBILE ONLY STYLES
 }
-
-// @media only screen and (min-width:771px) and (max-width:1040px){
-//     //TABLET ONLY STYLES
-// }

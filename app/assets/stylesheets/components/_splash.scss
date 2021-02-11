@@ -1,7 +1,6 @@
 @import "../base/colors.scss";
 @import "../base/fonts.scss";
 
-
 .splash-container {
     position: relative;
     cursor: pointer;
@@ -75,7 +74,6 @@
             font-weight: 700;
         }
     }
-
 }
 
 .splash-outer-container {
@@ -282,88 +280,11 @@
             .splash-title {
                 padding-top: 0px;
             }
-            
-            .splash-description {
-
-            }
-
-            .splash-author {
-
-            }
         }
 
-    }
-
-    .splash-outer-container {
     }
 
     .save-recipe-btn {
         display: none;
-
-        
-        .splash-outer-bookmark {
-
-
-            .splash-bookmark-text {
-            }
-            
-            .splash-bookmark {
-                
-            }
-            
-            .splash-bookmark-saved {
-            }
-
-            .splash-bookmark:before,
-            .splash-bookmark:after {
-                
-            }
-            
-            .splash-bookmark:before {
-            }
-        }
     }
-
-    .save-recipe-btn:hover {
-        
-        .splash-bookmark:before {
-        }
-    }
-
-    .save-recipe-btn .logged-in-pop-up {
-        
-    }
-
-    .logged-in-pop-up:before,
-    .logged-in-pop-up:after {
-    }
-
-    .logged-in-pop-up:after {
-    }
-
-    .logged-in-pop-up-spacer {
-
-    }
-
-    .logged-in-pop-up-title {
-
-    }
-
-    .logged-in-pop-up-body {
-        
-    }
-
-    .logged-in-pop-up-text {
-
-    }
-
-    .logged-in-pop-up-link {
-
-    }
-
-    .logged-in-pop-up-link:hover {
-    }
-
-    .save-recipe-btn:hover .logged-in-pop-up {
-    }   
 }
