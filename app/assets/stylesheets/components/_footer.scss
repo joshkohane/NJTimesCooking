@@ -143,6 +143,10 @@
 }
 
 @media (max-width: 870px) {
+    .main-footer-container {
+        overflow: hidden;
+    }
+    
     .home-footer {
         display: block;
         width: 100%;

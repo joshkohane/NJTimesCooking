@@ -30,10 +30,6 @@
         z-index: 1;
     }
 
-    .recipe-otd-resized {
-        display: none;
-    }
-
     .splash-recipe {
         position: absolute;
         display: flex;
@@ -72,6 +68,10 @@
             font-size: 14px;
             font-family: $sans-serif-bold;
             font-weight: 700;
+        }
+
+        .recipe-otd-resized {
+            display: none;
         }
     }
 }
@@ -239,27 +239,7 @@
             display: none;
         }
         
-        .recipe-otd-resized {
-            font-size: 10px;
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: $btn-red;
-            color: $white;
-            font-family: $karnak;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            font-weight: 400;
-            z-index: 1;
-            bottom: 280px;
-            left: calc(50% - 71px);
-            padding: 0 7px;
-            height: 22px;
-            border-radius: 11px;
-        }
-
+        
         .splash-recipe {
             position: relative;
             left: 0;
@@ -268,20 +248,43 @@
             max-height: 202px;
             margin-top: 90px;
             padding: 30px 10px;
-            box-sizing: border-box;
-            overflow: hidden;
-
+            box-sizing: border-box;            
+            
             .splash-title,
             .splash-description,
             .splash-author {
                 width: calc(100% - 30px);
             }
-
+            
             .splash-title {
                 padding-top: 0px;
             }
-        }
 
+            .splash-author {
+                overflow: hidden;
+            }
+
+            .recipe-otd-resized {
+                font-size: 10px;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: $btn-red;
+                color: $white;
+                font-family: $karnak;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                font-weight: 400;
+                z-index: 1;
+                bottom: 191px;
+                left: calc(50% - 71px);
+                padding: 0 7px;
+                height: 22px;
+                border-radius: 11px;
+            }
+        }
     }
 
     .save-recipe-btn {

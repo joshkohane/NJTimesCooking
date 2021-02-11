@@ -11,8 +11,8 @@ class Splash extends React.Component {
             <div className="splash-container" >
                 <img className="splash-image" src={recipe.photoUrl} alt="" />
                 <p className="recipe-otd" >Recipe <br />of the day</p>
-                <p className="recipe-otd-resized" >Recipe of the day</p>
                 <div className="splash-recipe">
+                    <p className="recipe-otd-resized" >Recipe of the day</p>
                     <h1 className="splash-title" >{recipe.title}</h1>
                     <p className="splash-description" >A delicious twist on a Jersey classic.</p>
                     <p className="splash-author" >{recipe.authorFirstName} {recipe.authorLastName}</p>
