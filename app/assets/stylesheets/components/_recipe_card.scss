@@ -5,8 +5,6 @@
     position: relative;
     width: 1000px;
     height: 450px;
-    overflow: visible;
-    list-style: none;
 }
 
 .recipe-card-overflow,
@@ -32,11 +30,7 @@
 
 .recipe-card-container:hover {
 
-    .fas.fa-chevron-right {
-        display: block;
-        cursor: pointer;
-    }
-
+    .fas.fa-chevron-right,
     .fas.fa-chevron-left {
         display: block;
         cursor: pointer;
@@ -87,10 +81,6 @@
     transition: all .5s ease-in 0s;
 }
 
-.recipe-card-mobile {
-    display: none;
-}
-
 .recipe-card-wrapper {
     height: 278px;
     width: 235.5px;
@@ -99,18 +89,17 @@
     border: 1px solid $photo-background;
     margin-right: 17px;
     box-sizing: border-box;
-}
 
-.recipe-card-wrapper:hover {
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
-    transition: all .2s ease-in 0s;
+    &:hover {
+        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+        transition: all .2s ease-in 0s;
+    }
 }
 
 .recipe-card-photo {
     width: 233.5px;
     height: 157px;
 }
-
 
 .recipe-card-text {
     margin: 12px 14px 6px 14px;
@@ -185,15 +174,14 @@
     box-sizing: border-box;
     right: 11px;
     bottom: 15px;
+
+    &:hover {
+        background-color: #b3b3b3;
+    }
 }
 
 .recipe-card-bookmark-saved {
     background-color: #b3b3b3;
-}
-
-.recipe-card-bookmark:hover {
-    background-color: #b3b3b3;
-
 }
 
 .recipe-card-wrapper .recipe-card-bookmark:hover .recipe-card-wrapper {
@@ -220,7 +208,6 @@
 
 .see-all-link:hover {
     color: $darker-red;
-
 }
 
 .see-all-link:hover:after { 
@@ -310,14 +297,12 @@
 }
 
 .recipe-card-pop-up-text {
-    text-align: center;
     color: $black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     font-family: $sans-serif-bold;
     font-size: 15px;
-
     padding: 0 10px 10px 0px;
 }
 
@@ -326,10 +311,10 @@
     cursor: pointer;
     padding-right: 4px;
     padding-left: 4px;
-}
 
-.recipe-card-pop-up-link:hover {
-    text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .recipe-card-bookmark-container:hover {
@@ -365,57 +350,7 @@
         height: 380px;
     }
 
-    .recipe-card-overflow,
-    .recipe-card-extra-overflow,
-    .recipe-card-overflow-left,
-    .recipe-card-extra-overflow-left {
-    }
-
-    .recipe-card-overflow {
-    }
-
-    .recipe-card-overflow-left {
-    }
-
-    .recipe-card-container:hover {
-
-        .fas.fa-chevron-right {
-        }
-
-        .fas.fa-chevron-left {
-        }
-    }
-
-    .fas.fa-chevron-right {
-        
-    }
-
-    .fas.fa-chevron-left {
-        
-    }
-
-    .recipe-card-extra-overflow {
-        
-    }
-
-    .recipe-card-extra-overflow-left {
-        
-    }
-
-    .recipe-card-container {
-        
-    }
-
     .recipe-card {
-        // position: relative;
-        // overflow: scroll;
-        // left: 0px;
-        // padding-left: 1195px;
-        // margin-left: -2em;
-    }
-
-    .recipe-card {
-        // display: none;
         position: relative;
         overflow: scroll;
         justify-content: flex-start;
@@ -424,24 +359,10 @@
             display: none; 
         }
     }
-    
-    .recipe-card-mobile {
-        // display: flex;
-        // position: relative;
-        // overflow: scroll;
-        // box-sizing: border-box;
-        // // justify-content: center;
-        // align-items: center;
-        // padding-bottom: 40px;
-        // transition: all .5s ease-in 0s;
-    }
 
     .recipe-card-wrapper {
         width: 145px;
         height: 212px;
-    }
-
-    .recipe-card-wrapper:hover {
     }
 
     .recipe-card-photo {
@@ -474,115 +395,13 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-
-        .recipe-card-time {
-        }
-        
-    }
-
-    .recipe-card-outer-container {
-        
-    }
-
-    .recipe-card-bookmark-container {
-    }
-
-    .recipe-card-bookmark:before,
-    .recipe-card-bookmark:after {
-        
-    }
-
-    .recipe-card-bookmark:before {
     }
 
     .recipe-card-bookmark {
         bottom: 17px;
     }
 
-    .recipe-card-bookmark-saved {
-    }
-
-    .recipe-card-bookmark:hover {
-
-    }
-
-    .recipe-card-wrapper .recipe-card-bookmark:hover .recipe-card-wrapper {
-    }
-
-    .see-all-link-wrapper {
-        
-    }
-
     .see-all-link {
         width: 145px;
-
-
-    }
-
-    .see-all-link:hover {
-
-    }
-
-    .see-all-link:hover:after { 
-    }
-
-    .see-all-link:before,
-    .see-all-link:after {
-        
-    }
-
-    .see-all-link:before {
-    }
-
-    .recipe-card-pop-up {
-        
-    }
-
-    .recipe-card-pop-up:before,
-    .recipe-card-pop-up:after {
-        
-    }
-
-    .recipe-card-pop-up:after {
-    }
-
-    .recipe-card-pop-up-spacer {
-        
-    }
-
-    .recipe-card-pop-up-title {
-        
-    }
-
-    .recipe-card-pop-up-body {
-        
-    }
-
-    .recipe-card-pop-up-text {
-
-    }
-
-    .recipe-card-pop-up-link {
-        
-    }
-
-    .recipe-card-pop-up-link:hover {
-    }
-
-    .recipe-card-bookmark-container:hover {
-        .recipe-card-pop-up {
-           
-        }
-    }
-
-    .no-search-results {
-    }
-
-    .no-search-results-heading {
-
-    }
-
-    .no-search-results-subheading {
-
     }
 }
