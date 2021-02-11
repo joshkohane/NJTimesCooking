@@ -74,42 +74,10 @@
             background-color: $main-light-gray;
             margin: 33px -16px;
             box-sizing: border-box;
-
-            &::after {
-                // padding-bottom: 20px;
-            }
-        }
-
-        .ingredients-container {
         }
 
         .directions-container {
             width: 100%;
         }
     }
-
-    .direction-wrapper {
-    }
-
-    .direction-step,
-    .direction-tip-header {
-
-    }
-
-    .direction-text {
-        // width: 95%;
-    }
-
-    .direction-tip-header {
-
-    }
-
-    .direction-tip {
-
-    }
-    //MOBILE ONLY STYLES
 }
-
-// @media only screen and (min-width:771px) and (max-width:1040px){
-//     //TABLET ONLY STYLES
-// }
