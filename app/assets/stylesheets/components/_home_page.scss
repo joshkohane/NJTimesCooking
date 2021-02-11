@@ -28,17 +28,19 @@
 .recipe-card-header {
     text-align: left;
 
-    .recipe-card-header-title {
+    .recipe-card-header-title,
+    .recipe-card-header-subtitle {
         font-family: $serif;
         font-size: 28px;
+    }
+
+    .recipe-card-header-title {
         color: $black;
         padding-top: 10px;
         border-top: 7px solid $black;
     }
 
     .recipe-card-header-subtitle {
-        font-family: $serif;
-        font-size: 28px;
         color: #999999;
         padding-bottom: 25px;
     }
@@ -54,7 +56,6 @@
     .home-page-header {
         padding: 0px 0px 10px;
         margin-top: -40px;
-        z-index: 10;
 
         .home-page-title {
             font-size: 1.5rem;
@@ -72,10 +73,6 @@
         .recipe-card-header-title,
         .recipe-card-header-subtitle {
             font-size: 24px;
-        }
-
-        .recipe-card-header-subtitle {
-
         }
     }   
 }
