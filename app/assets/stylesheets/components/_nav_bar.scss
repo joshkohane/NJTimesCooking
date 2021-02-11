@@ -93,13 +93,11 @@
             background-color: #555555;
 
             .search-results-child {
-
                 color: $white;
             }
         }
     }
     
-
     .fa-times-circle {
         position: absolute;
         right: 20px;
@@ -110,8 +108,8 @@
 }
 
 .nav-bar-end {
-    display: flex;
     position: relative;
+    display: flex;
     justify-content: flex-end;
 
     .recipe-box {
@@ -126,11 +124,11 @@
             height: 12px;
         }
 
-        .recipe-box-text {
+        .recipe-box-text,
+        .recipe-box-show {
+            border-right: 1px solid $lighter-gray;
             border-top: 1px solid $lighter-gray;
             border-left: 1px solid $lighter-gray;
-            border-right: 1px solid $lighter-gray;
-            border-bottom: 1px solid transparent;
             padding: 15px 18px 0px 17px;
             text-transform: uppercase;
             font-family: $sans-serif-bold;
@@ -140,39 +138,25 @@
             color: $btn-red;
             height: 39px;
             cursor: pointer;
-
+            
             &::after {
                 content: "Your Recipe Box";
             }
         }
-        
-        
-        .recipe-box-text:hover {
-            background-color: $main-light-gray;
-            border-bottom: 1px solid $lighter-gray;
+
+        .recipe-box-text {
+            border-bottom: 1px solid transparent;
+
+            &:hover {
+                background-color: $main-light-gray;
+                border-bottom: 1px solid $lighter-gray;
+            }
         }
         
         .recipe-box-show {
             background-color: $main-light-gray;
-            border-right: 1px solid $lighter-gray;
-            border-top: 1px solid $lighter-gray;
-            border-left: 1px solid $lighter-gray;
-            border-bottom: 1px solid $main-light-gray;
-            padding: 15px 18px 0px 17px;
-            text-transform: uppercase;
-            font-family: $sans-serif-bold;
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: .5px;
-            color: $btn-red;
-            height: 39px;
-            cursor: pointer;
-
-            &::after {
-                content: "Your Recipe Box";
-            }
+            border-bottom: 1px solid $main-light-gray;            
         }
-        
         
         .recipe-box-login-container:hover {
             background-color: $main-light-gray;
@@ -206,7 +190,6 @@
         .nav-bar-dropdown-show {
             display: none;
         }
-        
     }
 
     .nav-bar-dropdown:hover{
@@ -238,6 +221,10 @@
             padding: 10px;
             box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
             z-index: 100;
+
+            &:hover {
+                background-color: $main-light-gray;
+            }
         }
 
         .nav-bar-dropdown-show:before,
@@ -255,10 +242,6 @@
 
         .nav-bar-dropdown-show:after {
             border-bottom: 10px solid $white;
-        }
-
-        .nav-bar-dropdown-show:hover {
-            background-color: $main-light-gray;
         }
     }
 }
@@ -310,12 +293,6 @@
                     font-size: 15px;
                 }
             }
-            
-            .search-results-wrapper:hover {
-
-                .search-results-child {
-                }
-            }
         }
         
 
@@ -327,13 +304,9 @@
 
     .nav-bar-end {
         
-
         .recipe-box {
             height: 45px;
             width: 73px;
-
-            .recipe-spacer {
-            }
 
             .recipe-box-text,
             .recipe-box-show {
@@ -346,16 +319,8 @@
                 }
             }
             
-            
-            .recipe-box-text:hover {
-            }
-            
             .recipe-box-show {
                 height: 27px;
-            }
-            
-            
-            .recipe-box-login-container:hover {
             }
 
             .recipe-box-login {
@@ -370,35 +335,6 @@
             
             .fa-cog {
                 font-size: 12px;
-            }
-
-            .nav-bar-dropdown-show {
-            }
-            
-        }
-
-        .nav-bar-dropdown:hover{
-            
-            .fa-cog{
-            }
-
-            .nav-bar-dropdown-spacer {
-
-            }
-
-            .nav-bar-dropdown-show {
-                
-            }
-
-            .nav-bar-dropdown-show:before,
-            .nav-bar-dropdown-show:after {
-
-            }
-
-            .nav-bar-dropdown-show:after {
-            }
-
-            .nav-bar-dropdown-show:hover {
             }
         }
     }
