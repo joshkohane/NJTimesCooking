@@ -156,7 +156,6 @@
 .modal-title {
   font-size: 22px;
   font-weight: 300;
-  text-align: center;
   line-height: 1.5;
   padding-bottom: 12px;
   text-align: center;
@@ -175,19 +174,7 @@
     padding-bottom: 3px;
   }
   
-  .modal-input {
-    width: 282px;
-    font-family: $sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    height: 40px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    background-color: $white;
-    border: 1px solid $lighter-gray;
-    padding: 0 10px 4px;
-  }
-
+  .modal-input,
   .modal-input-red {
     width: 282px;
     font-family: $sans-serif;
@@ -197,9 +184,17 @@
     border-radius: 5px;
     box-sizing: border-box;
     background-color: $white;
-    border: 1px solid $btn-red;
-    padding: 0 10px 4px;
+    padding: 4px 10px 4px;
   }
+
+  .modal-input {
+    border: 1px solid $lighter-gray;
+  }
+
+  .modal-input-red {
+    border: 1px solid $btn-red;
+  }
+
 }
 
 .modal-password-field {
@@ -215,20 +210,16 @@
     top: 2px;
     right: 2px;
     width: 52px;
-    text-align: center;
     font-family: $sans-serif-bold;
     height: 36px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     box-sizing: border-box;
-    float: right;
     cursor: pointer;
     background-color: $white;
     font-size: 12px;
     font-weight: 700;
     color: $black;
-    text-align: center;
-    margin: 0 auto;
     padding-bottom: 4px;
   }
 
@@ -249,15 +240,12 @@
 }
 
 .modal-errors {
-  font-size: 12px;
-  font-weight: 300;
-  color: $btn-red;
   position: absolute;
   bottom: -28px;
-  font-family: $sans-serif;
 }
 
-.modal-password-errors {
+.modal-password-errors,
+.modal-errors {
   font-size: 12px;
   font-weight: 300;
   color: $btn-red;
@@ -265,13 +253,6 @@
 }
 
 @media (max-width: 770px) {
-  .modal-background-closed {
-  }
-
-  .modal-background {
-    
-  }
-
   .modal-child {
     width: 100vw;
     height: 100%;
@@ -283,105 +264,5 @@
 
   .modal-image-tag {
     display: none;
-
-    .modal-image {
-      
-    }
-
-    .modal-image-text {
-      
-    }
-  }
-
-  .modal-form {
-  }
-
-  .btn {
-    
-  }
-
-  .modal-btn {
-   
-  }
-
-  .demo-btn {
-    
-  }
-
-  .modal-submit-btn {
-  }
-
-  .modal-btn:hover {
-    
-  }
-
-  .demo-btn:hover {
-    
-  }
-
-  .modal-line-break {
-    
-  }
-    
-  .modal-line-break::before, .modal-line-break::after {
-    
-  }
-        
-  .modal-footer {
-    
-    
-    .modal-switch-page {
-      
-    }
-
-    .modal-link {
-      
-    }
-  }
-
-  .close-modal-btn {
-    
-  }
-
-  .modal-title {
-    
-  }
-
-  .modal-input-field {
-
-    .modal-input-text {
-      
-    }
-    
-    .modal-input {
-      
-    }
-
-    .modal-input-red {
-      
-    }
-  }
-
-  .modal-password-field {
-
-
-    .modal-show-btn {
-      
-    }
-
-    .modal-show-blue {
-      
-    }
-
-    .modal-show-btn:hover {
-    }
-  }
-
-  .modal-errors {
-
-  }
-
-  .modal-password-errors {
-
   }
 }
