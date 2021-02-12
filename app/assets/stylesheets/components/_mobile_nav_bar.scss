@@ -1,0 +1,268 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
+@keyframes slide-in {
+    0% {height: 0px;}
+    100% {height: 80px;}
+}
+
+.nav-bar-mobile-container {
+    display: none;
+}
+
+@media (max-width: 670px) {
+    .nav-bar-mobile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        background-color: $white;
+
+        .mobile-logo {
+            display: flex;
+            align-items: center;
+
+            .mobile-logo-left {
+                border-right: 0.5px solid $lighter-gray;
+                padding-right: 5px;
+                height: 24px;
+                width: auto;
+            }
+
+            .mobile-logo-right {
+                padding-left: 3px;
+                font-family: $karnak;
+                color: $black;
+                font-size: 25px;
+            }
+        }
+
+        .mobile-nav-hamburger-icon,
+        .mobile-nav-close-icon {
+            position: absolute;
+            left: 14px;
+        }
+        
+        .mobile-nav-hamburger-icon {
+            font-size: 17px;
+            top: 13px;
+            color: $black;
+        }
+
+        .mobile-nav-side-container {
+
+            .mobile-nav-close-icon {
+                font-size: 22px;
+                top: 10px;
+                color: $btn-red;
+            }
+            
+            .mobile-nav-side-open {
+                position: absolute;
+                top: 45px;
+                left: 0px;
+                width: 255px;
+                height: calc(100vh - 45px);
+                background-color: rgba(25,25,25,.97);
+                padding: 10px 0px 10px 12px;
+
+                .mobile-nav-side-text-home,
+                .mobile-nav-side-text-box {
+                    padding: 22px 0;
+                    width: 100%;
+                    font-family: $sans-serif-bold;
+                    letter-spacing: 1px;
+                }
+
+                .mobile-nav-side-text-home {
+                    color: $white;
+                    font-size: 13px;
+                    text-transform: uppercase;
+                }
+                
+                .mobile-nav-side-text-box {
+                    color: $btn-red;
+                    font-size: 18px;
+                    border-top: 1px solid $gray;
+                }
+
+                .mobile-nav-side-logout {
+                    color: $light-gray;
+                    font-family: $sans-serif;
+                    font-size: 13px;
+                    padding-top: 80px;
+                }
+
+                .mobile-nav-side-login-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 233px;
+                    height: 164px;
+                    box-sizing: border-box;
+                    margin: 80px 11px 0px 0px;
+                    padding: 15px 13px;
+                    background-color: $white;
+
+                    .mobile-nav-login-text {
+                        text-align: center;
+                        font-family: $sans-serif;
+                        font-size: 14px;
+                        letter-spacing: .5px;
+                    }
+
+                    .mobile-signup-btn,
+                    .mobile-login-btn {
+                        box-sizing: border-box;
+                        margin-top: 14px;
+                        width: 100%;
+                        text-align: center;
+                        padding: 8px 0;
+                        border-radius: 3px;
+                        font-size: 14px;
+                    }
+
+                    .mobile-signup-btn {
+                        font-family: $sans-serif-bold;
+                        color: $white;
+                        background-color: $btn-red;
+                        letter-spacing: 1px;
+                    }
+
+                    .mobile-login-btn {
+                        font-family: $sans-serif;
+                        color: $black;
+                        background-color: $white;
+                        border: 1px solid $black;
+                    }
+                }
+            }
+        }
+        
+        .mobile-nav-recipe-box-icon {
+            position: absolute;
+            border-right: 0.5px solid $lighter-gray;
+            color: $black;
+            right: 40px;
+            padding: 8px 14px;
+            font-size: 18px;
+            top: 6px;
+
+            &:active {
+                color: $btn-red;
+            }
+        }
+
+        .mobile-nav-search-icon,
+        .mobile-nav-close-search-icon {
+            position: absolute;
+            right: 14px;
+            color: $black;
+        }
+
+        .mobile-nav-search-icon {
+            font-size: 17px;
+        }
+
+        .mobile-nav-close-search-icon {
+            font-size: 22px;
+            top: 10px;
+        }
+        
+        .mobile-nav-search-container {
+            width: 100%;
+            height: 80px;
+            background-color: #FFFFFFF2;
+            position: absolute;
+            top: 45px;
+            left: 0px;
+            animation: slide-in .2s ease-in;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+
+            .mobile-search-form {
+                width: calc(100% - 20px);
+                display: flex;
+                position: relative;
+
+                .mobile-search-input {
+                    box-sizing: border-box;
+                    width: calc(100% - 60px);
+                    margin-right: 15px;
+                    font-family: $sans-serif-thin;
+                    font-size: 16px;
+                    background-color: $white;
+                    padding: 6px 12px 8px;
+                    border: 1px solid $lighter-gray;
+                    border-radius: 5px;
+                }
+
+                .mobile-search-go {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 45px;
+                    height: 40px;
+                    color: $white;
+                    font-size: 15px;
+                    font-family: $sans-serif-thin;
+                    background-color: $btn-red;
+                    border-radius: 3px;
+                    box-sizing: border-box;
+                    padding-bottom: 2px;
+                }
+
+                .mobile-nav-close-input-icon {
+                    position: absolute;
+                    font-size: 23px;
+                    color: $lighter-gray;
+                    top: 9px;
+                    right: 67px;
+                }
+            }
+        }
+
+        .mobile-nav-bar-search {
+
+            .search-results {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: absolute;
+                left: -1px;
+                top: 124px;
+                z-index: 100;
+                background-color: $main-light-gray;
+                width: calc(100% - 20px);
+                border: 1px solid $lighter-gray;
+                font-family: $sans-serif;
+    
+                .search-results-wrapper {
+                    padding: 5px 15px;
+    
+                    .search-results-child {
+                        display: flex;
+                        align-items: center;
+                        font-size: 22px;
+                        font-weight: 300;
+                        color: $black;
+                        width: 100%;
+                        height: 40px;
+                        padding-bottom: 4px;
+                    }
+                }
+                
+                .search-results-wrapper:hover {
+                    background-color: #555555;
+    
+                    .search-results-child {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

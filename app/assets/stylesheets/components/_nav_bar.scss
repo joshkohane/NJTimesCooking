@@ -254,6 +254,7 @@
     }
 
     .main-logo {
+        display: none;
         padding: 13px 5px;
 
         .logo-left {
@@ -266,6 +267,7 @@
     }
 
     .nav-bar-search {
+        display: none;
         width: calc(100% - 161px);
 
         .fa-search {
@@ -304,6 +306,7 @@
     }
 
     .nav-bar-end {
+        display: none;
         
         .recipe-box {
             height: 45px;

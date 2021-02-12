@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBarMobile from './nav_bar_mobile';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -103,6 +104,15 @@ class NavBar extends React.Component {
                             }
                     </div>
                 </div>
+                <NavBarMobile loggedIn={loggedIn} 
+                    logout={logout} 
+                    currentUser={currentUser} 
+                    searches={searches} 
+                    openModal={this.props.openModal} 
+                    history={this.props.history} 
+                    clearSearch={this.props.clearSearch}
+                    search={this.props.search}
+                    />
             </div>
         )
     }
