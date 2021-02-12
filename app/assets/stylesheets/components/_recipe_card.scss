@@ -344,10 +344,10 @@
     color: $gray;
 }
 
-@media (max-width: 870px) {
+@media (max-width: 1130px) {
     .home-page-recipe-card-container {
         width: 100%;
-        height: 400px;
+        height: 430px;
     }
 
     .recipe-card {
@@ -360,6 +360,16 @@
         }
     }
 
+    .see-all-link {
+        width: 145px;
+    }
+}
+
+@media (max-width: 870px) {
+    .home-page-recipe-card-container {
+        height: 400px;
+    }
+
     .recipe-card-wrapper {
         width: 145px;
         height: 212px;
@@ -369,7 +379,6 @@
         width: 144px;
         height: 96px;
     }
-
 
     .recipe-card-text {
         margin: 6px 10px;
@@ -400,9 +409,5 @@
 
     .recipe-card-bookmark {
         bottom: 13px;
-    }
-
-    .see-all-link {
-        width: 145px;
     }
 }
