@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, history, clearSearch, search }) {
+function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, history, location, clearSearch, search }) {
     const [showSide, setShowSide] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [searchValue, setSearchValue] = useState('');
     const [showClose, setShowClose] = useState(false);
+
+    useEffect(() => {
+        setShowSide(false);
+        setShowSearch(false);
+    }, [location])
 
     function handleOpenSide() {
         setShowSide(true);
@@ -16,9 +21,10 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
         setShowSide(false);
         setShowSearch(true);
     }
-
+    
     function handleCloseSearch() {
         setShowSearch(false);
+        setShowClose(false);
         clearSearch();
     }
 
@@ -40,7 +46,11 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
     }
 
     function handleSubmit() {
-        history.push({ pathname: `/api/search/${searchValue}` });
+        if (searchValue === '') {
+            history.push({ pathname: `/api/recipes/` });
+        } else {
+            history.push({ pathname: `/api/search/${searchValue}` });
+        }
         setShowSearch(false);
         setSearchValue('');
         setShowClose(false);
@@ -48,7 +58,15 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
 
     function handleChange(e) {
         setSearchValue(e.target.value);
-        handleSearch();
+        handleSearch(e.target.value);
+    }
+
+    function handleSearch(val) {
+        if (val === '') {
+            clearSearch();
+        } else {
+            Object.values(search(val));
+        }
     }
 
     function handleLogin(type) {
@@ -60,13 +78,13 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
         logout();
         setShowSide(false);
     }
-    
-    function handleSearch() {
-        if (searchValue === '') {
-            clearSearch();
-        } else {
-            Object.values(search(searchValue));
-        }
+
+    function handleRedirect() {
+        setShowSearch(false);
+        setShowClose(false);
+        clearSearch();
+        setSearchValue('');
+        setShowSide(false);
     }
 
     return (
@@ -98,14 +116,14 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
                 <i className="fas fa-bars mobile-nav-hamburger-icon" onClick={handleOpenSide}></i>
             }
             <Link to="/" style={{ textDecoration: 'none' }} >
-                <div className="mobile-logo">
+                <div className="mobile-logo" onClick={handleRedirect}>
                     <img className="mobile-logo-left" src={window.njblackIMG} alt="The NJTimesCooking Logo" />
                     <p className="mobile-logo-right" >Cooking</p>
                 </div>
             </Link>
             {loggedIn ?
                 <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
-                    <i className="fas fa-archive mobile-nav-recipe-box-icon"></i>
+                    <i className="fas fa-archive mobile-nav-recipe-box-icon" onClick={handleRedirect}></i>
                 </Link>
                 : ''
             }
@@ -126,8 +144,9 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
                             <button className="mobile-search-go" onClick={handleSubmit}>Go</button>
                         </form>
                     </div>
-                    {searches.length === 0 ?
-                        '' :
+                    {Object.values(searches).length === 0 ?
+                        ""
+                        :
                         <div className="mobile-nav-bar-search">
                             <ul className="search-results" >
                                 {Object.values(searches).map((recipe, idx) => (

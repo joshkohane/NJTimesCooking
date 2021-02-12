@@ -34,7 +34,7 @@ class SearchRecipes extends React.Component {
             <div className="recipe-box-outer-container" >
 
                 <div className="recipe-box-container" >
-                    <h1 className="recipe-box-title" >All Recipes</h1>
+                    <h1 className="recipe-box-title" >Search Results</h1>
                     <h2 className="recipe-box-subtitle" >{searches.length} recipes</h2>
                     <div className="recipe-box-recipes-container">
                         {searches.map((search, idx) => {

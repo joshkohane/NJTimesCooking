@@ -110,6 +110,7 @@ class NavBar extends React.Component {
                     searches={searches} 
                     openModal={this.props.openModal} 
                     history={this.props.history} 
+                    locaton={this.props.location}
                     clearSearch={this.props.clearSearch}
                     search={this.props.search}
                     />
