@@ -8,9 +8,12 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
     const [showClose, setShowClose] = useState(false);
 
     useEffect(() => {
-        setShowSide(false);
         setShowSearch(false);
-    }, [location])
+        setShowClose(false);
+        clearSearch();
+        setSearchValue('');
+        setShowSide(false);
+    }, [history.location.pathname])
 
     function handleOpenSide() {
         setShowSide(true);
@@ -58,14 +61,10 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
 
     function handleChange(e) {
         setSearchValue(e.target.value);
-        handleSearch(e.target.value);
-    }
-
-    function handleSearch(val) {
-        if (val === '') {
+        if (e.target.value === '') {
             clearSearch();
         } else {
-            Object.values(search(val));
+            Object.values(search(e.target.value));
         }
     }
 
@@ -76,14 +75,6 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
 
     function handleLogout() {
         logout();
-        setShowSide(false);
-    }
-
-    function handleRedirect() {
-        setShowSearch(false);
-        setShowClose(false);
-        clearSearch();
-        setSearchValue('');
         setShowSide(false);
     }
 
@@ -116,14 +107,14 @@ function NavBarMobile({ loggedIn, logout, currentUser, searches, openModal, hist
                 <i className="fas fa-bars mobile-nav-hamburger-icon" onClick={handleOpenSide}></i>
             }
             <Link to="/" style={{ textDecoration: 'none' }} >
-                <div className="mobile-logo" onClick={handleRedirect}>
+                <div className="mobile-logo">
                     <img className="mobile-logo-left" src={window.njblackIMG} alt="The NJTimesCooking Logo" />
                     <p className="mobile-logo-right" >Cooking</p>
                 </div>
             </Link>
             {loggedIn ?
                 <Link to={`/api/user/${currentUser}/recipeBox`} style={{ textDecoration: 'none' }}>
-                    <i className="fas fa-archive mobile-nav-recipe-box-icon" onClick={handleRedirect}></i>
+                    <i className="fas fa-archive mobile-nav-recipe-box-icon"></i>
                 </Link>
                 : ''
             }

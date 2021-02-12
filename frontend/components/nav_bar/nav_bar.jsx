@@ -46,7 +46,11 @@ class NavBar extends React.Component {
     }
 
     handleSubmit(e) {
-        this.props.history.push({pathname: `/api/search/${this.state.inputValue}`})
+        if (this.state.inputValue === '') {
+            this.props.history.push({ pathname: `/api/recipes/` });
+        } else {
+            this.props.history.push({pathname: `/api/search/${this.state.inputValue}`})
+        }
         this.setState({inputValue: ""})
         this.props.clearSearch();
     }
